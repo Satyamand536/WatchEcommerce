@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
-// Load environment variables immediately
 dotenv.config();
 
 const authRoutes = require('./routes/auth');
@@ -19,47 +18,37 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Routes
+// API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/payment', paymentRoutes);
 app.use('/api/watches', watchRoutes);
 app.use('/api/subscribe', subscribeRoutes);
 
-// Health check
-app.get('/', (req, res) => {
-  res.send('Pre-See-Jan API is running...');
+// ✅ Serve frontend build (VERY IMPORTANT ORDER)
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
 });
 
-// Error handling middleware
+// ❗ Error handler AFTER routes
 app.use(errorHandler);
-
-// Production Configuration: Serve built frontend
-if (process.env.NODE_ENV === "production" || true) { // Force enable for Render if needed, or rely on Render setting NODE_ENV
-  app.use(express.static(path.join(__dirname, "../frontend/dist")));
-
-  app.get("*", (req, res) => {
-    // If request is not an API call, serve index.html
-    if (!req.url.startsWith('/api')) {
-      res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
-    }
-  });
-}
 
 const PORT = process.env.PORT || 5000;
 
+// DB + Server start
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('Connected to MongoDB Atlas');
-    const server = app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+    const server = app.listen(PORT, () =>
+      console.log(`Server running on port ${PORT}`)
+    );
 
-    // Handle unhandled promise rejections
-    process.on('unhandledRejection', (err, promise) => {
+    process.on('unhandledRejection', (err) => {
       console.log(`Error: ${err.message}`);
-      // Close server & exit process
       server.close(() => process.exit(1));
     });
 
-    // Handle uncaught exceptions
     process.on('uncaughtException', (err) => {
       console.log(`Error: ${err.message}`);
       server.close(() => process.exit(1));
