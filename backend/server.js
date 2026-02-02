@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
@@ -31,6 +32,18 @@ app.get('/', (req, res) => {
 
 // Error handling middleware
 app.use(errorHandler);
+
+// Production Configuration: Serve built frontend
+if (process.env.NODE_ENV === "production" || true) { // Force enable for Render if needed, or rely on Render setting NODE_ENV
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+  app.get("*", (req, res) => {
+    // If request is not an API call, serve index.html
+    if (!req.url.startsWith('/api')) {
+      res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+    }
+  });
+}
 
 const PORT = process.env.PORT || 5000;
 

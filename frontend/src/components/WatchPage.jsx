@@ -170,7 +170,7 @@ const WatchPage = ({ category, promo, gender, searchQuery }) => {
       const fetchWatches = async () => {
         try {
           setLoading(true);
-          const { data } = await axios.get('http://localhost:5000/api/watches');
+          const { data } = await axios.get('/api/watches');
           if (data && data.length > 0) {
             setWatches(data);
           }

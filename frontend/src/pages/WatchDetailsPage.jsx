@@ -37,7 +37,7 @@ const WatchDetailsPage = () => {
     window.scrollTo(0, 0);
     const fetchWatch = async () => {
       try {
-        const { data } = await axios.get(`http://127.0.0.1:5000/api/watches/${id}`);
+        const { data } = await axios.get(`/api/watches/${id}`);
         setWatch(data);
       } catch (err) {
         const localWatch = WATCHES.find(w => String(w.id) === String(id));

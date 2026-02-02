@@ -28,7 +28,7 @@ const CheckoutForm = ({ amount, onSuccess, onCancel, customerDetails }) => {
 
     try {
       // 1. Create Payment Intent on the server
-      const { data: { clientSecret } } = await axios.post('http://localhost:5000/api/payment/create-intent', {
+      const { data: { clientSecret } } = await axios.post('/api/payment/create-intent', {
         amount: amount,
         name: customerDetails?.name,
         email: customerDetails?.email

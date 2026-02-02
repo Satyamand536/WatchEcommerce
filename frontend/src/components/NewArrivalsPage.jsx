@@ -27,7 +27,7 @@ const NewArrivalsPage = () => {
     window.scrollTo(0, 0);
     const fetchArrivals = async () => {
       try {
-        const { data } = await axios.get('http://localhost:5000/api/watches?sort=newest');
+        const { data } = await axios.get('/api/watches?sort=newest');
         setArrivals(data.slice(0, 5)); // Show top 5 newest
       } catch (error) {
         console.error("Fetch failed, using local reserve.");

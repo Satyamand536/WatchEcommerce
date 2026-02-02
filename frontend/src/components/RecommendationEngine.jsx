@@ -90,7 +90,7 @@ const RecommendationEngine = ({ onRecommendation }) => {
       };
 
       // 2. Fetch from Live API
-      const { data } = await axios.post('http://localhost:5000/api/watches/recommend', payload);
+      const { data } = await axios.post('/api/watches/recommend', payload);
       
       if (data && data.length > 0) {
         localResults = data;

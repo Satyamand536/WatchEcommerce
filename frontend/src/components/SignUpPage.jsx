@@ -70,7 +70,7 @@ const SignUpPage = () => {
 
     setIsSubmitting(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/signup', {
+      const response = await axios.post('/api/auth/signup', {
         name,
         email,
         password
