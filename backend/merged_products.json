@@ -1,0 +1,4534 @@
+[
+  {
+    "name": "Rolex Pearl Elite",
+    "brand": "Rolex",
+    "price": 85000,
+    "originalPrice": 95000,
+    "images": [
+      "/images/AP8.png"
+    ],
+    "description": "Premium Rolex Pearl Elite providing style and precision.",
+    "category": "Luxury",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Omega Seamaster Neo",
+    "brand": "Omega",
+    "price": 45000,
+    "originalPrice": 52000,
+    "images": [
+      "/images/O7.png"
+    ],
+    "description": "Premium Omega Seamaster Neo providing style and precision.",
+    "category": "Luxury",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Cartier Tank Solo",
+    "brand": "Cartier",
+    "price": 9500,
+    "originalPrice": 12500,
+    "images": [
+      "/images/TH3.png"
+    ],
+    "description": "Premium Cartier Tank Solo providing style and precision.",
+    "category": "Luxury",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Patek Calatrava Lite",
+    "brand": "Patek-philippe",
+    "price": 8999,
+    "originalPrice": 11000,
+    "images": [
+      "/images/IWC2.png"
+    ],
+    "description": "Premium Patek Calatrava Lite providing style and precision.",
+    "category": "Luxury",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "IWC Portofino Slim",
+    "brand": "Iwc",
+    "price": 7800,
+    "originalPrice": 9200,
+    "images": [
+      "/images/P5.png"
+    ],
+    "description": "Premium IWC Portofino Slim providing style and precision.",
+    "category": "Luxury",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Tag Heuer Carrera",
+    "brand": "Tag-heuer",
+    "price": 9800,
+    "originalPrice": 14500,
+    "images": [
+      "/images/W4.png"
+    ],
+    "description": "Premium Tag Heuer Carrera providing style and precision.",
+    "category": "Luxury",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Hermes Arceau Paris",
+    "brand": "Hermes",
+    "price": 8500,
+    "originalPrice": 11000,
+    "images": [
+      "/images/AP1.png"
+    ],
+    "description": "Premium Hermes Arceau Paris providing style and precision.",
+    "category": "Luxury",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Zenith El Primero",
+    "brand": "Zenith",
+    "price": 9400,
+    "originalPrice": 12500,
+    "images": [
+      "/images/O3.png"
+    ],
+    "description": "Premium Zenith El Primero providing style and precision.",
+    "category": "Luxury",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Titan Stellar Smart",
+    "brand": "Titan",
+    "price": 9995,
+    "originalPrice": 13995,
+    "images": [
+      "/images/O6.png"
+    ],
+    "description": "Premium Titan Stellar Smart providing style and precision.",
+    "category": "Smart",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Titan Regalia Gold",
+    "brand": "Titan",
+    "price": 7495,
+    "originalPrice": 9500,
+    "images": [
+      "/images/PatekPhilippe.png"
+    ],
+    "description": "Premium Titan Regalia Gold providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Fastrack Vibes Chrono",
+    "brand": "Fastrack",
+    "price": 2450,
+    "originalPrice": 3850,
+    "images": [
+      "/images/H5.png"
+    ],
+    "description": "Premium Fastrack Vibes Chrono providing style and precision.",
+    "category": "Classic",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Titan Karishma Steel",
+    "brand": "Titan",
+    "price": 1850,
+    "originalPrice": 2450,
+    "images": [
+      "/images/H1.png"
+    ],
+    "description": "Premium Titan Karishma Steel providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Fastrack Revolt X",
+    "brand": "Fastrack",
+    "price": 3495,
+    "originalPrice": 4500,
+    "images": [
+      "/images/AP2.png"
+    ],
+    "description": "Premium Fastrack Revolt X providing style and precision.",
+    "category": "Sport",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Sport"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Titan Raga Aura",
+    "brand": "Titan",
+    "price": 5850,
+    "originalPrice": 7200,
+    "images": [
+      "/images/W9.png"
+    ],
+    "description": "Premium Titan Raga Aura providing style and precision.",
+    "category": "Classic",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Titan Neo Elite",
+    "brand": "Titan",
+    "price": 4200,
+    "originalPrice": 5500,
+    "images": [
+      "/images/R6.png"
+    ],
+    "description": "Premium Titan Neo Elite providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Fastrack Game Face",
+    "brand": "Fastrack",
+    "price": 1450,
+    "originalPrice": 2100,
+    "images": [
+      "/images/T3.png"
+    ],
+    "description": "Premium Fastrack Game Face providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Titan Entry Plus",
+    "brand": "Titan",
+    "price": 850,
+    "originalPrice": 1200,
+    "images": [
+      "/images/AP6.png"
+    ],
+    "description": "Premium Titan Entry Plus providing style and precision.",
+    "category": "Classic",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Fastrack Reflex Slim",
+    "brand": "Fastrack",
+    "price": 4995,
+    "originalPrice": 7999,
+    "images": [
+      "/images/B8.png"
+    ],
+    "description": "Premium Fastrack Reflex Slim providing style and precision.",
+    "category": "Smart",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Noise Fit Crew",
+    "brand": "Noise",
+    "price": 999,
+    "originalPrice": 1599,
+    "images": [
+      "/images/CS5.png"
+    ],
+    "description": "Premium Noise Fit Crew providing style and precision.",
+    "category": "Smart",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "boAt Storm Call",
+    "brand": "Boat",
+    "price": 899,
+    "originalPrice": 1299,
+    "images": [
+      "/images/H2.png"
+    ],
+    "description": "Premium boAt Storm Call providing style and precision.",
+    "category": "Smart",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Ambrane Fit Beam",
+    "brand": "Ambrane",
+    "price": 1850,
+    "originalPrice": 2450,
+    "images": [
+      "/images/P4.png"
+    ],
+    "description": "Premium Ambrane Fit Beam providing style and precision.",
+    "category": "Smart",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "G-Shock Carbon Mud",
+    "brand": "Casio",
+    "price": 9995,
+    "originalPrice": 12995,
+    "images": [
+      "/images/AudemarsPiguet.png"
+    ],
+    "description": "Premium G-Shock Carbon Mud providing style and precision.",
+    "category": "Sport",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Sport"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Casio Edifice Black",
+    "brand": "Casio",
+    "price": 8495,
+    "originalPrice": 10500,
+    "images": [
+      "/images/IWC7.png"
+    ],
+    "description": "Premium Casio Edifice Black providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Casio Vintage Gold",
+    "brand": "Casio",
+    "price": 1695,
+    "originalPrice": 2295,
+    "images": [
+      "/images/IWC3.png"
+    ],
+    "description": "Premium Casio Vintage Gold providing style and precision.",
+    "category": "Classic",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Baby-G Floral Pink",
+    "brand": "Casio",
+    "price": 7450,
+    "originalPrice": 8999,
+    "images": [
+      "/images/C5.png"
+    ],
+    "description": "Premium Baby-G Floral Pink providing style and precision.",
+    "category": "Sport",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Sport"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Casio Enticer Blue",
+    "brand": "Casio",
+    "price": 3495,
+    "originalPrice": 4500,
+    "images": [
+      "/images/JL3.png"
+    ],
+    "description": "Premium Casio Enticer Blue providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Casio Youth Sport",
+    "brand": "Casio",
+    "price": 850,
+    "originalPrice": 1250,
+    "images": [
+      "/images/C3.png"
+    ],
+    "description": "Premium Casio Youth Sport providing style and precision.",
+    "category": "Classic",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Casio Basic Silver",
+    "brand": "Casio",
+    "price": 550,
+    "originalPrice": 850,
+    "images": [
+      "/images/B7.png"
+    ],
+    "description": "Premium Casio Basic Silver providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Casio Lady Quartz",
+    "brand": "Casio",
+    "price": 650,
+    "originalPrice": 950,
+    "images": [
+      "/images/CS4.png"
+    ],
+    "description": "Premium Casio Lady Quartz providing style and precision.",
+    "category": "Classic",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Seiko 5 Sport Neo",
+    "brand": "Seiko",
+    "price": 9500,
+    "originalPrice": 12000,
+    "images": [
+      "/images/HuBLOT.PNG"
+    ],
+    "description": "Premium Seiko 5 Sport Neo providing style and precision.",
+    "category": "Sport",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Sport"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Seiko Dress Brown",
+    "brand": "Seiko",
+    "price": 8200,
+    "originalPrice": 9900,
+    "images": [
+      "/images/R4.png"
+    ],
+    "description": "Premium Seiko Dress Brown providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Citizen Eco-Drive XL",
+    "brand": "Citizen",
+    "price": 8900,
+    "originalPrice": 11000,
+    "images": [
+      "/images/JL6.png"
+    ],
+    "description": "Premium Citizen Eco-Drive XL providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Citizen Luxury Lady",
+    "brand": "Citizen",
+    "price": 9400,
+    "originalPrice": 12500,
+    "images": [
+      "/images/C6.png"
+    ],
+    "description": "Premium Citizen Luxury Lady providing style and precision.",
+    "category": "Luxury",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "Seiko Quartz Basic",
+    "brand": "Seiko",
+    "price": 1850,
+    "originalPrice": 2800,
+    "images": [
+      "/images/IWC6.png"
+    ],
+    "description": "Premium Seiko Quartz Basic providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Citizen Lady Luxe",
+    "brand": "Citizen",
+    "price": 5450,
+    "originalPrice": 7200,
+    "images": [
+      "/images/P2.png"
+    ],
+    "description": "Premium Citizen Lady Luxe providing style and precision.",
+    "category": "Classic",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Fossil Gen 6 Smart",
+    "brand": "Fossil",
+    "price": 9995,
+    "originalPrice": 19995,
+    "images": [
+      "/images/S2.png"
+    ],
+    "description": "Premium Fossil Gen 6 Smart providing style and precision.",
+    "category": "Smart",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Fossil Townsman Auto",
+    "brand": "Fossil",
+    "price": 8995,
+    "originalPrice": 11500,
+    "images": [
+      "/images/B6.png"
+    ],
+    "description": "Premium Fossil Townsman Auto providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Fossil Jacqueline Mini",
+    "brand": "Fossil",
+    "price": 6495,
+    "originalPrice": 8500,
+    "images": [
+      "/images/AP3.png"
+    ],
+    "description": "Premium Fossil Jacqueline Mini providing style and precision.",
+    "category": "Classic",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Fossil machine black",
+    "brand": "Fossil",
+    "price": 4250,
+    "originalPrice": 5800,
+    "images": [
+      "/images/JL1.png"
+    ],
+    "description": "Premium Fossil machine black providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Fossil Entry Unisex",
+    "brand": "Fossil",
+    "price": 950,
+    "originalPrice": 1550,
+    "images": [
+      "/images/W8.png"
+    ],
+    "description": "Premium Fossil Entry Unisex providing style and precision.",
+    "category": "Classic",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "G-Shock Junior Mud",
+    "brand": "Casio",
+    "price": 1499,
+    "originalPrice": 2499,
+    "images": [
+      "/images/CS1.png"
+    ],
+    "description": "Premium G-Shock Junior Mud providing style and precision.",
+    "category": "Junior",
+    "gender": "Boys",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Junior"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Pink Sparkle Watch",
+    "brand": "Sparkle",
+    "price": 799,
+    "originalPrice": 1299,
+    "images": [
+      "/images/BR1.png"
+    ],
+    "description": "Premium Pink Sparkle Watch providing style and precision.",
+    "category": "Junior",
+    "gender": "Girls",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Junior"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Matrix Boy Hero",
+    "brand": "Matrix",
+    "price": 599,
+    "originalPrice": 999,
+    "images": [
+      "/images/P1.png"
+    ],
+    "description": "Premium Matrix Boy Hero providing style and precision.",
+    "category": "Junior",
+    "gender": "Boys",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Junior"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Fastrack Girl Chic",
+    "brand": "Fastrack",
+    "price": 1899,
+    "originalPrice": 2499,
+    "images": [
+      "/images/Brietling.webp"
+    ],
+    "description": "Premium Fastrack Girl Chic providing style and precision.",
+    "category": "Junior",
+    "gender": "Girls",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Junior"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Titan Kid Blue",
+    "brand": "Titan",
+    "price": 2450,
+    "originalPrice": 3500,
+    "images": [
+      "/images/Rolex.png"
+    ],
+    "description": "Premium Titan Kid Blue providing style and precision.",
+    "category": "Junior",
+    "gender": "Boys",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Junior"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Sonata Girl Gem",
+    "brand": "Sonata",
+    "price": 1200,
+    "originalPrice": 1800,
+    "images": [
+      "/images/S3.png"
+    ],
+    "description": "Premium Sonata Girl Gem providing style and precision.",
+    "category": "Junior",
+    "gender": "Girls",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Junior"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Junior Entry Boy",
+    "brand": "Bharat",
+    "price": 550,
+    "originalPrice": 850,
+    "images": [
+      "/images/R2.png"
+    ],
+    "description": "Premium Junior Entry Boy providing style and precision.",
+    "category": "Junior",
+    "gender": "Boys",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Junior"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Junior Entry Girl",
+    "brand": "Bharat",
+    "price": 550,
+    "originalPrice": 850,
+    "images": [
+      "/images/W7.png"
+    ],
+    "description": "Premium Junior Entry Girl providing style and precision.",
+    "category": "Junior",
+    "gender": "Girls",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Junior"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Titan Raga Junior",
+    "brand": "Titan",
+    "price": 3450,
+    "originalPrice": 4200,
+    "images": [
+      "/images/R5.png"
+    ],
+    "description": "Premium Titan Raga Junior providing style and precision.",
+    "category": "Junior",
+    "gender": "Girls",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Junior"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Baby-G Lite",
+    "brand": "Casio",
+    "price": 5800,
+    "originalPrice": 7500,
+    "images": [
+      "/images/F1.png"
+    ],
+    "description": "Premium Baby-G Lite providing style and precision.",
+    "category": "Junior",
+    "gender": "Girls",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Junior"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Fossil Bloom Junior",
+    "brand": "Fossil",
+    "price": 4200,
+    "originalPrice": 5500,
+    "images": [
+      "/images/Cartier.png"
+    ],
+    "description": "Premium Fossil Bloom Junior providing style and precision.",
+    "category": "Junior",
+    "gender": "Girls",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Junior"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Fastrack Smarty Girl",
+    "brand": "Fastrack",
+    "price": 2999,
+    "originalPrice": 3850,
+    "images": [
+      "/images/JL7.png"
+    ],
+    "description": "Premium Fastrack Smarty Girl providing style and precision.",
+    "category": "Junior",
+    "gender": "Girls",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Junior"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Elite Princess Gold",
+    "brand": "Titan",
+    "price": 8500,
+    "originalPrice": 11000,
+    "images": [
+      "/images/BM1.png"
+    ],
+    "description": "Premium Elite Princess Gold providing style and precision.",
+    "category": "Junior",
+    "gender": "Girls",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Junior"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Cartier Panthère Jr",
+    "brand": "Cartier",
+    "price": 24500,
+    "originalPrice": 28500,
+    "images": [
+      "/images/H7.png"
+    ],
+    "description": "Premium Cartier Panthère Jr providing style and precision.",
+    "category": "Junior",
+    "gender": "Girls",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Junior"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Patek Nautilus Mini",
+    "brand": "Patek-philippe",
+    "price": 32000,
+    "originalPrice": 38000,
+    "images": [
+      "/images/C2.png"
+    ],
+    "description": "Premium Patek Nautilus Mini providing style and precision.",
+    "category": "Junior",
+    "gender": "Girls",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Junior"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Rolex Datejust Pink",
+    "brand": "Rolex",
+    "price": 18500,
+    "originalPrice": 22500,
+    "images": [
+      "/images/W3.png"
+    ],
+    "description": "Premium Rolex Datejust Pink providing style and precision.",
+    "category": "Junior",
+    "gender": "Girls",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Junior"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Couple Gold Set",
+    "brand": "Titan",
+    "price": 9999,
+    "originalPrice": 15000,
+    "images": [
+      "/images/T2.png"
+    ],
+    "description": "Premium Couple Gold Set providing style and precision.",
+    "category": "Gifting",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Gifting"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Elegance Box Set",
+    "brand": "Titan",
+    "price": 8500,
+    "originalPrice": 12000,
+    "images": [
+      "/images/TH6.png"
+    ],
+    "description": "Premium Elegance Box Set providing style and precision.",
+    "category": "Gifting",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Gifting"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Executive Pen Set",
+    "brand": "Elite",
+    "price": 7450,
+    "originalPrice": 9999,
+    "images": [
+      "/images/TS2.png"
+    ],
+    "description": "Premium Executive Pen Set providing style and precision.",
+    "category": "Gifting",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Gifting"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Rose Gold Delight",
+    "brand": "Sonata",
+    "price": 4500,
+    "originalPrice": 6500,
+    "images": [
+      "/images/O2.png"
+    ],
+    "description": "Premium Rose Gold Delight providing style and precision.",
+    "category": "Gifting",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Gifting"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Budget Buddy Box",
+    "brand": "Daily",
+    "price": 950,
+    "originalPrice": 1500,
+    "images": [
+      "/images/B4.PNG"
+    ],
+    "description": "Premium Budget Buddy Box providing style and precision.",
+    "category": "Gifting",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Gifting"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Silver shine Pack",
+    "brand": "Silver",
+    "price": 1850,
+    "originalPrice": 2800,
+    "images": [
+      "/images/TagHeuer.png"
+    ],
+    "description": "Premium Silver shine Pack providing style and precision.",
+    "category": "Gifting",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Gifting"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Collector's Chrono Set",
+    "brand": "Iwc",
+    "price": 24500,
+    "originalPrice": 32000,
+    "images": [
+      "/images/H4.png"
+    ],
+    "description": "Premium Collector's Chrono Set providing style and precision.",
+    "category": "Gifting",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Gifting"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Diamond Jubilee Box",
+    "brand": "Zenith",
+    "price": 45000,
+    "originalPrice": 55000,
+    "images": [
+      "/images/B5.png"
+    ],
+    "description": "Premium Diamond Jubilee Box providing style and precision.",
+    "category": "Gifting",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Gifting"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Presidential Duo Pack",
+    "brand": "Elite",
+    "price": 12499,
+    "originalPrice": 18000,
+    "images": [
+      "/images/AP4.png"
+    ],
+    "description": "Premium Presidential Duo Pack providing style and precision.",
+    "category": "Gifting",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Gifting"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Matrix Azure Steel",
+    "brand": "Matrix",
+    "price": 999,
+    "originalPrice": 1999,
+    "images": [
+      "/images/P8.png"
+    ],
+    "description": "Premium Matrix Azure Steel providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Matrix Rose Luxe",
+    "brand": "Matrix",
+    "price": 1450,
+    "originalPrice": 2450,
+    "images": [
+      "/images/W5.png"
+    ],
+    "description": "Premium Matrix Rose Luxe providing style and precision.",
+    "category": "Classic",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Matrix Sport 500",
+    "brand": "Matrix",
+    "price": 550,
+    "originalPrice": 999,
+    "images": [
+      "/images/C8.png"
+    ],
+    "description": "Premium Matrix Sport 500 providing style and precision.",
+    "category": "Sport",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Sport"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Rolex Precision Blue",
+    "brand": "Rolex",
+    "price": 9900,
+    "originalPrice": 14500,
+    "images": [
+      "/images/IWC4.png"
+    ],
+    "description": "Premium Rolex Precision Blue providing style and precision.",
+    "category": "Luxury",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Omega Aqua Terra Lite",
+    "brand": "Omega",
+    "price": 8200,
+    "originalPrice": 11000,
+    "images": [
+      "/images/JL8.png"
+    ],
+    "description": "Premium Omega Aqua Terra Lite providing style and precision.",
+    "category": "Luxury",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Omega Speedmaster 1.0",
+    "brand": "Omega",
+    "price": 7800,
+    "images": [
+      "/images/P3.PNG"
+    ],
+    "description": "Premium Omega Speedmaster 1.0 providing style and precision.",
+    "category": "Luxury",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "Rolex Oyster Lady",
+    "brand": "Rolex",
+    "price": 9100,
+    "images": [
+      "/images/AP5.png"
+    ],
+    "description": "Premium Rolex Oyster Lady providing style and precision.",
+    "category": "Luxury",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "Rolex Entry Men",
+    "brand": "Rolex",
+    "price": 1450,
+    "images": [
+      "/images/W2.png"
+    ],
+    "description": "Premium Rolex Entry Men providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Rolex Entry Women",
+    "brand": "Rolex",
+    "price": 1200,
+    "images": [
+      "/images/O4.png"
+    ],
+    "description": "Premium Rolex Entry Women providing style and precision.",
+    "category": "Classic",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Casio Edifice Neo",
+    "brand": "Casio",
+    "price": 9400,
+    "originalPrice": 12500,
+    "images": [
+      "/images/R8.png"
+    ],
+    "description": "Premium Casio Edifice Neo providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "G-Shock Mudmaster V2",
+    "brand": "Casio",
+    "price": 8800,
+    "originalPrice": 11500,
+    "images": [
+      "/images/IWC5.png"
+    ],
+    "description": "Premium G-Shock Mudmaster V2 providing style and precision.",
+    "category": "Sport",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Sport"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Casio Entry Gold II",
+    "brand": "Casio",
+    "price": 650,
+    "images": [
+      "/images/C1.png"
+    ],
+    "description": "Premium Casio Entry Gold II providing style and precision.",
+    "category": "Classic",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Casio Enticer Blue II",
+    "brand": "Casio",
+    "price": 1850,
+    "images": [
+      "/images/IWC.png"
+    ],
+    "description": "Premium Casio Enticer Blue II providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Titan Regalia Plus",
+    "brand": "Titan",
+    "price": 5500,
+    "originalPrice": 7500,
+    "images": [
+      "/images/BL1.png"
+    ],
+    "description": "Premium Titan Regalia Plus providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Titan Raga Pearl",
+    "brand": "Titan",
+    "price": 4200,
+    "originalPrice": 6200,
+    "images": [
+      "/images/B2.png"
+    ],
+    "description": "Premium Titan Raga Pearl providing style and precision.",
+    "category": "Classic",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Titan Edge Slim II",
+    "brand": "Titan",
+    "price": 1100,
+    "images": [
+      "/images/H6.png"
+    ],
+    "description": "Premium Titan Edge Slim II providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Titan Entry Women II",
+    "brand": "Titan",
+    "price": 550,
+    "images": [
+      "/images/P6.png"
+    ],
+    "description": "Premium Titan Entry Women II providing style and precision.",
+    "category": "Classic",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Fossil Gen 6 Hybrid",
+    "brand": "Fossil",
+    "price": 9200,
+    "originalPrice": 14500,
+    "images": [
+      "/images/H3.png"
+    ],
+    "description": "Premium Fossil Gen 6 Hybrid providing style and precision.",
+    "category": "Smart",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Fossil Jacqueline II",
+    "brand": "Fossil",
+    "price": 4800,
+    "originalPrice": 7200,
+    "images": [
+      "/images/B1.png"
+    ],
+    "description": "Premium Fossil Jacqueline II providing style and precision.",
+    "category": "Classic",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Fossil townsman Lite",
+    "brand": "Fossil",
+    "price": 1450,
+    "images": [
+      "/images/S1.png"
+    ],
+    "description": "Premium Fossil townsman Lite providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Fossil Budget Case",
+    "brand": "Fossil",
+    "price": 650,
+    "images": [
+      "/images/O1.png"
+    ],
+    "description": "Premium Fossil Budget Case providing style and precision.",
+    "category": "Classic",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Fastrack Revolver II",
+    "brand": "Fastrack",
+    "price": 2999,
+    "originalPrice": 4250,
+    "images": [
+      "/images/TH2.png"
+    ],
+    "description": "Premium Fastrack Revolver II providing style and precision.",
+    "category": "Sport",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Sport"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Fastrack Vibes Chic",
+    "brand": "Fastrack",
+    "price": 950,
+    "images": [
+      "/images/Omega.png"
+    ],
+    "description": "Premium Fastrack Vibes Chic providing style and precision.",
+    "category": "Classic",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Fastrack reflex XL",
+    "brand": "Fastrack",
+    "price": 7500,
+    "images": [
+      "/images/H8.png"
+    ],
+    "description": "Premium Fastrack reflex XL providing style and precision.",
+    "category": "Smart",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Seiko 5 Sport Blue",
+    "brand": "Seiko",
+    "price": 8100,
+    "originalPrice": 11000,
+    "images": [
+      "/images/O8.png"
+    ],
+    "description": "Premium Seiko 5 Sport Blue providing style and precision.",
+    "category": "Sport",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Sport"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Citizen Eco Lady II",
+    "brand": "Citizen",
+    "price": 5800,
+    "originalPrice": 8500,
+    "images": [
+      "/images/IWC1.png"
+    ],
+    "description": "Premium Citizen Eco Lady II providing style and precision.",
+    "category": "Classic",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Seiko Dress Neo",
+    "brand": "Seiko",
+    "price": 4500,
+    "images": [
+      "/images/JL2.png"
+    ],
+    "description": "Premium Seiko Dress Neo providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Citizen eco entry",
+    "brand": "Citizen",
+    "price": 1100,
+    "images": [
+      "/images/JL4.png"
+    ],
+    "description": "Premium Citizen eco entry providing style and precision.",
+    "category": "Classic",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Matrix Azure V2",
+    "brand": "Matrix",
+    "price": 1450,
+    "originalPrice": 2450,
+    "images": [
+      "/images/TS3.png"
+    ],
+    "description": "Premium Matrix Azure V2 providing style and precision.",
+    "category": "Classic",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Matrix Rose II",
+    "brand": "Matrix",
+    "price": 950,
+    "originalPrice": 1850,
+    "images": [
+      "/images/W12.png"
+    ],
+    "description": "Premium Matrix Rose II providing style and precision.",
+    "category": "Classic",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Classic"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Matrix Smart Lite II",
+    "brand": "Matrix",
+    "price": 2200,
+    "images": [
+      "/images/B3.png"
+    ],
+    "description": "Premium Matrix Smart Lite II providing style and precision.",
+    "category": "Smart",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Breitling Navitimer B01",
+    "brand": "Breitling",
+    "price": 58000,
+    "originalPrice": 65000,
+    "images": [
+      "/images/AP7.png"
+    ],
+    "description": "Premium Breitling Navitimer B01 providing style and precision.",
+    "category": "Luxury",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "Breitling Superocean Heritage",
+    "brand": "Breitling",
+    "price": 32000,
+    "originalPrice": 38000,
+    "images": [
+      "/images/C4.png"
+    ],
+    "description": "Premium Breitling Superocean Heritage providing style and precision.",
+    "category": "Luxury",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "Breitling Avenger Chrono",
+    "brand": "Breitling",
+    "price": 38000,
+    "images": [
+      "/images/TH8.png"
+    ],
+    "description": "Premium Breitling Avenger Chrono providing style and precision.",
+    "category": "Luxury",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "Hublot Big Bang Unico",
+    "brand": "Hublot",
+    "price": 95000,
+    "originalPrice": 110000,
+    "images": [
+      "/images/W1.png"
+    ],
+    "description": "Premium Hublot Big Bang Unico providing style and precision.",
+    "category": "Luxury",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "Hublot Classic Fusion Gold",
+    "brand": "Hublot",
+    "price": 55000,
+    "originalPrice": 62000,
+    "images": [
+      "/images/C7.png"
+    ],
+    "description": "Premium Hublot Classic Fusion Gold providing style and precision.",
+    "category": "Luxury",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "Hublot Spirit of Big Bang",
+    "brand": "Hublot",
+    "price": 78000,
+    "images": [
+      "/images/JaegerLeCoultre.png"
+    ],
+    "description": "Premium Hublot Spirit of Big Bang providing style and precision.",
+    "category": "Luxury",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "JLC Reverso Tribute",
+    "brand": "Jaeger-lecoultre",
+    "price": 42000,
+    "originalPrice": 48000,
+    "images": [
+      "/images/CS2.png"
+    ],
+    "description": "Premium JLC Reverso Tribute providing style and precision.",
+    "category": "Luxury",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "JLC Rendez-Vous Night & Day",
+    "brand": "Jaeger-lecoultre",
+    "price": 38000,
+    "originalPrice": 44000,
+    "images": [
+      "/images/W10.png"
+    ],
+    "description": "Premium JLC Rendez-Vous Night & Day providing style and precision.",
+    "category": "Luxury",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "JLC Master Ultra Thin",
+    "brand": "Jaeger-lecoultre",
+    "price": 52000,
+    "images": [
+      "/images/CS3.png"
+    ],
+    "description": "Premium JLC Master Ultra Thin providing style and precision.",
+    "category": "Luxury",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "AP Royal Oak Selfwinding",
+    "brand": "Audemars-piguet",
+    "price": 92000,
+    "originalPrice": 105000,
+    "images": [
+      "/images/T4.png"
+    ],
+    "description": "Premium AP Royal Oak Selfwinding providing style and precision.",
+    "category": "Luxury",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "AP Royal Oak Lady Rose",
+    "brand": "Audemars-piguet",
+    "price": 85000,
+    "originalPrice": 92000,
+    "images": [
+      "/images/IWC8.png"
+    ],
+    "description": "Premium AP Royal Oak Lady Rose providing style and precision.",
+    "category": "Luxury",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "IWC Portugieser Chrono",
+    "brand": "Iwc",
+    "price": 45000,
+    "images": [
+      "/images/O5.png"
+    ],
+    "description": "Premium IWC Portugieser Chrono providing style and precision.",
+    "category": "Luxury",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "IWC Da Vinci Automatic",
+    "brand": "Iwc",
+    "price": 38000,
+    "images": [
+      "/images/TH7.png"
+    ],
+    "description": "Premium IWC Da Vinci Automatic providing style and precision.",
+    "category": "Luxury",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "Tag Heuer Monaco Gulf",
+    "brand": "Tag-heuer",
+    "price": 42000,
+    "images": [
+      "/images/TH5.png"
+    ],
+    "description": "Premium Tag Heuer Monaco Gulf providing style and precision.",
+    "category": "Luxury",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "Tag Heuer Aquaracer Lady",
+    "brand": "Tag-heuer",
+    "price": 18500,
+    "images": [
+      "/images/R3.png"
+    ],
+    "description": "Premium Tag Heuer Aquaracer Lady providing style and precision.",
+    "category": "Luxury",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "Zenith Defy Skyline",
+    "brand": "Zenith",
+    "price": 52000,
+    "images": [
+      "/images/TH4.png"
+    ],
+    "description": "Premium Zenith Defy Skyline providing style and precision.",
+    "category": "Luxury",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "Zenith Elite Moonphase",
+    "brand": "Zenith",
+    "price": 32000,
+    "images": [
+      "/images/TS1.png"
+    ],
+    "description": "Premium Zenith Elite Moonphase providing style and precision.",
+    "category": "Luxury",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20
+  },
+  {
+    "name": "Elite Gift Pair",
+    "brand": "Titan",
+    "price": 7500,
+    "originalPrice": 9999,
+    "images": [
+      "/images/R1.png"
+    ],
+    "description": "Premium Elite Gift Pair providing style and precision.",
+    "category": "Gifting",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Gifting"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Budget Gift Box II",
+    "brand": "Daily",
+    "price": 550,
+    "images": [
+      "/images/P7.png"
+    ],
+    "description": "Premium Budget Gift Box II providing style and precision.",
+    "category": "Gifting",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Gifting"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Apple Watch Ultra II",
+    "brand": "Apple",
+    "price": 89900,
+    "originalPrice": 95000,
+    "images": [
+      "/images/W11.png"
+    ],
+    "description": "Premium Apple Watch Ultra II providing style and precision.",
+    "category": "Smart",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Samsung Galaxy Watch 6",
+    "brand": "Samsung",
+    "price": 34999,
+    "originalPrice": 42000,
+    "images": [
+      "/images/TH1.png"
+    ],
+    "description": "Premium Samsung Galaxy Watch 6 providing style and precision.",
+    "category": "Smart",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Garmin Epix Pro",
+    "brand": "Garmin",
+    "price": 65000,
+    "originalPrice": 72000,
+    "images": [
+      "/images/R7.png"
+    ],
+    "description": "Premium Garmin Epix Pro providing style and precision.",
+    "category": "Smart",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Noise Halo Plus",
+    "brand": "Noise",
+    "price": 12500,
+    "originalPrice": 15999,
+    "images": [
+      "/images/T1.png"
+    ],
+    "description": "Premium Noise Halo Plus providing style and precision.",
+    "category": "Smart",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "G-Shock Gravitymaster Jr",
+    "brand": "Casio",
+    "price": 7500,
+    "originalPrice": 9999,
+    "images": [
+      "/images/W6.png"
+    ],
+    "description": "Premium G-Shock Gravitymaster Jr providing style and precision.",
+    "category": "Junior",
+    "gender": "Boys",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Junior"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Titan Regalia Boy",
+    "brand": "Titan",
+    "price": 12500,
+    "originalPrice": 15000,
+    "images": [
+      "/images/JL5.png"
+    ],
+    "description": "Premium Titan Regalia Boy providing style and precision.",
+    "category": "Junior",
+    "gender": "Boys",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Junior"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Seiko 5 Boy Scout",
+    "brand": "Seiko",
+    "price": 18500,
+    "originalPrice": 22000,
+    "images": [
+      "/images/AP8.png"
+    ],
+    "description": "Premium Seiko 5 Boy Scout providing style and precision.",
+    "category": "Junior",
+    "gender": "Boys",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Junior"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Fastrack Reflex Beat",
+    "brand": "Fastrack",
+    "price": 850,
+    "originalPrice": 1499,
+    "images": [
+      "/images/O7.png"
+    ],
+    "description": "Premium Fastrack Reflex Beat providing style and precision.",
+    "category": "Smart",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Noise ColorFit Pulse",
+    "brand": "Noise",
+    "price": 1500,
+    "originalPrice": 2499,
+    "images": [
+      "/images/TH3.png"
+    ],
+    "description": "Premium Noise ColorFit Pulse providing style and precision.",
+    "category": "Smart",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "boAt Wave Lite",
+    "brand": "Boat",
+    "price": 1800,
+    "originalPrice": 3999,
+    "images": [
+      "/images/IWC2.png"
+    ],
+    "description": "Premium boAt Wave Lite providing style and precision.",
+    "category": "Smart",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Fire-Boltt Ninja",
+    "brand": "Fire-boltt",
+    "price": 3500,
+    "originalPrice": 5999,
+    "images": [
+      "/images/P5.png"
+    ],
+    "description": "Premium Fire-Boltt Ninja providing style and precision.",
+    "category": "Smart",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Noise Pro 4 Alpha",
+    "brand": "Noise",
+    "price": 4200,
+    "originalPrice": 6500,
+    "images": [
+      "/images/W4.png"
+    ],
+    "description": "Premium Noise Pro 4 Alpha providing style and precision.",
+    "category": "Smart",
+    "gender": "Unisex",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Titan Talk S",
+    "brand": "Titan",
+    "price": 8500,
+    "originalPrice": 11999,
+    "images": [
+      "/images/AP1.png"
+    ],
+    "description": "Premium Titan Talk S providing style and precision.",
+    "category": "Smart",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Michael Kors Ritz",
+    "brand": "Michael-kors",
+    "price": 18500,
+    "originalPrice": 24000,
+    "images": [
+      "/images/O3.png"
+    ],
+    "description": "Premium Michael Kors Ritz providing style and precision.",
+    "category": "Luxury",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Emporio Armani Gianna",
+    "brand": "Emporio-armani",
+    "price": 28000,
+    "originalPrice": 35000,
+    "images": [
+      "/images/O6.png"
+    ],
+    "description": "Premium Emporio Armani Gianna providing style and precision.",
+    "category": "Luxury",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Seiko Lukia Automatic",
+    "brand": "Seiko",
+    "price": 45000,
+    "originalPrice": 52000,
+    "images": [
+      "/images/PatekPhilippe.png"
+    ],
+    "description": "Premium Seiko Lukia Automatic providing style and precision.",
+    "category": "Luxury",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Luxury"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 20,
+    "promo": "offers"
+  },
+  {
+    "name": "Noise Fit Pulse V2",
+    "brand": "Noise",
+    "price": 899,
+    "originalPrice": 1999,
+    "images": [
+      "/images/H5.png"
+    ],
+    "description": "Premium Noise Fit Pulse V2 providing style and precision.",
+    "category": "Smart",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Fire-Boltt Ninja Bloom",
+    "brand": "Fire-boltt",
+    "price": 950,
+    "originalPrice": 2499,
+    "images": [
+      "/images/H1.png"
+    ],
+    "description": "Premium Fire-Boltt Ninja Bloom providing style and precision.",
+    "category": "Smart",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "boAt Wave Style",
+    "brand": "Boat",
+    "price": 1450,
+    "originalPrice": 3499,
+    "images": [
+      "/images/AP2.png"
+    ],
+    "description": "Premium boAt Wave Style providing style and precision.",
+    "category": "Smart",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Ambrane Fit Beam Pro",
+    "brand": "Ambrane",
+    "price": 1850,
+    "originalPrice": 3200,
+    "images": [
+      "/images/W9.png"
+    ],
+    "description": "Premium Ambrane Fit Beam Pro providing style and precision.",
+    "category": "Smart",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Noise ColorFit Ultra 3",
+    "brand": "Noise",
+    "price": 3495,
+    "originalPrice": 5995,
+    "images": [
+      "/images/R6.png"
+    ],
+    "description": "Premium Noise ColorFit Ultra 3 providing style and precision.",
+    "category": "Smart",
+    "gender": "Men",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Titan Talk Rose Gold",
+    "brand": "Titan",
+    "price": 4200,
+    "originalPrice": 7500,
+    "images": [
+      "/images/T3.png"
+    ],
+    "description": "Premium Titan Talk Rose Gold providing style and precision.",
+    "category": "Smart",
+    "gender": "Women",
+    "suitableFor": [
+      "Daily Wear"
+    ],
+    "styleTags": [
+      "Smart"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "Seiko Presage Cocktail",
+    "brand": "Seiko",
+    "price": 18500,
+    "images": [
+      "/images/AP6.png"
+    ],
+    "category": "Luxury",
+    "gender": "Men",
+    "description": "Strategically selected to ensure no selection gap exists in our hallmarked collection.",
+    "suitableFor": [
+      "Daily Wear",
+      "Office"
+    ],
+    "styleTags": [
+      "Luxury",
+      "Premium"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Automatic",
+      "waterResistance": "50m"
+    },
+    "isLuxury": true,
+    "stock": 10
+  },
+  {
+    "name": "Tissot Le Locle",
+    "brand": "Tissot",
+    "price": 19500,
+    "images": [
+      "/images/B8.png"
+    ],
+    "category": "Luxury",
+    "gender": "Women",
+    "description": "Strategically selected to ensure no selection gap exists in our hallmarked collection.",
+    "suitableFor": [
+      "Daily Wear",
+      "Office"
+    ],
+    "styleTags": [
+      "Luxury",
+      "Premium"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Automatic",
+      "waterResistance": "50m"
+    },
+    "isLuxury": true,
+    "stock": 10
+  },
+  {
+    "name": "Fitbit Sense 2",
+    "brand": "Fitbit",
+    "price": 14500,
+    "images": [
+      "/images/CS5.png"
+    ],
+    "category": "Smart",
+    "gender": "Women",
+    "description": "Strategically selected to ensure no selection gap exists in our hallmarked collection.",
+    "suitableFor": [
+      "Daily Wear",
+      "Office"
+    ],
+    "styleTags": [
+      "Smart",
+      "Premium"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Automatic",
+      "waterResistance": "50m"
+    },
+    "isLuxury": false,
+    "stock": 10
+  },
+  {
+    "name": "Noise Origin Premier",
+    "brand": "Noise",
+    "price": 12500,
+    "images": [
+      "/images/H2.png"
+    ],
+    "category": "Smart",
+    "gender": "Unisex",
+    "description": "Strategically selected to ensure no selection gap exists in our hallmarked collection.",
+    "suitableFor": [
+      "Daily Wear",
+      "Office"
+    ],
+    "styleTags": [
+      "Smart",
+      "Premium"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Automatic",
+      "waterResistance": "50m"
+    },
+    "isLuxury": false,
+    "stock": 10
+  },
+  {
+    "name": "G-Shock Mudmaster Elite",
+    "brand": "Casio",
+    "price": 16500,
+    "images": [
+      "/images/P4.png"
+    ],
+    "category": "Sport",
+    "gender": "Men",
+    "description": "Strategically selected to ensure no selection gap exists in our hallmarked collection.",
+    "suitableFor": [
+      "Daily Wear",
+      "Office"
+    ],
+    "styleTags": [
+      "Sport",
+      "Premium"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Automatic",
+      "waterResistance": "50m"
+    },
+    "isLuxury": false,
+    "stock": 10
+  },
+  {
+    "name": "Garmin Fenix 7X Pro",
+    "brand": "Garmin",
+    "price": 65000,
+    "images": [
+      "/images/AudemarsPiguet.png"
+    ],
+    "category": "Sport",
+    "gender": "Men",
+    "description": "Strategically selected to ensure no selection gap exists in our hallmarked collection.",
+    "suitableFor": [
+      "Daily Wear",
+      "Office"
+    ],
+    "styleTags": [
+      "Sport",
+      "Premium"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Automatic",
+      "waterResistance": "50m"
+    },
+    "isLuxury": false,
+    "stock": 10
+  },
+  {
+    "name": "Suunto 9 Peak",
+    "brand": "Suunto",
+    "price": 42000,
+    "images": [
+      "/images/IWC7.png"
+    ],
+    "category": "Sport",
+    "gender": "Women",
+    "description": "Strategically selected to ensure no selection gap exists in our hallmarked collection.",
+    "suitableFor": [
+      "Daily Wear",
+      "Office"
+    ],
+    "styleTags": [
+      "Sport",
+      "Premium"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Automatic",
+      "waterResistance": "50m"
+    },
+    "isLuxury": false,
+    "stock": 10
+  },
+  {
+    "name": "Garmin Vivofit Jr 3",
+    "brand": "Garmin",
+    "price": 8500,
+    "images": [
+      "/images/IWC3.png"
+    ],
+    "category": "Junior",
+    "gender": "Boys",
+    "description": "Strategically selected to ensure no selection gap exists in our hallmarked collection.",
+    "suitableFor": [
+      "Daily Wear",
+      "Office"
+    ],
+    "styleTags": [
+      "Junior",
+      "Premium"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Automatic",
+      "waterResistance": "50m"
+    },
+    "isLuxury": false,
+    "stock": 10
+  },
+  {
+    "name": "Fitbit Ace 3 Elite",
+    "brand": "Fitbit",
+    "price": 7499,
+    "images": [
+      "/images/C5.png"
+    ],
+    "category": "Junior",
+    "gender": "Girls",
+    "description": "Strategically selected to ensure no selection gap exists in our hallmarked collection.",
+    "suitableFor": [
+      "Daily Wear",
+      "Office"
+    ],
+    "styleTags": [
+      "Junior",
+      "Premium"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Automatic",
+      "waterResistance": "50m"
+    },
+    "isLuxury": false,
+    "stock": 10
+  },
+  {
+    "name": "Zoop Smart Junior",
+    "brand": "Zoop",
+    "price": 6500,
+    "images": [
+      "/images/JL3.png"
+    ],
+    "category": "Junior",
+    "gender": "Unisex",
+    "description": "Strategically selected to ensure no selection gap exists in our hallmarked collection.",
+    "suitableFor": [
+      "Daily Wear",
+      "Office"
+    ],
+    "styleTags": [
+      "Junior",
+      "Premium"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Automatic",
+      "waterResistance": "50m"
+    },
+    "isLuxury": false,
+    "stock": 10
+  },
+  {
+    "name": "Titan Wedding Heritage Set",
+    "brand": "Titan",
+    "price": 35000,
+    "images": [
+      "/images/C3.png"
+    ],
+    "category": "Gifting",
+    "gender": "Unisex",
+    "description": "Strategically selected to ensure no selection gap exists in our hallmarked collection.",
+    "suitableFor": [
+      "Daily Wear",
+      "Office"
+    ],
+    "styleTags": [
+      "Gifting",
+      "Premium"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Automatic",
+      "waterResistance": "50m"
+    },
+    "isLuxury": false,
+    "stock": 10
+  },
+  {
+    "name": "Fossil His & Her Luxury",
+    "brand": "Fossil",
+    "price": 28000,
+    "images": [
+      "/images/B7.png"
+    ],
+    "category": "Gifting",
+    "gender": "Unisex",
+    "description": "Strategically selected to ensure no selection gap exists in our hallmarked collection.",
+    "suitableFor": [
+      "Daily Wear",
+      "Office"
+    ],
+    "styleTags": [
+      "Gifting",
+      "Premium"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Automatic",
+      "waterResistance": "50m"
+    },
+    "isLuxury": false,
+    "stock": 10
+  },
+  {
+    "name": "Ambrane Fit Pulse Pro",
+    "brand": "Ambrane",
+    "price": 1850,
+    "images": [
+      "/images/CS4.png"
+    ],
+    "category": "Smart",
+    "gender": "Women",
+    "description": "Strategically selected to ensure no selection gap exists in our hallmarked collection.",
+    "suitableFor": [
+      "Daily Wear",
+      "Office"
+    ],
+    "styleTags": [
+      "Smart",
+      "Premium"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Automatic",
+      "waterResistance": "50m"
+    },
+    "isLuxury": false,
+    "stock": 10
+  },
+  {
+    "name": "Titan Men's Gifting Combo",
+    "brand": "Titan",
+    "price": 1850,
+    "originalPrice": 2999,
+    "images": [
+      "/images/W1.png"
+    ],
+    "description": "Elegant gifting combo featuring a classic stainless steel watch and a premium wallet.",
+    "category": "Gifting",
+    "gender": "Men",
+    "suitableFor": [
+      "Gifting"
+    ],
+    "styleTags": [
+      "Gifting",
+      "Classic",
+      "Combo"
+    ],
+    "wristFit": {
+      "dialSize": 42,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": false,
+    "stock": 40
+  },
+  {
+    "name": "Fastrack Urban Gift Set",
+    "brand": "Fastrack",
+    "price": 1450,
+    "originalPrice": 2200,
+    "images": [
+      "/images/AP3.png"
+    ],
+    "description": "Sporty gift set for the modern man. Includes an athletic watch and a signature band.",
+    "category": "Gifting",
+    "gender": "Men",
+    "suitableFor": [
+      "Gifting"
+    ],
+    "styleTags": [
+      "Gifting",
+      "Sporty",
+      "Young"
+    ],
+    "wristFit": {
+      "dialSize": 44,
+      "fitCategory": "Large"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "50m"
+    },
+    "isLuxury": false,
+    "stock": 50
+  },
+  {
+    "name": "Premium Brass Duo Pack",
+    "brand": "Heritage",
+    "price": 3800,
+    "originalPrice": 5500,
+    "images": [
+      "/images/O5.png"
+    ],
+    "description": "Sophisticated duo featuring a mechanical timepiece and a matching brass bracelet.",
+    "category": "Gifting",
+    "gender": "Men",
+    "suitableFor": [
+      "Gifting",
+      "Formal"
+    ],
+    "styleTags": [
+      "Gifting",
+      "Luxury",
+      "Brass"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Mechanical",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 15
+  },
+  {
+    "name": "Fossil Signature Gift Case",
+    "brand": "Fossil",
+    "price": 4500,
+    "originalPrice": 6999,
+    "images": [
+      "/images/TH2.png"
+    ],
+    "description": "The ultimate gift of time. A premium leather-strap watch presented in a limited edition collector's case.",
+    "category": "Gifting",
+    "gender": "Men",
+    "suitableFor": [
+      "Gifting",
+      "Party"
+    ],
+    "styleTags": [
+      "Gifting",
+      "Leather",
+      "Premium"
+    ],
+    "wristFit": {
+      "dialSize": 44,
+      "fitCategory": "Large"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "50m"
+    },
+    "isLuxury": false,
+    "stock": 20
+  },
+  {
+    "name": "G-Shock Gravitymaster Boy",
+    "brand": "Casio",
+    "price": 7500,
+    "originalPrice": 9999,
+    "images": [
+      "/images/B5.png"
+    ],
+    "description": "Rugged and resilient. The Gravitymaster Boy is designed for young adventurers who demand durability.",
+    "category": "Junior",
+    "gender": "Boys",
+    "suitableFor": [
+      "Sports",
+      "Adventure"
+    ],
+    "styleTags": [
+      "Boys",
+      "Rugged",
+      "Aviation"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "100m"
+    },
+    "isLuxury": false,
+    "stock": 25
+  },
+  {
+    "name": "Titan Regalia Junior",
+    "brand": "Titan",
+    "price": 12500,
+    "originalPrice": 15000,
+    "images": [
+      "/images/W3.png"
+    ],
+    "description": "A mark of excellence. The Regalia Junior brings Titan's legendary craftsmanship to the next generation.",
+    "category": "Junior",
+    "gender": "Boys",
+    "suitableFor": [
+      "Formal",
+      "Daily"
+    ],
+    "styleTags": [
+      "Boys",
+      "Luxury",
+      "Gold"
+    ],
+    "wristFit": {
+      "dialSize": 38,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "30m"
+    },
+    "isLuxury": true,
+    "stock": 12
+  },
+  {
+    "name": "Seiko 5 Sport Boy Edition",
+    "brand": "Seiko",
+    "price": 18500,
+    "originalPrice": 22000,
+    "images": [
+      "/images/O7.png"
+    ],
+    "description": "Automatic precision for the young enthusiast. Features a transparent case back and robust caliber.",
+    "category": "Junior",
+    "gender": "Boys",
+    "suitableFor": [
+      "Smart Casual"
+    ],
+    "styleTags": [
+      "Boys",
+      "Automatic",
+      "Tough"
+    ],
+    "wristFit": {
+      "dialSize": 36,
+      "fitCategory": "Small"
+    },
+    "technicalSpecs": {
+      "movement": "Automatic",
+      "waterResistance": "50m"
+    },
+    "isLuxury": true,
+    "stock": 8
+  },
+  {
+    "name": "Garmin Forerunner JR Pro",
+    "brand": "Garmin",
+    "price": 24500,
+    "originalPrice": 28000,
+    "images": [
+      "/images/TS1.png"
+    ],
+    "description": "Advanced fitness tracking for junior athletes. GPS enabled with custom health goals.",
+    "category": "Junior",
+    "gender": "Boys",
+    "suitableFor": [
+      "Sports",
+      "Tracking"
+    ],
+    "styleTags": [
+      "Boys",
+      "Smart",
+      "GPS"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Digital",
+      "waterResistance": "IP68"
+    },
+    "isLuxury": false,
+    "stock": 15
+  },
+  {
+    "name": "Patek Nautilus Mini Junior",
+    "brand": "Patek-Philippe",
+    "price": 45000,
+    "originalPrice": 55000,
+    "images": [
+      "/images/P3.PNG"
+    ],
+    "description": "The ultimate childhood heirloom. A masterfully crafted nautilus-inspired timepiece for children.",
+    "category": "Junior",
+    "gender": "Boys",
+    "suitableFor": [
+      "Exclusive Wear"
+    ],
+    "styleTags": [
+      "Boys",
+      "Luxury",
+      "Heirloom"
+    ],
+    "wristFit": {
+      "dialSize": 34,
+      "fitCategory": "Small"
+    },
+    "technicalSpecs": {
+      "movement": "Automatic",
+      "waterResistance": "50m"
+    },
+    "isLuxury": true,
+    "stock": 5
+  },
+  {
+    "name": "Tag Heuer Carrera Jr",
+    "brand": "Tag-Heuer",
+    "price": 32000,
+    "originalPrice": 38000,
+    "images": [
+      "/images/TH2.png"
+    ],
+    "description": "Racing heritage scaled for young champions. High-precision chronograph with sapphire glass.",
+    "category": "Junior",
+    "gender": "Boys",
+    "suitableFor": [
+      "Sports",
+      "Luxury"
+    ],
+    "styleTags": [
+      "Boys",
+      "Chrono",
+      "Racing"
+    ],
+    "wristFit": {
+      "dialSize": 38,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Quartz",
+      "waterResistance": "100m"
+    },
+    "isLuxury": true,
+    "stock": 7
+  }
+]
