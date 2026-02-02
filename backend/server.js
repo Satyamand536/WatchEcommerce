@@ -18,39 +18,44 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// API Routes
+// ---------------- API Routes ----------------
 app.use('/api/auth', authRoutes);
 app.use('/api/payment', paymentRoutes);
 app.use('/api/watches', watchRoutes);
 app.use('/api/subscribe', subscribeRoutes);
 
-// ✅ Serve frontend build (VERY IMPORTANT ORDER)
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
+// ---------------- Serve Frontend (Vite build) ----------------
+const distPath = path.join(__dirname, "../frontend/dist");
 
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+app.use(express.static(distPath));
+
+// SPA fallback for Express v5 (IMPORTANT)
+app.use((req, res, next) => {
+  if (req.originalUrl.startsWith('/api')) return next();
+  res.sendFile(path.join(distPath, 'index.html'));
 });
 
-// ❗ Error handler AFTER routes
+// ---------------- Error Handler (LAST) ----------------
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
-// DB + Server start
+// ---------------- DB + Server ----------------
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('Connected to MongoDB Atlas');
-    const server = app.listen(PORT, () =>
-      console.log(`Server running on port ${PORT}`)
-    );
+
+    const server = app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
 
     process.on('unhandledRejection', (err) => {
-      console.log(`Error: ${err.message}`);
+      console.error(`Unhandled Rejection: ${err.message}`);
       server.close(() => process.exit(1));
     });
 
     process.on('uncaughtException', (err) => {
-      console.log(`Error: ${err.message}`);
+      console.error(`Uncaught Exception: ${err.message}`);
       server.close(() => process.exit(1));
     });
   })
