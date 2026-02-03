@@ -197,7 +197,7 @@ export const comingSoonStyles = {
   price: "mt-3 text-sm text-gray-600",
   
   // Function for formatting (keep as helper)
-  formatINR: (n) => `₹ ${n.toLocaleString("en-IN")}`
+  formatINR: (n) => `₹ ${(n ?? 0).toLocaleString("en-IN")}`
 };
 
 

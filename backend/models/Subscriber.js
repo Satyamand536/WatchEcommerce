@@ -25,6 +25,6 @@ const subscriberSchema = new mongoose.Schema({
 });
 
 // Index for faster queries
-subscriberSchema.index({ email: 1 });
+// Email is already indexed via 'unique: true' in schema definition
 
 module.exports = mongoose.model('Subscriber', subscriberSchema);

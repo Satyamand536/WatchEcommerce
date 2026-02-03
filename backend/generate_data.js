@@ -25,7 +25,7 @@ const getImageUrl = (varName) => {
 const dummyPath = path.join(__dirname, '../frontend/src/assets/dummywdata.js');
 const content = fs.readFileSync(dummyPath, 'utf8');
 
-const objectRegex = /\{ id: ([\s\S]*?)\}/g;
+const objectRegex = /\{ id: [\s\S]+?(?=\{ id: |\];)/g;
 const matches = content.match(objectRegex);
 
 const products = [];
@@ -33,14 +33,14 @@ const seenNames = new Set();
 
 if (matches) {
     matches.forEach(m => {
-        const namePart = m.match(/name: "(.*?)"/);
-        const pricePart = m.match(/price: (.*?),/);
-        const originalPricePart = m.match(/originalPrice: (.*?),/);
-        const brandPart = m.match(/brand: "(.*?)"/);
-        const genderPart = m.match(/gender: "(.*?)"/);
-        const categoryPart = m.match(/category: "(.*?)"/);
-        const imgPart = m.match(/img: (.*?),/);
-        const promoPart = m.match(/promo: "(.*?)"/);
+        const namePart = m.match(/name:\s*["'](.*?)["']/);
+        const pricePart = m.match(/price:\s*([\d.]+)/);
+        const originalPricePart = m.match(/originalPrice:\s*([\d.]+)/);
+        const brandPart = m.match(/brand:\s*["'](.*?)["']/);
+        const genderPart = m.match(/gender:\s*["'](.*?)["']/);
+        const categoryPart = m.match(/category:\s*["'](.*?)["']/);
+        const imgPart = m.match(/img:\s*([^,}\s]+)/);
+        const promoPart = m.match(/promo:\s*["'](.*?)["']/);
 
         if (namePart && pricePart) {
             const name = namePart[1];
@@ -132,5 +132,6 @@ const finalProducts = products.filter((p, index, self) =>
     index === self.findIndex((t) => t.name === p.name)
 );
 
-fs.writeFileSync('merged_products.json', JSON.stringify(finalProducts, null, 2));
+const outputPath = path.join(__dirname, 'merged_products.json');
+fs.writeFileSync(outputPath, JSON.stringify(finalProducts, null, 2));
 console.log(`Generated ${finalProducts.length} products with 100% gap coverage V2.`);

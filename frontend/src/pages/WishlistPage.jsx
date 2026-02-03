@@ -12,7 +12,7 @@ const WishlistPage = () => {
   const { wishlist, toggleWishlist, addItem, cart } = useCart();
   const { theme } = useTheme();
 
-  const isInCart = (id) => cart.some(item => String(item.id) === String(id));
+  const isInCart = (id) => cart.some(item => String(item._id || item.id) === String(id));
 
   return (
     <div className="min-h-screen bg-[var(--bg-primary)] transition-colors duration-500">
@@ -80,12 +80,12 @@ const WishlistPage = () => {
                     </div>
                     
                     <div className="mt-auto flex items-center justify-between gap-4">
-                      <span className="text-lg font-black text-[var(--text-primary)] italic tracking-tighter">₹ {watch.price.toLocaleString('en-IN')}</span>
+                      <span className="text-lg font-black text-[var(--text-primary)] italic tracking-tighter">₹ {(watch?.price ?? 0).toLocaleString('en-IN')}</span>
                       
                       <button 
                         onClick={() => addItem(watch)}
                         disabled={isInCart(watch.id)}
-                        className={`flex-1 py-4 px-4 rounded-xl font-black text-[9px] uppercase tracking-widest transition-all ${
+                        className={`flex-1 h-12 px-4 rounded-xl font-black text-[9px] uppercase tracking-widest transition-all min-h-[44px] ${
                           isInCart(watch.id)
                             ? 'bg-gray-100 text-gray-400 cursor-not-allowed border border-gray-200'
                             : 'bg-[var(--text-primary)] text-[var(--bg-primary)] hover:bg-zinc-800 dark:hover:bg-zinc-200 shadow-lg'

@@ -7,9 +7,8 @@ import {
   X, 
   Heart, 
   ChevronDown, 
-  Clock,
-  Zap,
-  Sun,
+  Zap, 
+  Sun, 
   Moon
 } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -137,17 +136,17 @@ const Navbar = () => {
           </div>
           
           {/* Center: Desktop Menu (Natural flow, safer than absolute) */}
-          <div className="hidden lg:flex items-center justify-center gap-8">
+          <div className="hidden lg:flex items-center justify-center gap-10">
             {navItems.map((item) => (
               <div 
                 key={item.name} 
-                className="relative group"
+                className="relative group h-full"
                 onMouseEnter={() => item.submenu && setActiveDropdown(item.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <Link 
                   to={item.href} 
-                  className={`text-[12px] font-bold tracking-widest flex items-center gap-1.5 transition-colors uppercase ${location.pathname === item.href ? 'text-[var(--text-accent)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-accent)]'}`}
+                  className={`text-[12px] h-full min-h-[44px] px-2 font-bold tracking-widest flex items-center gap-1.5 transition-colors uppercase ${location.pathname === item.href ? 'text-[var(--text-accent)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'}`}
                 >
                   {item.icon}
                   {item.name}
@@ -180,101 +179,106 @@ const Navbar = () => {
           </div>
   
           {/* Right Actions - Mobile optimized */}
-          <div className="flex-1 flex items-center justify-end gap-3 sm:gap-4 md:gap-8 lg:pl-16">
+          <div className="flex-1 flex items-center justify-end gap-2 sm:gap-4 md:gap-8 lg:pl-16">
             
-            {/* Theme Toggle - Touch-friendly */}
+            {/* Theme Toggle - Hidden on extra small mobile */}
             <button 
               onClick={toggleTheme}
-              className="text-[var(--text-secondary)] hover:text-[var(--text-accent)] transition-colors p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
+              className="hidden sm:flex text-[var(--text-secondary)] hover:text-[var(--text-accent)] transition-colors p-2 min-w-[44px] min-h-[44px] items-center justify-center"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun size={18} className="sm:w-5 sm:h-5" /> : <Moon size={18} className="sm:w-5 sm:h-5" />}
             </button>
   
-            {/* Search bar expanded or icon */}
-            <div className="hidden md:flex items-center relative gap-4">
-               <AnimatePresence>
-                 {searchOpen && (
-                   <div className="relative">
-                     <motion.input
-                       ref={searchInputRef}
-                       initial={{ width: 0, opacity: 0 }}
-                       animate={{ width: 200, opacity: 1 }}
-                       exit={{ width: 0, opacity: 0 }}
-                       type="text"
-                       placeholder="Search pieces..."
-                       value={searchQuery}
-                       onChange={(e) => {
-                         setSearchQuery(e.target.value);
-                         // Suggestions logic
-                         if (e.target.value.trim().length > 1) {
-                           const s = e.target.value.toLowerCase();
-                           const matches = WATCHES.filter(w => 
-                             w.name.toLowerCase().includes(s) || 
-                             w.brand.toLowerCase().includes(s)
-                           ).slice(0, 5);
-                           
-                           // Dynamic Price Suggestions
-                           const priceSuggestions = [];
-                           const targetGenders = ["men", "women", "boys", "girls"];
-                           const matchedGender = targetGenders.find(g => s.includes(g));
-                           
-                           if (matchedGender) {
-                              priceSuggestions.push({ label: `${matchedGender.charAt(0).toUpperCase() + matchedGender.slice(1)} watches under ₹1,000`, query: `${matchedGender} watches under 1000` });
-                              priceSuggestions.push({ label: `${matchedGender.charAt(0).toUpperCase() + matchedGender.slice(1)} watches under ₹5,000`, query: `${matchedGender} watches under 5000` });
-                           } else if (s.includes("smart") || s.includes("luxury")) {
-                              const term = s.includes("smart") ? "smart" : "luxury";
-                              priceSuggestions.push({ label: `${term.charAt(0).toUpperCase() + term.slice(1)} watches under ₹5,000`, query: `${term} watches under 5000` });
+            {/* Universal Search - Visible on all devices */}
+            <div className="flex items-center relative gap-2 sm:gap-4">
+               <button 
+                  onClick={() => setSearchOpen(true)} 
+                  className="text-gray-400 hover:text-[var(--text-primary)] transition-colors p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
+                  aria-label="Search"
+               >
+                 <Search size={18} className="sm:w-5 sm:h-5" />
+               </button>
+
+               {/* Desktop Search Bar (MD and up) */}
+               <div className="hidden md:block">
+                 <AnimatePresence>
+                   {searchOpen && (
+                     <div className="relative">
+                       <motion.input
+                         ref={searchInputRef}
+                         initial={{ width: 0, opacity: 0 }}
+                         animate={{ width: 220, opacity: 1 }}
+                         exit={{ width: 0, opacity: 0 }}
+                         type="text"
+                         placeholder="Search pieces..."
+                         value={searchQuery}
+                         onChange={(e) => {
+                          setSearchQuery(e.target.value);
+                          if (e.target.value.trim().length > 1) {
+                            const s = e.target.value.toLowerCase();
+                            const matches = WATCHES.filter(w => {
+                              const searchTerms = s.split(/\s+/).filter(t => t.length > 2); // only items > 2 chars
+                              return searchTerms.some(term => {
+                                 const normTerm = term === 'watches' ? 'watch' : (term === 'girls' ? 'girl' : (term === 'boys' ? 'boy' : (term.endsWith('s') ? term.slice(0, -1) : term)));
+                                 return w.name.toLowerCase().includes(normTerm) || w.brand.toLowerCase().includes(normTerm);
+                              });
+                            }).slice(0, 5);
+                            
+                            const priceSuggestions = [];
+                            const targetGenders = ["men", "women", "boys", "girls"];
+                            const matchedGender = targetGenders.find(g => s.includes(g));
+                            
+                            if (matchedGender) {
+                               priceSuggestions.push({ label: `${matchedGender.charAt(0).toUpperCase() + matchedGender.slice(1)} watches under ₹1,000`, query: `${matchedGender} watches under 1000` });
+                               priceSuggestions.push({ label: `${matchedGender.charAt(0).toUpperCase() + matchedGender.slice(1)} watches under ₹5,000`, query: `${matchedGender} watches under 5000` });
+                            } else if (s.includes("smart") || s.includes("luxury")) {
+                               const term = s.includes("smart") ? "smart" : "luxury";
+                               priceSuggestions.push({ label: `${term.charAt(0).toUpperCase() + term.slice(1)} watches under ₹5,000`, query: `${term} watches under 5000` });
+                            }
+                            setSuggestions({ matches, priceSuggestions });
+                          } else {
+                            setSuggestions({ matches: [], priceSuggestions: [] });
+                          }
+                        }}
+                         onKeyDown={(e) => {
+                           if (e.key === 'Enter' && searchQuery.trim()) {
+                             navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+                             setSearchOpen(false);
+                             setSearchQuery("");
                            }
-  
-                           setSuggestions({ matches, priceSuggestions });
-                         } else {
-                           setSuggestions({ matches: [], priceSuggestions: [] });
-                         }
-                       }}
-                       onKeyDown={(e) => {
-                         if (e.key === 'Enter' && searchQuery.trim()) {
-                           navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
-                           setSearchOpen(false);
-                           setSearchQuery("");
-                           setSuggestions({ matches: [], priceSuggestions: [] });
-                         }
-                       }}
-                       className="bg-[var(--bg-tertiary)] px-4 py-2 rounded-full text-xs text-[var(--text-primary)] border border-[var(--border-color)] focus:outline-none focus:border-[var(--text-accent)]"
-                     />
-                     
-                     {/* Suggestions Dropdown */}
-                     <AnimatePresence>
-                       {((suggestions.matches?.length > 0 || suggestions.priceSuggestions?.length > 0) || (searchQuery.length > 0 && searchQuery.length < 2)) && (
-                         <motion.div
-                           initial={{ opacity: 0, y: 10 }}
-                           animate={{ opacity: 1, y: 0 }}
-                           exit={{ opacity: 0, y: 10 }}
-                           className="absolute top-full right-0 mt-4 w-72 bg-[var(--bg-primary)] border border-[var(--border-color)] rounded-2xl shadow-2xl overflow-hidden z-[110]"
-                         >
-                           {/* Price Suggestions Section */}
-                           {suggestions.priceSuggestions?.length > 0 && (
-                              <div className="py-2 border-b border-[var(--border-color)] bg-[var(--bg-secondary)]/30">
-                                 <div className="px-4 py-2 text-[8px] font-black uppercase tracking-widest text-gray-400">Buying Guides</div>
-                                 {suggestions.priceSuggestions.map(p => (
-                                   <button
-                                     key={p.query}
-                                     onClick={() => {
-                                       navigate(`/search?q=${encodeURIComponent(p.query)}`);
-                                       setSearchOpen(false);
-                                       setSearchQuery("");
-                                       setSuggestions({ matches: [], priceSuggestions: [] });
-                                     }}
-                                     className="w-full px-4 py-2.5 text-[10px] font-bold text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] text-left transition-colors flex items-center gap-2"
-                                   >
-                                     <Zap size={10} className="text-amber-400" />
-                                     {p.label}
-                                   </button>
-                                 ))}
-                              </div>
-                           )}
-  
-                           {suggestions.matches?.length > 0 ? (
+                         }}
+                         className="bg-[var(--bg-tertiary)] px-4 py-2 rounded-full text-xs text-[var(--text-primary)] border border-[var(--border-color)] focus:outline-none focus:border-[var(--text-accent)]"
+                       />
+                       
+                       <AnimatePresence>
+                         {(suggestions.matches?.length > 0 || suggestions.priceSuggestions?.length > 0) && (
+                           <motion.div
+                             initial={{ opacity: 0, y: 10 }}
+                             animate={{ opacity: 1, y: 0 }}
+                             exit={{ opacity: 0, y: 10 }}
+                             className="absolute top-full right-0 mt-4 w-72 bg-[var(--bg-primary)] border border-[var(--border-color)] rounded-2xl shadow-2xl overflow-hidden z-[110]"
+                           >
+                             {suggestions.priceSuggestions?.length > 0 && (
+                               <div className="py-2 border-b border-[var(--border-color)] bg-[var(--bg-secondary)]/30">
+                                  <div className="px-4 py-2 text-[8px] font-black uppercase tracking-widest text-gray-400">Buying Guides</div>
+                                  {suggestions.priceSuggestions.map(p => (
+                                    <button
+                                      key={p.query}
+                                      onClick={() => {
+                                        navigate(`/search?q=${encodeURIComponent(p.query)}`);
+                                        setSearchOpen(false);
+                                        setSearchQuery("");
+                                        setSuggestions({ matches: [], priceSuggestions: [] });
+                                      }}
+                                      className="w-full px-4 py-2.5 text-[10px] font-bold text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] text-left transition-colors flex items-center gap-2"
+                                    >
+                                      <Zap size={10} className="text-amber-400" />
+                                      {p.label}
+                                    </button>
+                                  ))}
+                               </div>
+                             )}
                              <div className="py-2">
                                <div className="px-4 py-2 text-[8px] font-black uppercase tracking-widest text-gray-400">Top Matches</div>
                                {suggestions.matches.map(w => (
@@ -284,66 +288,109 @@ const Navbar = () => {
                                      navigate(`/watch/${w.id}`);
                                      setSearchOpen(false);
                                      setSearchQuery("");
-                                     setSuggestions({ matches: [], priceSuggestions: [] });
                                    }}
                                    className="w-full flex items-center gap-3 px-4 py-2 hover:bg-[var(--bg-secondary)] transition-colors text-left"
                                  >
                                    <img src={w.img} alt="" className="w-8 h-8 object-contain bg-white rounded-lg p-1" />
                                    <div className="flex flex-col">
-                                     <span className="text-[10px] font-bold text-[var(--text-primary)] uppercase truncate">{w.name}</span>
+                                     <span className="text-[10px] font-bold text-[var(--text-primary)] truncate">{w.name}</span>
                                      <span className="text-[8px] text-gray-400 uppercase font-black tracking-tighter">{w.brand}</span>
                                    </div>
                                  </button>
                                ))}
                              </div>
-                           ) : searchQuery.length > 0 && searchQuery.length < 2 && (
-                             <div className="py-2">
-                               <div className="px-4 py-2 text-[8px] font-black uppercase tracking-widest text-gray-400">Quick Links</div>
-                               {[
-                                 { label: "Men's Collection", path: "/men/watches" },
-                                 { label: "Special Offers", path: "/offers" },
-                                 { label: "Luxury Brands", path: "/luxury" },
-                                 { label: "Smart Watches", path: "/smart-watches" }
-                               ].map(link => (
-                                 <button
-                                   key={link.path}
-                                   onClick={() => {
-                                     navigate(link.path);
-                                     setSearchOpen(false);
-                                     setSearchQuery("");
-                                   }}
-                                   className="w-full px-4 py-2 text-[10px] font-bold text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] text-left transition-colors"
-                                 >
-                                   {link.label}
-                                 </button>
-                               ))}
-                             </div>
-                           )}
-                         </motion.div>
-                       )}
-                     </AnimatePresence>
-                   </div>
-                 )}
-               </AnimatePresence>
-               <button 
-                  onClick={() => {
-                    if (searchOpen && searchQuery.trim()) {
-                      navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
-                      setSearchOpen(false);
-                      setSearchQuery("");
-                      setSuggestions([]);
-                    } else {
-                      setSearchOpen(!searchOpen);
-                    }
-                  }} 
-                  className="text-gray-400 hover:text-[var(--text-primary)] transition-colors p-2"
-                  aria-label="Search"
-               >
-                 {searchOpen && searchQuery.trim() ? <Search size={20} className="text-[var(--text-primary)]" /> : (searchOpen ? <X size={20} /> : <Search size={20} />)}
-               </button>
+                           </motion.div>
+                         )}
+                       </AnimatePresence>
+                       
+                       <button 
+                         onClick={() => setSearchOpen(false)}
+                         className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[var(--text-primary)]"
+                       >
+                         <X size={14} />
+                       </button>
+                     </div>
+                   )}
+                 </AnimatePresence>
+               </div>
             </div>
+
+            {/* Mobile Search Overlay Full Screen */}
+            <AnimatePresence>
+              {searchOpen && (
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="fixed inset-0 bg-[var(--bg-primary)]/95 backdrop-blur-xl z-[200] md:hidden flex flex-col p-6 overflow-y-auto"
+                >
+                  <div className="flex items-center justify-between mb-12">
+                     <span className="text-xs font-black uppercase tracking-widest text-gray-400">Search the Vault</span>
+                     <button 
+                       onClick={() => setSearchOpen(false)}
+                       className="p-3 rounded-full border border-[var(--border-color)] text-[var(--text-primary)]"
+                     >
+                       <X size={24} />
+                     </button>
+                  </div>
+
+                  <div className="relative mb-10">
+                    <input 
+                      autoFocus
+                      type="text"
+                      placeholder="Search the pieces..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' && searchQuery.trim()) {
+                          navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+                          setSearchOpen(false);
+                          setSearchQuery("");
+                        }
+                      }}
+                      className="w-full bg-transparent border-b-2 border-[var(--text-primary)] py-6 pr-16 text-3xl font-black text-[var(--text-primary)] placeholder:text-gray-300 focus:outline-none"
+                    />
+                    <button 
+                      onClick={() => {
+                        if (searchQuery.trim()) {
+                          navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+                          setSearchOpen(false);
+                          setSearchQuery("");
+                        }
+                      }}
+                      className="absolute right-0 top-1/2 -translate-y-1/2 p-4 text-[var(--text-primary)] hover:scale-110 transition-transform"
+                    >
+                      <Search size={28} />
+                    </button>
+                  </div>
+
+                  <div className="flex flex-col gap-6">
+                     <div className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">Trending Prototypes</div>
+                     {[
+                       { label: "Girls watches under 5,000", q: "girls watches under 5000" },
+                       { label: "Luxury Collection", q: "luxury" },
+                       { label: "Boys Sport watches", q: "boys sport" },
+                       { label: "Smart Watches under 2000", q: "smart watches under 2000" }
+                     ].map(item => (
+                       <button 
+                         key={item.q}
+                         onClick={() => {
+                            navigate(`/search?q=${encodeURIComponent(item.q)}`);
+                            setSearchOpen(false);
+                            setSearchQuery("");
+                         }}
+                         className="text-left text-xl font-bold text-[var(--text-primary)] hover:text-[var(--text-accent)] transition-colors flex items-center justify-between group"
+                       >
+                         {item.label}
+                         <Zap size={16} className="text-amber-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                       </button>
+                     ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
   
-            <Link to="/wishlist" className="text-gray-400 hover:text-[var(--text-primary)] transition-colors relative p-2 min-w-[44px] min-h-[44px] flex items-center justify-center group" aria-label="Wishlist">
+            <Link to="/wishlist" className="hidden sm:flex text-gray-400 hover:text-[var(--text-primary)] transition-colors relative p-2 min-w-[44px] min-h-[44px] items-center justify-center group" aria-label="Wishlist">
               <Heart size={18} className="sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
               {wishlist.length > 0 && (
                 <motion.span 
@@ -387,10 +434,11 @@ const Navbar = () => {
   
             {/* Mobile Menu Trigger */}
             <button 
-              className="lg:hidden text-[var(--text-primary)]" 
+              className="lg:hidden text-[var(--text-primary)] p-3 -mr-2 hover:bg-[var(--bg-secondary)] rounded-full transition-colors active:scale-95" 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
           </div>
         </div>
@@ -408,41 +456,56 @@ const Navbar = () => {
             >
               {/* Mobile Menu Header with Close Button */}
               <div className="flex items-center justify-between px-6 py-6 border-b border-[var(--border-color)]">
-                  <span className="text-lg font-black tracking-tighter text-[var(--text-primary)] uppercase">Menu</span>
-                  <button 
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="p-2 rounded-full border border-[var(--border-color)] text-[var(--text-primary)] hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] transition-colors"
-                  >
-                    <X size={24} />
-                  </button>
+                  <div className="flex items-center gap-4">
+                    <span className="text-lg font-black tracking-tighter text-[var(--text-primary)] uppercase">Menu</span>
+                    <button 
+                      onClick={toggleTheme}
+                      className="p-2 rounded-lg border border-[var(--border-color)] text-[var(--text-secondary)] sm:hidden"
+                    >
+                      {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+                    </button>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Link to="/wishlist" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg border border-[var(--border-color)] text-rose-500 sm:hidden">
+                       <Heart size={16} fill={wishlist.length > 0 ? "currentColor" : "none"} />
+                    </Link>
+                    <button 
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="p-2 rounded-full border border-[var(--border-color)] text-[var(--text-primary)] hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] transition-colors"
+                    >
+                      <X size={24} />
+                    </button>
+                  </div>
               </div>
 
               <div className="flex-1 flex flex-col gap-8 px-8 py-10">
-                {navItems.map((item) => (
-                  <div key={item.name} className="flex flex-col gap-4">
-                     <Link 
-                       to={item.href} 
-                       onClick={() => setMobileMenuOpen(false)}
-                       className="text-3xl font-black text-[var(--text-primary)] uppercase tracking-tighter"
-                     >
-                       {item.name}
-                     </Link>
-                     {item.submenu && (
-                       <div className="flex flex-col gap-2 pl-4 border-l border-[var(--border-color)]">
-                         {item.submenu.map(sub => (
-                           <Link 
-                             key={sub.name} 
-                             to={sub.href} 
-                             onClick={() => setMobileMenuOpen(false)}
-                             className="text-[var(--text-secondary)] font-bold hover:text-[var(--text-accent)] transition-colors"
-                           >
-                             {sub.name}
-                           </Link>
-                         ))}
-                       </div>
-                     )}
-                  </div>
-                ))}
+                <div className="flex flex-col gap-6">
+                   {navItems.map((item) => (
+                     <div key={item.name} className="flex flex-col gap-6">
+                      <Link 
+                        to={item.href} 
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="text-4xl font-black text-[var(--text-primary)] uppercase tracking-tighter hover:text-[var(--text-accent)] transition-colors py-2"
+                      >
+                        {item.name}
+                      </Link>
+                      {item.submenu && (
+                        <div className="flex flex-col gap-4 pl-6 border-l-2 border-[var(--border-color)]">
+                          {item.submenu.map(sub => (
+                            <Link 
+                              key={sub.name} 
+                              to={sub.href} 
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="text-lg font-bold text-[var(--text-secondary)] hover:text-[var(--text-accent)] transition-colors py-1"
+                            >
+                              {sub.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                     </div>
+                   ))}
+                </div>
                 
                 <div className="mt-10 pt-10 border-t border-[var(--border-color)]">
                   {!isAuthenticated ? (

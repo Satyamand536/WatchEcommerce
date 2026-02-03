@@ -114,6 +114,14 @@ export const WATCHES = [
   { id: 1007, name: "Hermes Arceau Paris", img: H1, price: 8500, originalPrice: 11000, category: "Luxury", brand: "hermes", gender: "women", dialSize: 34, promo: "offers", specs: { warranty: "2 Years", origin: "France" }, styleTags: ["fashion", "minimalist", "leather"] },
   { id: 1008, name: "Zenith El Primero", img: JL3, price: 9400, originalPrice: 12500, category: "Luxury", brand: "zenith", gender: "men", dialSize: 42, promo: "offers", specs: { warranty: "2 Years", origin: "Swiss" }, styleTags: ["chrono", "precision", "blue"] },
 
+  // --- LUXURY (AFFORDABLE RANGE 2000-5000) ---
+  { id: 1009, name: "Rolex Oyster Lite Edition", img: R2, price: 4999, originalPrice: 6999, category: "Luxury", brand: "rolex", gender: "men", dialSize: 40, specs: { warranty: "2 Years", waterproof: "50m", origin: "Swiss-Inspired" }, suitableFor: ["Daily Wear", "Events"], styleTags: ["luxury", "premium", "steel", "formal"] },
+  { id: 1010, name: "Omega De Ville Mini", img: O3, price: 4499, originalPrice: 5999, category: "Luxury", brand: "omega", gender: "women", dialSize: 34, specs: { warranty: "2 Years", waterproof: "30m", origin: "Swiss-Inspired" }, suitableFor: ["Daily Wear", "Events"], styleTags: ["luxury", "elegant", "leather", "classic"] },
+  { id: 1011, name: "Cartier Ballon Entry", img: C2, price: 3999, originalPrice: 5499, category: "Luxury", brand: "cartier", gender: "women", dialSize: 36, specs: { warranty: "1 Year", waterproof: "30m", origin: "France-Inspired" }, suitableFor: ["Daily Wear", "Events"], styleTags: ["luxury", "statement", "gold", "fashion"] },
+  { id: 1012, name: "Tag Heuer Formula Lite", img: TH2, price: 4799, originalPrice: 6299, category: "Luxury", brand: "tag-heuer", gender: "men", dialSize: 42, specs: { warranty: "2 Years", waterproof: "100m", origin: "Swiss-Inspired" }, suitableFor: ["Daily Wear", "Events"], styleTags: ["luxury", "sport", "chrono", "racing"] },
+  { id: 1013, name: "IWC Pilot Minimalist", img: IWC2, price: 3499, originalPrice: 4999, category: "Luxury", brand: "iwc", gender: "men", dialSize: 40, specs: { warranty: "2 Years", origin: "Swiss-Inspired" }, suitableFor: ["Daily Wear", "Events"], styleTags: ["luxury", "minimalist", "pilot", "beige"] },
+  { id: 1014, name: "Patek Philippe Elegance", img: P1, price: 2999, originalPrice: 4299, category: "Luxury", brand: "patek-philippe", gender: "women", dialSize: 32, specs: { warranty: "1 Year", waterproof: "30m", origin: "Swiss-Inspired" }, suitableFor: ["Daily Wear", "Events"], styleTags: ["luxury", "elegant", "diamond", "gold"] },
+
   // --- TITAN & FASTTRACK (BHARAT ELITE) ---
   { id: 3001, name: "Titan Stellar Smart", img: TS3, price: 9995, originalPrice: 13995, category: "Smart", brand: "titan", gender: "unisex", dialSize: 44, promo: "offers", specs: { warranty: "1 Year", origin: "Bharat" }, styleTags: ["smart", "premium", "titan"] },
   { id: 3002, name: "Titan Regalia Gold", img: W2, price: 7495, originalPrice: 9500, category: "Classic", brand: "titan", gender: "men", dialSize: 40, promo: "offers", specs: { warranty: "2 Years", origin: "Bharat" }, styleTags: ["classic", "gold", "formal"] },
@@ -299,6 +307,24 @@ export const WATCHES = [
   { id: 25004, name: "Garmin Forerunner JR Pro", img: TS1, price: 24500, originalPrice: 28000, category: "Junior", brand: "garmin", gender: "boys", dialSize: 40, styleTags: ["boys", "smart", "pro"] },
   { id: 25005, name: "Patek Nautilus Mini Junior", img: P3, price: 45000, originalPrice: 55000, category: "Junior", brand: "patek-philippe", gender: "boys", dialSize: 34, styleTags: ["boys", "luxury", "elite"] },
   { id: 25006, name: "Tag Heuer Carrera Jr", img: TH2, price: 32000, originalPrice: 38000, category: "Junior", brand: "tag-heuer", gender: "boys", dialSize: 38, styleTags: ["boys", "chrono", "racing"] },
+  
+  // --- BOYS SMART WATCHES (BUDGET - UNDER 1000) ---
+  { id: 30001, name: "Fastrack Smart Boy Pro", img: TS2, price: 699, originalPrice: 1299, category: "Smart", brand: "fastrack", gender: "boys", dialSize: 40, styleTags: ["boys", "smart", "budget", "fitness"] },
+  { id: 30002, name: "boAt Wave Jr Smart", img: TS1, price: 799, originalPrice: 1499, category: "Smart", brand: "boat", gender: "boys", dialSize: 38, styleTags: ["boys", "smart", "calling", "sport"] },
+  { id: 30003, name: "Noise Fit Jr", img: S2, price: 899, originalPrice: 1599, category: "Smart", brand: "noise", gender: "boys", dialSize: 42, styleTags: ["boys", "smart", "fitness", "digital"] },
+  { id: 30004, name: "Fire-Boltt Ninja Boy", img: S1, price: 950, originalPrice: 1799, category: "Smart", brand: "fire-boltt", gender: "boys", dialSize: 44, styleTags: ["boys", "smart", "rugged", "adventure"] },
+
+  // --- BOYS SMART WATCHES (MID-RANGE - 1000-5000) ---
+  { id: 30005, name: "Titan Smart Jr Elite", img: TS3, price: 2499, originalPrice: 3999, category: "Smart", brand: "titan", gender: "boys", dialSize: 40, styleTags: ["boys", "smart", "premium", "calling"] },
+  { id: 30006, name: "Casio G-Shock Smart Boy", img: B5, price: 3499, originalPrice: 4999, category: "Smart", brand: "casio", gender: "boys", dialSize: 42, styleTags: ["boys", "smart", "shock", "sport"] },
+  { id: 30007, name: "Noise ColorFit Boy Pro", img: S3, price: 1499, originalPrice: 2499, category: "Smart", brand: "noise", gender: "boys", dialSize: 42, styleTags: ["boys", "smart", "amoled", "vibrant"] },
+  { id: 30008, name: "Ambrane Fit Boy Adventure", img: S2, price: 1999, originalPrice: 3499, category: "Smart", brand: "ambrane", gender: "boys", dialSize: 40, styleTags: ["boys", "smart", "outdoor", "tracking"] },
+
+  // --- BOYS ANALOG WATCHES (UNDER 5000) ---
+  { id: 30009, name: "Titan Zoop Boy Hero", img: W2, price: 1299, originalPrice: 1899, category: "Junior", brand: "titan", gender: "boys", dialSize: 36, styleTags: ["boys", "analog", "colorful", "durable"] },
+  { id: 30010, name: "Casio Youth Boy Digital", img: O7, price: 899, originalPrice: 1499, category: "Junior", brand: "casio", gender: "boys", dialSize: 38, styleTags: ["boys", "digital", "sport", "waterproof"] },
+  { id: 30011, name: "Fastrack Tees Boy Watch", img: AP3, price: 999, originalPrice: 1599, category: "Junior", brand: "fastrack", gender: "boys", dialSize: 38, styleTags: ["boys", "trendy", "casual", "vibrant"] },
+  { id: 30012, name: "Sonata Super Fibre Boy", img: IWC5, price: 799, originalPrice: 1299, category: "Junior", brand: "sonata", gender: "boys", dialSize: 36, styleTags: ["boys", "shock-resistant", "durable", "budget"] },
 ];
 
 export const FILTERS = [

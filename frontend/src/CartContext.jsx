@@ -1,4 +1,4 @@
-import React, { useEffect, useState,} from "react";
+import React, { useEffect, useState } from "react";
 import { createContext } from "react";
 import { useContext } from "react";
 
@@ -37,7 +37,18 @@ export function CartProvider({ children }) {
   // to add item tot eh cart
 
   const addItem = (item) => {
-    const newItem = { ...item, id: String(item.id), selected: true };
+    const rawId = item._id || item.id || item.sku || item.name;
+    // Normalization: Ensure 'img' is always populated correctly from various possible sources
+    const normalizedImg = item.img || (item.images && item.images[0]) || item.image;
+    const normalizedPrice = parsePrice(item.price);
+    const newItem = { 
+      ...item, 
+      id: String(rawId), 
+      _id: String(rawId), 
+      img: normalizedImg,
+      price: normalizedPrice,
+      selected: true 
+    };
     setCart((prev) => {
       const existing = prev.find((p) => p.id === newItem.id);
       if (existing) {
@@ -93,17 +104,22 @@ export function CartProvider({ children }) {
   };
 
   const toggleWishlist = (item) => {
-    const id = String(item.id);
+    const rawId = item._id || item.id || item.sku || item.name;
+    const tid = String(rawId);
+    // Normalize image source for wishlist consistency
+    const normalizedImg = item.img || (item.images && item.images[0]) || item.image;
+    
     setWishlist((prev) => {
-      const exists = prev.find((w) => String(w.id) === id);
+      const exists = prev.find((w) => String(w._id || w.id || w.sku || w.name) === tid);
       if (exists) {
-        return prev.filter((w) => String(w.id) !== id);
+        return prev.filter((w) => String(w._id || w.id || w.sku || w.name) !== tid);
       }
-      return [...prev, { ...item, id }];
+      // Ensure the item stored has normalized 'img' and consistent IDs
+      return [...prev, { ...item, id: tid, _id: tid, img: normalizedImg }];
     });
   };
 
-  const isInWishlist = (id) => wishlist.some((w) => String(w.id) === String(id));
+  const isInWishlist = (id) => wishlist.some((w) => String(w._id || w.id || w.sku || w.name) === String(id));
 
   //helper function
 

@@ -68,7 +68,7 @@ const UPIModal = ({ isOpen, onClose, amount, onPaymentComplete }) => {
                 <div className="text-center mb-8">
                   <span className="text-[10px] font-black text-gray-500 uppercase tracking-widest block mb-2">Amount to Authorize</span>
                   <h2 className="text-4xl font-black italic tracking-tighter text-[var(--text-primary)] leading-none">
-                    ₹{amount.toLocaleString('en-IN')}
+                    ₹{(amount ?? 0).toLocaleString('en-IN')}
                   </h2>
                 </div>
 
@@ -105,7 +105,7 @@ const UPIModal = ({ isOpen, onClose, amount, onPaymentComplete }) => {
                  <ShieldCheck size={48} className="text-[var(--text-accent)] mb-6" />
                  <h3 className="text-xl font-black text-[var(--text-primary)] uppercase tracking-widest mb-2">Confirm Payment</h3>
                  <p className="text-xs text-gray-500 font-bold uppercase tracking-wider mb-8 max-w-[200px] leading-relaxed">
-                   You are about to securely transfer <span className="text-[var(--text-primary)]">₹{amount.toLocaleString('en-IN')}</span> via {selectedProvider?.name}.
+                   You are about to securely transfer <span className="text-[var(--text-primary)]">₹{(amount ?? 0).toLocaleString('en-IN')}</span> via {selectedProvider?.name}.
                  </p>
                  
                  <div className="flex flex-col gap-3 w-full">

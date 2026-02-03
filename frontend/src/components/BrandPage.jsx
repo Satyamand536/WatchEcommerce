@@ -87,7 +87,7 @@ const BrandPage = () => {
                   <button
                     key={f.key}
                     onClick={() => setActiveGender(f.key)}
-                    className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 ${
+                    className={`flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold transition-all duration-300 min-h-[44px] ${
                       activeGender === f.key
                         ? "bg-[var(--text-primary)] text-[var(--bg-primary)] shadow-lg scale-105"
                         : "text-gray-400 hover:text-[var(--text-primary)]"
@@ -105,7 +105,7 @@ const BrandPage = () => {
                   <button
                     key={r.label}
                     onClick={() => setActivePriceRange(r)}
-                    className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest border transition-all duration-300 ${
+                    className={`px-5 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest border transition-all duration-300 min-h-[44px] ${
                       activePriceRange.label === r.label
                         ? "bg-[var(--accent-primary)] border-[var(--accent-primary)] text-white shadow-md scale-105"
                         : "bg-[var(--bg-secondary)] border-[var(--border-color)] text-gray-500 hover:border-gray-400"
@@ -152,7 +152,7 @@ const BrandPage = () => {
                   <div key={watch.id} className={brandPageStyles.card}>
                     <Link to={`/watch/${watch.id}`} className={brandPageStyles.imageContainer}>
                       <img
-                        src={watch.img}
+                        src={watch.img || (watch.images && watch.images[0])}
                         alt={watch.name}
                         className={brandPageStyles.image}
                         onError={(e) => {
@@ -181,9 +181,9 @@ const BrandPage = () => {
                       <div className={brandPageStyles.priceAndControls}>
                         <div className="flex flex-col">
                           {watch.originalPrice && (
-                            <span className="text-[10px] text-rose-500 font-bold line-through opacity-60 tracking-tighter">₹ {watch.originalPrice.toLocaleString('en-IN')}</span>
+                            <span className="text-[10px] text-rose-500 font-bold line-through opacity-60 tracking-tighter">₹ {(watch?.originalPrice ?? 0).toLocaleString('en-IN')}</span>
                           )}
-                          <p className={brandPageStyles.price}>₹ {watch.price.toLocaleString('en-IN')}</p>
+                          <p className={brandPageStyles.price}>₹ {(watch?.price ?? 0).toLocaleString('en-IN')}</p>
                         </div>
                         {inCart ? (
                           <div className={brandPageStyles.quantityContainer}>
@@ -193,8 +193,8 @@ const BrandPage = () => {
                           </div>
                         ) : (
                           <button
-                            onClick={() => addItem({ id: watch.id, name: watch.name, price: watch.price, img: watch.img })}
-                            className={brandPageStyles.addButton}
+                            onClick={() => addItem(watch)}
+                            className={`${brandPageStyles.addButton} min-h-[44px]`}
                           >
                             <span>Add to Cart</span>
                           </button>

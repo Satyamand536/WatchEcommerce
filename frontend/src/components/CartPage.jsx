@@ -49,6 +49,15 @@ const CartPage = () => {
   const [showCODConfirmation, setShowCODConfirmation] = useState(false); // New state for COD confirmation
   const [orderSuccess, setOrderSuccess] = useState(false);
   const [completedOrder, setCompletedOrder] = useState(null);
+  const [isProcessing, setIsProcessing] = useState(false);
+
+  const resetForm = () => {
+    setName("");
+    setEmail("");
+    setAddress("");
+    setMobile("");
+    setPaymentMethod("");
+  };
 
   const isFormValid = () => {
     if (!name.trim() || !email.trim() || !address.trim() || !mobile.trim() || !paymentMethod.trim()) return false;
@@ -118,6 +127,9 @@ const CartPage = () => {
       protocol: 'CASH ON DELIVERY'
     };
     
+    // UI Reset: Close confirmation modal before showing success
+    setShowCODConfirmation(false);
+    
     // Sync with backend (Demo persistence)
     handleDemoPayment(manifest);
   };
@@ -125,11 +137,12 @@ const CartPage = () => {
   const handleDemoPayment = async (manifest) => {
     try {
       // Future-Proof Architecture: This call can be replaced with Razorpay verification
-      await axios.post('http://127.0.0.1:5000/api/payment/demo-success', { manifest });
+      await axios.post('/api/payment/demo-success', { manifest });
       
       setCompletedOrder(manifest);
       setOrderSuccess(true);
       clearSelectedItems();
+      resetForm();
       toast.success("Identity Verified. Logistics Initiated.");
     } catch (error) {
        console.error("Backend Sync Protocol Failure:", error);
@@ -217,7 +230,7 @@ const CartPage = () => {
                       {isUPI ? 'Amount Hallmarked' : 'Balance to be Collected'}
                    </span>
                    <span className="text-4xl md:text-5xl font-black italic tracking-tighter tabular-nums text-[var(--text-primary)] leading-none">
-                      ₹{completedOrder?.grandTotal.toLocaleString('en-IN', { maximumFractionDigits: 0 })}
+                      ₹{(completedOrder?.grandTotal ?? 0).toLocaleString('en-IN', { maximumFractionDigits: 0 })}
                    </span>
                 </div>
 
@@ -242,7 +255,7 @@ const CartPage = () => {
                          <div className="flex flex-col items-end">
                             <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">1 Piece Cost</span>
                             <span className="text-xs font-black text-[var(--text-primary)] italic tracking-tighter">
-                               Rs. {typeof item.price === 'number' ? item.price.toLocaleString('en-IN') : item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                               Rs. {typeof item.price === 'number' ? (item.price ?? 0).toLocaleString('en-IN') : String(item.price ?? "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                             </span>
                          </div>
                       </div>
@@ -436,10 +449,22 @@ const CartPage = () => {
                   <Motion.div 
                     layout
                     key={item.id} 
-                    className={`flex gap-4 md:gap-6 p-4 md:p-6 rounded-[2rem] md:rounded-[2.5rem] bg-[var(--bg-tertiary)] border border-[var(--border-color)] transition-all duration-500 card-premium ${!item.selected ? 'opacity-40 grayscale scale-95' : 'hover:border-[var(--text-accent)] shadow-sm hover:shadow-xl'}`}
+                    className={`relative flex flex-col sm:flex-row gap-8 p-6 pt-20 sm:pt-20 md:p-10 md:pt-24 rounded-[2.5rem] bg-[var(--bg-tertiary)] border border-[var(--border-color)] transition-all duration-500 card-premium ${!item.selected ? 'opacity-40 grayscale scale-95' : 'hover:border-[var(--text-accent)] shadow-sm hover:shadow-xl'}`}
                   >
+                    {/* Floating Selection Control - High Priority Z-Index & Absolute Separation */}
+                    <button 
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        toggleSelect(item.id);
+                      }}
+                      className={`absolute top-6 left-6 md:top-8 md:left-8 w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all z-20 shadow-lg ${item.selected ? 'bg-[var(--text-primary)] border-[var(--text-primary)] text-[var(--bg-primary)]' : 'bg-[var(--bg-primary)] border-gray-300 dark:border-gray-500 text-transparent hover:border-[var(--text-primary)]'}`}
+                    >
+                      <CheckCircle2 size={22} className={item.selected ? 'block' : 'hidden'} />
+                    </button>
+
                     <div 
-                      className={`relative w-24 h-24 md:w-28 md:h-28 bg-[var(--bg-primary)] rounded-2xl flex items-center justify-center p-2 md:p-4 border border-[var(--border-color)] shrink-0 ${item.selected ? 'cursor-pointer hover:border-[var(--text-accent)]' : 'cursor-default'}`}
+                      className={`relative w-28 h-28 bg-[var(--bg-primary)] rounded-[1.8rem] flex items-center justify-center p-4 border border-[var(--border-color)] shrink-0 self-start sm:self-center transition-all ${item.selected ? 'cursor-pointer hover:border-[var(--text-accent)] hover:rotate-2' : 'cursor-default'}`}
                       onClick={() => {
                         if (item.selected) {
                            navigate(`/watch/${item.id}`);
@@ -447,31 +472,29 @@ const CartPage = () => {
                       }}
                     >
                       <WatchImage src={item.img} alt={item.name} className="w-full h-full object-contain" />
-                      <button 
-                        onClick={() => toggleSelect(item.id)}
-                        className={`absolute -top-3 -left-3 w-8 h-8 md:w-8 md:h-8 rounded-full flex items-center justify-center border-2 transition-all z-10 ${item.selected ? 'bg-[var(--text-primary)] border-[var(--text-primary)] text-[var(--bg-primary)]' : 'bg-[var(--bg-primary)] border-gray-400 dark:border-gray-500 text-transparent shadow-sm hover:border-[var(--text-primary)]'}`}
-                      >
-                        <CheckCircle2 size={18} className={item.selected ? 'block' : 'hidden'} />
-                      </button>
                     </div>
 
                     <div className="flex-1 flex flex-col justify-between py-1">
-                      <div className="flex flex-col sm:flex-row justify-between items-start gap-2">
+                      <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
                         <div>
-                          <h3 className="text-lg md:text-xl font-black text-[var(--text-primary)] tracking-tight italic leading-tight">{item.name}</h3>
-                          <span className="text-[10px] md:text-xs text-[var(--text-secondary)] font-bold uppercase tracking-widest">{item.brand || 'Luxury Pulse'}</span>
+                          <h3 className="text-xl md:text-2xl font-black text-[var(--text-primary)] tracking-tight italic leading-tight uppercase">{item.name}</h3>
+                          <span className="text-[10px] md:text-xs text-[var(--text-secondary)] font-black uppercase tracking-[0.2em] opacity-60">{item.brand || 'Luxury Pulse'}</span>
                         </div>
-                        <span className="text-lg font-black text-[var(--text-primary)] italic tracking-tighter leading-none">{item.price}</span>
+                        <span className="text-xl font-black text-[var(--text-primary)] italic tracking-tighter leading-none">
+                          ₹ {(typeof item.price === 'number' && !isNaN(item.price))
+                            ? item.price.toLocaleString('en-IN') 
+                            : String(item.price ?? "").replace(/[^0-9]/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                        </span>
                       </div>
 
-                      <div className="flex items-center justify-between mt-4">
-                        <div className="flex items-center gap-4 md:gap-6 bg-[var(--bg-primary)] px-3 md:px-4 py-2 rounded-xl border border-[var(--border-color)]">
-                          <button onClick={() => decrement(item.id)} className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors p-1"><Minus size={14}/></button>
-                          <span className="text-xs font-black text-zinc-950 dark:text-white w-4 text-center">{item.qty}</span>
-                          <button onClick={() => increment(item.id)} className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors p-1"><Plus size={14}/></button>
+                      <div className="flex items-center justify-between mt-8">
+                        <div className="flex items-center gap-6 bg-[var(--bg-primary)] px-5 py-2.5 rounded-2xl border border-[var(--border-color)] shadow-inner">
+                          <button onClick={() => decrement(item.id)} className="text-[var(--text-secondary)] hover:text-rose-500 transition-colors p-1"><Minus size={16}/></button>
+                          <span className="text-sm font-black text-zinc-950 dark:text-white w-6 text-center tabular-nums">{item.qty}</span>
+                          <button onClick={() => increment(item.id)} className="text-[var(--text-secondary)] hover:text-emerald-500 transition-colors p-1"><Plus size={16}/></button>
                         </div>
-                        <button onClick={() => removeItem(item.id)} className="text-rose-500/30 hover:text-rose-500 transition-colors p-2">
-                          <Trash2 size={18} />
+                        <button onClick={() => removeItem(item.id)} className="group bg-rose-500/5 hover:bg-rose-500 p-3 rounded-2xl border border-rose-500/10 hover:border-rose-500 transition-all">
+                          <Trash2 size={20} className="text-rose-500 group-hover:text-white transition-colors" />
                         </button>
                       </div>
                     </div>
@@ -480,8 +503,8 @@ const CartPage = () => {
             </div>
 
             {/* Form Section */}
-            <div className="bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-[2rem] md:rounded-[3rem] p-6 md:p-12 shadow-[0_40px_100px_rgba(0,0,0,0.02)]">
-               <h2 className="text-xl md:text-2xl font-black text-[var(--text-primary)] italic tracking-tighter mb-6 md:mb-8 uppercase">Shipment Protocol</h2>
+            <div className="max-w-[750px] mx-auto w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-[3rem] p-8 md:p-12 shadow-xl my-16">
+               <h2 className="text-3xl font-black text-[var(--text-primary)] italic tracking-tighter uppercase mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-[var(--text-primary)] to-gray-500">Logistics & Deployment</h2>
                
                {showStripe ? (
                   stripePromise ? (
@@ -508,7 +531,9 @@ const CartPage = () => {
                              };
                              setCompletedOrder(manifest);
                              setOrderSuccess(true); 
-                             clearCart(); 
+                             setShowStripe(false); // UI Reset
+                             clearSelectedItems(); // Standardized Behavior
+                             resetForm();
                            }} 
                            onCancel={() => setShowStripe(false)} 
                            customerDetails={{ name, email }} 
@@ -533,7 +558,7 @@ const CartPage = () => {
                      </div>
                      <h3 className="text-xl font-black text-[var(--text-primary)] uppercase tracking-widest mb-2">Confirm Order?</h3>
                      <p className="text-xs text-gray-500 font-bold uppercase tracking-wider mb-8 leading-relaxed max-w-xs mx-auto">
-                        You are about to place a <span className="text-amber-500">Cash on Delivery</span> order for <span className="text-[var(--text-primary)]">₹{totalPrice.toLocaleString('en-IN')}</span>. items.
+                        You are about to place a <span className="text-amber-500">Cash on Delivery</span> order for <span className="text-[var(--text-primary)]">₹{(totalPrice ?? 0).toLocaleString('en-IN')}</span>. items.
                      </p>
                      
                      <div className="flex flex-col gap-3">
@@ -552,7 +577,7 @@ const CartPage = () => {
                      </div>
                   </Motion.div>
                ) : (
-                 <form onSubmit={handleSubmit} className="space-y-6">
+                 <form onSubmit={handleSubmit} className="space-y-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                       <div className="space-y-2">
                         <label className="text-[10px] font-black text-[var(--text-secondary)] uppercase tracking-widest ml-1">Signature</label>
@@ -608,7 +633,7 @@ const CartPage = () => {
                <div className="space-y-6 mb-10 relative z-10">
                  <div className="flex justify-between items-end border-b border-[var(--border-color)] pb-4">
                    <span className="text-[10px] md:text-xs font-black uppercase opacity-60">Sub-total</span>
-                   <span className="text-xl font-black tracking-tighter italic">₹ {totalPrice.toLocaleString('en-IN')}</span>
+                   <span className="text-xl font-black tracking-tighter italic">₹ {(totalPrice ?? 0).toLocaleString('en-IN')}</span>
                  </div>
                  <div className="flex justify-between items-end border-b border-[var(--border-color)] pb-4">
                    <span className="text-[10px] md:text-xs font-black uppercase opacity-60">Logistics</span>
@@ -616,13 +641,13 @@ const CartPage = () => {
                  </div>
                  <div className="flex justify-between items-end border-b border-[var(--border-color)] pb-4">
                    <span className="text-[10px] md:text-xs font-black uppercase opacity-60">GST / Processing (8%)</span>
-                   <span className="text-sm font-black italic tracking-tight">₹ {(totalPrice * 0.08).toLocaleString('en-IN', { maximumFractionDigits: 0 })}</span>
+                   <span className="text-sm font-black italic tracking-tight">₹ {((totalPrice ?? 0) * 0.08).toLocaleString('en-IN', { maximumFractionDigits: 0 })}</span>
                  </div>
                </div>
 
                <div className="flex justify-between items-end mb-12 relative z-10">
                  <span className="text-xs font-black uppercase tracking-widest">Grand Total</span>
-                 <span className="text-3xl md:text-4xl font-black italic tracking-tighter leading-none">₹ {(totalPrice * 1.08).toLocaleString('en-IN', { maximumFractionDigits: 0 })}</span>
+                 <span className="text-3xl md:text-4xl font-black italic tracking-tighter leading-none">₹ {((totalPrice ?? 0) * 1.08).toLocaleString('en-IN', { maximumFractionDigits: 0 })}</span>
                </div>
 
                <div className="bg-[var(--bg-primary)] p-6 rounded-[2rem] border border-[var(--border-color)] relative z-10">

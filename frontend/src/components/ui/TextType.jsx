@@ -80,7 +80,7 @@ const TextType = ({
     if (!isVisible) return;
 
     let timeout;
-    const currentText = textArray[currentTextIndex];
+    const currentText = textArray[currentTextIndex] || "";
     const processedText = reverseMode ? currentText.split('').reverse().join('') : currentText;
 
     const executeTypingAnimation = () => {

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { ImageOff } from 'lucide-react';
+// PRODUCTION-READY: Local fallback image (no external dependencies)
+import FALLBACK_WATCH from '../../assets/CS1.png';
 
-const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=800"; // Clean localized fallback
+const FALLBACK_IMAGE = FALLBACK_WATCH; // Use local asset for guaranteed offline support
 
 const WatchImage = ({ src, alt, className, ...props }) => {
   const [error, setError] = useState(false);

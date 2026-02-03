@@ -40,6 +40,8 @@ const WatchDetailsPage = () => {
         const { data } = await axios.get(`/api/watches/${id}`);
         setWatch(data);
       } catch (err) {
+        // Silent fallback to local data (expected behavior when API is down)
+        console.log(`API unavailable for watch ${id}, using local data`);
         const localWatch = WATCHES.find(w => String(w.id) === String(id));
         if (localWatch) setWatch(localWatch);
         else setError("Piece outdated or removed from vault.");
@@ -103,6 +105,8 @@ const WatchDetailsPage = () => {
     );
   }
 
+  const sid = String(watch?._id || watch?.id || watch?.sku || watch?.name || id);
+
   const specCards = [
     { icon: <Award className="text-amber-500" />, label: 'Warranty', value: watch.specs?.warranty || '2 Years Signature' },
     { icon: <Droplets className="text-blue-500" />, label: 'Resilience', value: watch.specs?.waterproof || '50m / 5 ATM' },
@@ -116,16 +120,17 @@ const WatchDetailsPage = () => {
       <ToastContainer theme={theme} hideProgressBar />
       
       <div className="max-w-7xl mx-auto">
-        {/* Navigation */}
-        <div className="flex justify-between items-center mb-16">
+        {/* Navigation - Mobile Responsive */}
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 sm:mb-16 gap-4">
           <button 
             onClick={() => navigate(-1)} 
             className="flex items-center gap-2 text-[10px] font-black text-gray-500 uppercase tracking-widest hover:text-[var(--text-primary)] transition-colors"
           >
             <ArrowLeft size={14} /> Return
           </button>
-          <div className="flex items-center gap-4 bg-[var(--bg-tertiary)] px-6 py-2 rounded-full border border-[var(--border-color)] shadow-sm">
-             <span className="text-[10px] font-black uppercase tracking-widest text-[var(--text-accent)]">Status: Available in Vault</span>
+          {/* Hide on mobile, show on sm and up */}
+          <div className="hidden sm:flex items-center gap-3 bg-[var(--bg-tertiary)] px-4 md:px-6 py-2 rounded-full border border-[var(--border-color)] shadow-sm">
+             <span className="text-[9px] md:text-[10px] font-black uppercase tracking-widest text-[var(--text-accent)]">Status: Available in Vault</span>
              <div className="w-2 h-2 rounded-full bg-[var(--text-accent)] animate-pulse"></div>
           </div>
         </div>
@@ -143,8 +148,8 @@ const WatchDetailsPage = () => {
               <div className="absolute -top-20 -right-20 w-80 h-80 bg-[var(--text-primary)]/5 rounded-full blur-3xl group-hover:bg-[var(--text-primary)]/10 transition-colors duration-1000"></div>
               
               <WatchImage 
-                src={watch.images?.[0] || watch.img} 
-                alt={watch.name} 
+                src={watch?.images?.[0] || watch?.img || watch?.image || (WATCHES.find(w => String(w.id) === String(id))?.img)} 
+                alt={watch?.name || (WATCHES.find(w => String(w.id) === String(id))?.name) || "Luxury Timepiece"} 
                 className="w-full h-full object-contain relative z-10 group-hover:scale-110 transition-transform duration-1000 pointer-events-none" 
               />
               
@@ -157,12 +162,12 @@ const WatchDetailsPage = () => {
                   <button 
                     onClick={() => toggleWishlist(watch)}
                     className={`p-2 rounded-xl border transition-all ${
-                      isInWishlist(watch.id) 
+                      isInWishlist(sid) 
                         ? 'bg-rose-500 border-rose-500 text-white' 
                         : 'bg-[var(--bg-primary)] border-[var(--border-color)] text-[var(--text-secondary)] hover:text-rose-500 hover:border-rose-500/30'
                     }`}
                   >
-                    <Heart size={14} fill={isInWishlist(watch.id) ? "currentColor" : "none"} />
+                    <Heart size={14} fill={isInWishlist(sid) ? "currentColor" : "none"} />
                   </button>
                 </div>
               </div>
@@ -176,21 +181,21 @@ const WatchDetailsPage = () => {
           >
             <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.5em] mb-4">CHRONO-CERTIFIED • {watch.brand}</span>
             <h1 className="text-6xl lg:text-8xl font-black text-[var(--text-primary)] italic tracking-tighter leading-[0.8] mb-8 uppercase line-clamp-2 pr-4">
-               {watch.name.split(' ').map((word, i) => (
+               {(watch?.name || "Timepiece").split(' ').map((word, i) => (
                  <span key={i} className={i === 0 ? "" : "text-gray-500"}>{word} </span>
                ))}
             </h1>
             
-            <p className="text-[var(--text-secondary)] text-lg md:text-xl font-medium mb-12 uppercase tracking-wide leading-relaxed">
+            <p className="text-[var(--text-secondary)] text-lg md:text-xl font-medium mb-12 uppercase tracking-wide leading-[1.6]">
               {watch.desc}. Built for the elite who value precision over mere time.
             </p>
 
             <div className="flex items-end gap-6 mb-12 border-b border-[var(--border-color)] pb-8">
                <div className="flex flex-col">
-                  {watch.originalPrice && (
-                    <span className="text-sm font-bold text-rose-500 line-through opacity-70 tracking-widest mb-1">₹ {watch.originalPrice.toLocaleString('en-IN')}</span>
+                  {(watch?.originalPrice || watch?.oldPrice || (WATCHES.find(w => String(w.id) === String(id))?.originalPrice)) && (
+                    <span className="text-sm font-bold text-rose-500 line-through opacity-70 tracking-widest mb-1">₹ {(watch?.originalPrice || watch?.oldPrice || (WATCHES.find(w => String(w.id) === String(id))?.originalPrice) || 0).toLocaleString('en-IN')}</span>
                   )}
-                  <span className="text-6xl font-black text-[var(--text-primary)] italic tracking-tighter leading-none">₹ {watch.price.toLocaleString('en-IN')}</span>
+                  <span className="text-6xl font-black text-[var(--text-primary)] italic tracking-tighter leading-none">₹ {(watch?.price || (WATCHES.find(w => String(w.id) === String(id))?.price) || 0).toLocaleString('en-IN')}</span>
                </div>
                <div className="mb-2 px-4 py-1.5 bg-green-500/10 text-green-500 rounded-lg text-[9px] font-black uppercase tracking-widest border border-green-500/20">
                  Instant Procurement Ready
@@ -211,7 +216,7 @@ const WatchDetailsPage = () => {
             {/* Action Area */}
             <div className="flex flex-col md:flex-row gap-6">
               {(() => {
-                const isAdded = cart.some(item => String(item.id) === String(watch.id));
+                const isAdded = cart.some(item => String(item.id) === sid);
                 return (
                   <button 
                     onClick={() => {
@@ -221,7 +226,7 @@ const WatchDetailsPage = () => {
                       }
                     }}
                     disabled={isAdded}
-                    className={`flex-1 py-6 font-black text-[10px] uppercase tracking-[0.4em] rounded-2.5xl flex items-center justify-center gap-4 transition-all shadow-xl group ${
+                    className={`flex-1 min-h-[56px] py-4 md:py-6 font-black text-[10px] uppercase tracking-[0.4em] rounded-2.5xl flex items-center justify-center gap-4 transition-all shadow-xl group ${
                       isAdded 
                         ? 'bg-[var(--bg-secondary)] text-[var(--text-secondary)] cursor-default border border-[var(--border-color)]' 
                         : 'bg-[var(--text-primary)] text-[var(--bg-primary)] hover:bg-zinc-800 hover:shadow-2xl cursor-pointer'

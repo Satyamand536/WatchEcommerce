@@ -8,8 +8,11 @@ import {
   Dumbbell, 
   ChevronRight,
   Plus,
+  Minus,
   TrendingUp,
-  Star
+  Star,
+  Heart,
+  ShoppingCart
 } from 'lucide-react';
 import { WATCHES } from '../assets/dummywdata';
 import { useCart } from '../CartContext';
@@ -26,7 +29,12 @@ const OccasionShop = () => {
   const [selectedOccasion, setSelectedOccasion] = useState(occasions[0]);
   const [watches, setWatches] = useState([]);
   const [loading, setLoading] = useState(false);
-  const { addItem } = useCart();
+  const { cart, addItem, increment, decrement, removeItem, toggleWishlist, isInWishlist } = useCart();
+
+  const getQty = (id) => {
+    const item = cart.find((c) => String(c.id) === String(id));
+    return item ? Number(item.qty || 0) : 0;
+  };
 
   useEffect(() => {
     filterOccasionWatches(selectedOccasion.id);
@@ -96,13 +104,31 @@ const OccasionShop = () => {
               ) : (
                 watches.map((watch) => (
                   <div key={watch.id} className="relative group rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden bg-[var(--bg-secondary)] border border-[var(--border-color)] flex flex-col h-full hover:border-[var(--text-primary)] transition-all duration-700">
-                    <Link to={`/watch/${watch.id}`} className="aspect-[4/5] overflow-hidden bg-white dark:bg-zinc-800 flex items-center justify-center p-2 transition-colors group-hover:bg-gray-100 dark:group-hover:bg-zinc-700 rounded-t-[2.5rem] md:rounded-t-[3.5rem]">
-                       <img src={watch.img} alt={watch.name} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 pointer-events-none" />
-                       <div className="absolute top-4 right-4 md:top-6 md:right-6 flex items-center gap-1 md:gap-2 bg-[var(--bg-primary)]/80 backdrop-blur-xl px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-[var(--border-color)]">
+                    <div className="relative aspect-[4/5] overflow-hidden bg-white dark:bg-zinc-800 flex items-center justify-center p-2 transition-colors group-hover:bg-gray-100 dark:group-hover:bg-zinc-700 rounded-t-[2.5rem] md:rounded-t-[3.5rem]">
+                      {/* Wishlist Heart Button */}
+                      <button 
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          toggleWishlist(watch);
+                        }}
+                        className={`absolute top-4 right-4 md:top-6 md:right-6 z-30 p-2.5 md:p-3 rounded-xl md:rounded-2xl border transition-all duration-300 ${
+                          isInWishlist(watch.id) 
+                            ? 'bg-rose-500 border-rose-500 text-white shadow-lg' 
+                            : 'bg-[var(--bg-primary)] border-[var(--border-color)] text-[var(--text-secondary)] hover:text-rose-500 hover:border-rose-500/30'
+                        }`}
+                      >
+                        <Heart size={14} fill={isInWishlist(watch.id) ? "currentColor" : "none"} />
+                      </button>
+                      <Link to={`/watch/${watch.id}`} className="w-full h-full flex items-center justify-center">
+                          <img src={watch.img || (watch.images && watch.images[0])} alt={watch.name} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 pointer-events-none" />
+                       </Link>
+                       {/* Star Rating Badge */}
+                       <div className="absolute top-4 left-4 md:top-6 md:left-6 flex items-center gap-1 md:gap-2 bg-[var(--bg-primary)]/80 backdrop-blur-xl px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-[var(--border-color)]">
                          <Star size={10} className="text-yellow-500 fill-current" />
                          <span className="text-[9px] md:text-[10px] font-black text-[var(--text-primary)]">4.9</span>
                        </div>
-                    </Link>
+                     </div>
                     
                     <div className="p-6 md:p-8 mt-auto border-t border-[var(--border-color)] group-hover:border-[var(--text-primary)] transition-colors">
                        <span className="text-[9px] md:text-[10px] text-gray-500 font-black uppercase tracking-[0.3em] mb-1 md:mb-2 block">{watch.brand}</span>
@@ -112,19 +138,40 @@ const OccasionShop = () => {
                         <div className="flex items-center justify-between">
                           <div className="flex flex-col">
                             {watch.originalPrice && (
-                              <span className="text-[10px] md:text-xs text-rose-500 font-bold line-through opacity-60 tracking-tighter">₹ {watch.originalPrice.toLocaleString('en-IN')}</span>
+                              <span className="text-[10px] md:text-xs text-rose-500 font-bold line-through opacity-60 tracking-tighter">₹ {(watch?.originalPrice ?? 0).toLocaleString('en-IN')}</span>
                             )}
-                            <span className="text-xl md:text-2xl font-black text-[var(--text-primary)] italic tracking-tighter leading-none">₹ {watch.price.toLocaleString('en-IN')}</span>
+                            <span className="text-xl md:text-2xl font-black text-[var(--text-primary)] italic tracking-tighter leading-none">₹ {(watch?.price ?? 0).toLocaleString('en-IN')}</span>
                           </div>
-                          <button 
-                            onClick={() => {
-                              addItem(watch);
-                              toast.success(`${watch.name} into the bag!`);
-                            }}
-                            className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center border border-[var(--border-color)] rounded-xl md:rounded-2xl hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] hover:border-transparent transition-all duration-500 group-hover:scale-110 group-hover:rotate-[-5deg]"
-                          >
-                             <Plus size={20} />
-                          </button>
+                          {(() => {
+                            const qty = getQty(watch.id);
+                            return qty > 0 ? (
+                              <div className="flex items-center gap-1 bg-[var(--bg-primary)] border border-[var(--border-color)] rounded-xl p-1">
+                                <button 
+                                  onClick={() => qty > 1 ? decrement(watch.id) : removeItem(watch.id)}
+                                  className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center hover:bg-[var(--bg-secondary)] rounded-lg transition-colors"
+                                >
+                                  <Minus size={14} />
+                                </button>
+                                <span className="text-xs md:text-sm font-black min-w-[24px] text-center">{qty}</span>
+                                <button 
+                                  onClick={() => increment(watch.id)}
+                                  className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center hover:bg-[var(--bg-secondary)] rounded-lg transition-colors"
+                                >
+                                  <Plus size={14} />
+                                </button>
+                              </div>
+                            ) : (
+                              <button 
+                                onClick={() => {
+                                  addItem(watch);
+                                  toast.success(`${watch.name} into the bag!`);
+                                }}
+                                className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center border border-[var(--border-color)] rounded-xl md:rounded-2xl hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] hover:border-transparent transition-all duration-500 group-hover:scale-110 group-hover:rotate-[-5deg]"
+                              >
+                                <Plus size={20} />
+                              </button>
+                            );
+                          })()}
                         </div>
                     </div>
                   </div>

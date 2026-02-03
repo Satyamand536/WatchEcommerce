@@ -70,6 +70,13 @@ const WatchCard = ({ w, sid, qty, addItem, increment, decrement, removeItem, tog
           </div>
         )}
 
+        {/* Category Badge */}
+        <div className="absolute top-6 left-1/2 -translate-x-1/2 z-30">
+          <span className="bg-[var(--bg-primary)] text-[var(--text-primary)] px-3 py-1 rounded-full text-[8px] font-black uppercase tracking-[0.2em] border border-[var(--border-color)] shadow-sm backdrop-blur-md opacity-80">
+            {w.isLuxury ? 'ELITE' : (w.category || 'CLASSIC')}
+          </span>
+        </div>
+
         {/* GradientBlinds Effect - Only rendered on hover to save WebGL contexts */}
         <AnimatePresence>
           {isHovered && (
@@ -122,8 +129,8 @@ const WatchCard = ({ w, sid, qty, addItem, increment, decrement, removeItem, tog
             </div>
           ) : (
             <button 
-              onClick={() => addItem({ id: sid, name: w.name, price: w.price, img: w.img })}
-              className="w-full py-4 bg-[var(--text-primary)] text-[var(--bg-primary)] font-black text-[10px] uppercase tracking-widest rounded-2xl shadow-2xl flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all"
+              onClick={() => addItem(w)}
+              className="w-full h-12 bg-[var(--text-primary)] text-[var(--bg-primary)] font-black text-[10px] uppercase tracking-widest rounded-2xl shadow-2xl flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all"
             >
               <ShoppingCart size={14} /> Add to Cart
             </button>
@@ -141,14 +148,16 @@ const WatchCard = ({ w, sid, qty, addItem, increment, decrement, removeItem, tog
       <div className="flex flex-col gap-2 px-2">
         <Link to={`/watch/${sid}`} className="flex justify-between items-start group/title">
           <h3 className="text-lg font-black text-[var(--text-primary)] italic tracking-tight uppercase group-hover/title:text-[var(--text-accent)] transition-colors">{w.name}</h3>
-          <div className="flex flex-col items-end">
-            {w.originalPrice && (
-              <span className="text-[10px] text-rose-500 font-bold line-through opacity-60 tracking-tighter">₹ {w.originalPrice.toLocaleString('en-IN')}</span>
-            )}
-            <span className="text-lg font-black text-[var(--text-primary)] italic tracking-tighter leading-none">₹ {w.price.toLocaleString('en-IN')}</span>
-          </div>
+            <div className="flex flex-col items-end">
+              {w.originalPrice && (
+                <span className="text-[10px] text-rose-500 font-bold line-through opacity-60 tracking-tighter">₹ {(w.originalPrice ?? 0).toLocaleString('en-IN')}</span>
+              )}
+              <span className="text-lg font-black text-[var(--text-primary)] italic tracking-tighter leading-none">₹ {(w.price ?? 0).toLocaleString('en-IN')}</span>
+            </div>
         </Link>
-        <p className="text-[12px] font-medium text-[var(--text-secondary)] leading-relaxed uppercase tracking-tight opacity-80">{w.desc}</p>
+        <p className="text-[12px] font-medium text-[var(--text-secondary)] leading-relaxed uppercase tracking-tight opacity-80 min-h-[3em]">
+          {w.desc}
+        </p>
       </div>
     </motion.div>
   );
@@ -171,14 +180,16 @@ const WatchPage = ({ category, promo, gender, searchQuery }) => {
         try {
           setLoading(true);
           const { data } = await axios.get('/api/watches');
-          if (data && data.length > 0) {
+          if (data && Array.isArray(data) && data.length > 0) {
             setWatches(data);
+          } else {
+            console.warn("API returned invalid data format, falling back to local vault.");
+            setWatches(WATCHES);
           }
           setError(null);
         } catch (err) {
-          console.error("Error fetching watches:", err);
-          setError("Failed to synchronize with vault.");
-          // Fallback to dummy data if API fails to ensure UI doesn't break during dev
+          console.error("Error fetching watches or malformed payload:", err);
+          setError("Failed to synchronize with vault. Using local backup.");
           setWatches(WATCHES); 
         } finally {
           setLoading(false);
@@ -193,23 +204,89 @@ const WatchPage = ({ category, promo, gender, searchQuery }) => {
     }, [category, promo, gender, location.pathname, searchQuery]); 
 
     const filtered = useMemo(() => {
+      if (!Array.isArray(watches)) return [];
+      
+      // -- SMART SEARCH PARSER --
+      let searchGender = null;
+      let searchMaxPrice = Infinity;
+      let searchKeywords = [];
+
+      if (searchQuery) {
+        const s = searchQuery.toLowerCase();
+        
+        // 1. Detect Gender
+        if (s.includes("boy")) searchGender = "boys";
+        else if (s.includes("girl")) searchGender = "girls";
+        else if (s.includes("women") || s.includes("lady") || s.includes("ladies")) searchGender = "women";
+        else if (s.includes("men") || s.includes("gent")) searchGender = "men";
+
+        // 2. Detect Price (e.g. "under 1000", "< 5000")
+        const priceWords = s.match(/(?:under|below|<|less than)\s*(\d+)/i);
+        if (priceWords && priceWords[1]) {
+          searchMaxPrice = parseInt(priceWords[1]);
+        } else {
+          // Check for any number if "under" isn't present
+          const numbers = s.match(/\d+/g);
+          if (numbers && s.includes("under")) {
+            searchMaxPrice = Math.min(...numbers.map(Number));
+          }
+        }
+
+        // 3. Extract keywords (filtering out utility words & normalizing plurals)
+        searchKeywords = s.split(/\s+/).filter(w => 
+          !["watches", "watch", "under", "below", "for", "in", "price", "is", "a", "the", "of"].includes(w)
+          && !w.match(/^\d+$/)
+        ).map(w => {
+           if (w === "watches") return "watch";
+           if (w === "girls") return "girl";
+           if (w === "boys") return "boy";
+           return w.endsWith('s') ? w.slice(0, -1) : w;
+        }); 
+      }
+
       return watches.filter((w) => {
         let matches = true;
 
-        if (category && (w.category || "").toLowerCase() !== category.toLowerCase()) matches = false;
+        if (category && (w.category || "").trim().toLowerCase() !== category.trim().toLowerCase()) matches = false;
         if (promo && (w.promo || "").toLowerCase() !== promo.toLowerCase()) matches = false;
         
-        // Price filtering
+        // Price filtering (Manual Filter UI)
         if (w.price < priceRange.min || (priceRange.max !== Infinity && w.price > priceRange.max)) matches = false;
 
-        // Search filtering
+        // -- SMART SEARCH MATCHING --
         if (matches && searchQuery) {
-          const s = searchQuery.toLowerCase();
-          const nameMatch = (w.name || "").toLowerCase().includes(s);
-          const brandMatch = (w.brand || "").toLowerCase().includes(s);
-          const tagMatch = (w.styleTags || []).some(t => t.toLowerCase().includes(s));
-          
-          if (!nameMatch && !brandMatch && !tagMatch) matches = false;
+          const wName = (w.name || "").toLowerCase();
+          const wBrand = (w.brand || "").toLowerCase();
+          const wGender = (w.gender || "").toLowerCase();
+          const wTags = (w.styleTags || []).map(t => t.toLowerCase());
+
+          // A. Price Constraint from Search
+          if (w.price > searchMaxPrice) matches = false;
+
+          // B. Gender Constraint from Search
+          if (matches && searchGender) {
+            if (searchGender === "boys") {
+                if (wGender !== "boys" && !wTags.includes("boys") && !wName.includes("boy")) matches = false;
+            } else if (searchGender === "girls") {
+                if (wGender !== "girls" && !wTags.includes("girls") && !wName.includes("girl")) matches = false;
+            } else if (searchGender === "women") {
+                if (wGender !== "women" && wGender !== "unisex" && !wName.includes("women") && !wName.includes("lady")) matches = false;
+            } else if (searchGender === "men") {
+                // Exclude women's watches explicitly (since "women".includes("men") is true)
+                if (wGender !== "men" && wGender !== "unisex" && 
+                    (!wName.includes("men") || wName.includes("women"))) matches = false;
+            }
+          }
+
+          // C. Keyword Matching (Name, Brand, Tags) - Robust check
+          if (matches && searchKeywords.length > 0) {
+            const keywordMatch = searchKeywords.every(k => {
+              const checkStr = (wName + " " + wBrand + " " + (w.category || "") + " " + wTags.join(" ")).toLowerCase();
+              // Check literal match OR singularized match
+              return checkStr.includes(k) || checkStr.split(/\s+/).some(word => (word.endsWith('s') ? word.slice(0, -1) : word).includes(k));
+            });
+            if (!keywordMatch) matches = false;
+          }
         }
         
         if (!matches) return false;
@@ -222,37 +299,27 @@ const WatchPage = ({ category, promo, gender, searchQuery }) => {
         // Context detection (Route/Path)
         const isBoysRoute = path.includes("/boys");
         const isGirlsRoute = path.includes("/girls");
-        
-        // Stabilize: If it's a specific sub-route, don't let parent gender props interfere
         const isMenRoute = !isBoysRoute && !isGirlsRoute && (path.includes("/men") || (gender && gender.toLowerCase() === "men"));
         const isWomenRoute = !isBoysRoute && !isGirlsRoute && (path.includes("/women") || (gender && gender.toLowerCase() === "women"));
 
-        // 1. Sub-category (Junior/Age Specific) Checks - Priority 1
+        // Priority 1: Sub-category (Junior)
         if (isBoysRoute) {
-            const isBoyItem = currentGender === "boys" || tags.includes("boys") || name.includes("boy");
-            if (!isBoyItem) matches = false;
+            if (currentGender !== "boys" && !tags.includes("boys") && !name.includes("boy")) matches = false;
         } else if (isGirlsRoute) {
-            const isGirlItem = currentGender === "girls" || tags.includes("girls") || name.includes("girl") || tags.includes("ladies");
-            if (!isGirlItem) matches = false;
+            if (currentGender !== "girls" && !tags.includes("girls") && !name.includes("girl") && !tags.includes("ladies")) matches = false;
         } 
         
-        // 2. High-level Gender Filtering - Only if NOT a sub-route
+        // Priority 2: Gender Filtering
         if (matches && isMenRoute) {
-            const isMenMatch = currentGender === "men" || currentGender === "unisex" || (name.includes("men") && !name.includes("women"));
-            if (!isMenMatch) matches = false;
+            if (currentGender !== "men" && currentGender !== "unisex" && (!name.includes("men") || name.includes("women"))) matches = false;
         } else if (matches && isWomenRoute) {
-            const isWomenMatch = currentGender === "women" || currentGender === "unisex" || name.includes("women") || name.includes("lady") || name.includes("girl");
-            if (!isWomenMatch) matches = false;
+            if (currentGender !== "women" && currentGender !== "unisex" && !name.includes("women") && !name.includes("lady") && !name.includes("girl")) matches = false;
         }
 
-        // 3. Tab Filter (Bottom Nav / Tab Selection)
+        // Priority 3: Tab Filter
         if (matches && filter !== "all") {
             const targetFilter = filter.toLowerCase();
-            if (currentGender !== targetFilter && currentGender !== "unisex") {
-                if (targetFilter === "men" && currentGender !== "men" && currentGender !== "unisex") matches = false;
-                else if (targetFilter === "women" && currentGender !== "women" && currentGender !== "unisex") matches = false;
-                else if (targetFilter !== "men" && targetFilter !== "women") matches = false;
-            }
+            if (currentGender !== targetFilter && currentGender !== "unisex") matches = false;
         }
         
         return matches;
@@ -264,13 +331,95 @@ const WatchPage = ({ category, promo, gender, searchQuery }) => {
       return it ? Number(it.qty || 0) : 0;
     };
 
+    const getHeaderContent = () => {
+      const path = location.pathname.toLowerCase();
+      
+      if (searchQuery) return null;
+
+      if (path.includes("/boys")) {
+        return {
+          title: <>Junior Boys <br/> <span className="text-gray-500">Collection.</span></>,
+          desc: "Rugged and durable watches for dynamic young leaders."
+        };
+      }
+      if (path.includes("/girls")) {
+        return {
+          title: <>Junior Girls <br/> <span className="text-gray-500">Collection.</span></>,
+          desc: "Elegant and stylish timepieces for the next generation."
+        };
+      }
+
+      const catLower = (category || "").toLowerCase();
+      if (catLower === 'smart') {
+        return {
+          title: <>Smart Watch <br/> <span className="text-gray-500">Edition.</span></>,
+          desc: "Connect your world with silicon precision and sapphire style."
+        };
+      }
+      if (catLower === 'gifting') {
+        return {
+          title: <>The Gifting <br/> <span className="text-gray-500">Gallery.</span></>,
+          desc: "Timeless gifts for meaningful moments. Perfectly curated for bestowal."
+        };
+      }
+      if (catLower === 'luxury') {
+        return {
+          title: <>Luxury <br/> <span className="text-gray-500">Collection.</span></>,
+          desc: "High-tier craftsmanship and prestige from the world's finest horologists."
+        };
+      }
+      if (catLower === 'classic') {
+        return {
+          title: <>Classic <br/> <span className="text-gray-500">Timepieces.</span></>,
+          desc: "Traditional engineering that never fades. The quintessence of time."
+        };
+      }
+      if (catLower === 'sport') {
+        return {
+          title: <>Sport & <br/> <span className="text-gray-500">Tactical.</span></>,
+          desc: "Engineered for excellence in extreme environments and high velocity."
+        };
+      }
+
+      // Check for promo/offers first (higher priority)
+      if ((promo || "").toLowerCase() === 'offers') {
+        return {
+          title: <>Special <br/> <span className="text-gray-500">Offers.</span></>,
+          desc: "Exceptional acquisitions with unmatched value. Limited time premium selections."
+        };
+      }
+
+      // Then check for gender-specific routes
+      if ((gender || "").toLowerCase() === 'men' || path.includes("/men")) {
+        return {
+          title: <>Men's <br/> <span className="text-gray-500">Collection.</span></>,
+          desc: "Standard-issue class and robust engineering for the modern gentleman."
+        };
+      }
+      
+      if ((gender || "").toLowerCase() === 'women' || path.includes("/women")) {
+        return {
+          title: <>Women's <br/> <span className="text-gray-500">Timepieces.</span></>,
+          desc: "Graceful precision and elegant jewelry for every sophisticated orbit."
+        };
+      }
+
+      // Default for general watches page
+      return {
+        title: <>Watches <br/> <span className="text-gray-500">Collection.</span></>,
+        desc: "Explore our curated collection of timbre engineering and hallmarked clarity."
+      };
+    };
+
+    const header = getHeaderContent();
+
     return (
-      <div className="min-h-screen bg-[var(--bg-primary)] transition-colors duration-500 pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6">
+      <div className="min-h-screen bg-[var(--bg-primary)] transition-colors duration-500 pt-28 sm:pt-32 md:pt-36 pb-20 sm:pb-24 md:pb-32 px-6 sm:px-8">
         <div className="max-w-7xl mx-auto">
           
           {/* Header Section - Mobile Responsive */}
-          <div className="mb-12 sm:mb-16">
-            <div className="flex justify-between items-center mb-16 px-4 sm:px-0">
+          <div className="mb-20 sm:mb-24 px-2 sm:px-0">
+            <div className="flex justify-between items-center mb-16 px-2 sm:px-0">
             <button 
               onClick={() => navigate("/")}
               className="group flex items-center gap-3 transition-all"
@@ -307,10 +456,10 @@ const WatchPage = ({ category, promo, gender, searchQuery }) => {
                 ) : (
                   <>
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[var(--text-primary)] italic tracking-tighter leading-[0.85] uppercase mb-3 sm:mb-4">
-                      The <br/> <span className="text-gray-500">Curated</span> Selection.
+                      {header.title}
                     </h1>
                     <p className="text-sm sm:text-base text-[var(--text-secondary)] font-medium max-w-lg">
-                      Precision in every second. Clarity in every choice. Explore our hallmarked collection of timeless engineering.
+                      {header.desc}
                     </p>
                   </>
                 )}
@@ -320,17 +469,17 @@ const WatchPage = ({ category, promo, gender, searchQuery }) => {
                 {/* Price Range Filter */}
                 <div className="flex flex-wrap gap-2">
                   {PRICE_RANGES.map((r) => (
-                    <button
-                      key={r.label}
-                      onClick={() => setPriceRange(r)}
-                      className={`px-4 py-2 rounded-xl text-[9px] font-black uppercase tracking-widest border transition-all ${
-                        priceRange.label === r.label
-                          ? 'bg-[var(--text-primary)] text-[var(--bg-primary)] border-[var(--text-primary)]'
-                          : 'bg-transparent text-gray-400 border-[var(--border-color)] hover:border-[var(--text-primary)]'
-                      }`}
-                    >
-                      {r.label}
-                    </button>
+                      <button
+                        key={r.label}
+                        onClick={() => setPriceRange(r)}
+                        className={`px-5 h-11 rounded-xl text-[9px] font-black uppercase tracking-widest border transition-all ${
+                          priceRange.label === r.label
+                            ? 'bg-[var(--text-primary)] text-[var(--bg-primary)] border-[var(--text-primary)]'
+                            : 'bg-transparent text-gray-400 border-[var(--border-color)] hover:border-[var(--text-primary)]'
+                        }`}
+                      >
+                        {r.label}
+                      </button>
                   ))}
                 </div>
 
@@ -382,7 +531,7 @@ const WatchPage = ({ category, promo, gender, searchQuery }) => {
                 ))
               ) : filtered.length > 0 ? (
                 filtered.map((w) => {
-                  const sid = String(w.id ?? w._id ?? w.sku ?? w.name);
+                  const sid = String(w._id || w.id || w.sku || w.name);
                   const qty = getQty(sid);
                   return (
                     <WatchCard 

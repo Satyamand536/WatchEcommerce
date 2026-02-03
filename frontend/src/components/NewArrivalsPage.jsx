@@ -18,7 +18,7 @@ import { WATCHES } from '../assets/dummywdata';
 const NewArrivalsPage = () => {
   const navigate = useNavigate();
   const { theme } = useTheme();
-  const { addItem } = useCart();
+  const { addItem, cart } = useCart();
   const [loading, setLoading] = useState(true);
   const [selectedWatch, setSelectedWatch] = useState(null);
   const [arrivals, setArrivals] = useState([]);
@@ -52,12 +52,7 @@ const NewArrivalsPage = () => {
   }, []);
 
   const handleReserve = (watch) => {
-    addItem({
-      id: watch._id,
-      name: watch.name,
-      price: watch.price,
-      img: watch.images?.[0],
-    });
+    addItem(watch);
     toast.success(
       <div className="flex flex-col">
         <span className="font-bold text-xs uppercase tracking-widest">{watch.name} ADDED TO CART.</span>
@@ -65,7 +60,7 @@ const NewArrivalsPage = () => {
     );
   };
 
-  const formatINR = (n) => `₹ ${n.toLocaleString("en-IN")}`;
+  const formatINR = (n) => `₹ ${(n ?? 0).toLocaleString("en-IN")}`;
 
   return (
     <div className="min-h-screen bg-[var(--bg-primary)] pt-32 pb-20 px-6 transition-colors duration-500">
@@ -95,19 +90,21 @@ const NewArrivalsPage = () => {
         </div>
 
         {/* Content */}
-        <div className="grid grid-cols-1 gap-16">
+        <div className="grid grid-cols-1 gap-20 sm:gap-24 md:gap-32">
           {arrivals.map((watch, index) => (
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              key={watch.id}
+              key={watch._id || watch.id || index}
               className={`flex flex-col lg:flex-row bg-[var(--bg-secondary)] rounded-[3.5rem] border border-[var(--border-color)] overflow-hidden hover:border-[var(--text-primary)] transition-all duration-700 group ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
             >
               {/* Image Side */}
               <div className="lg:w-1/2 bg-[var(--bg-primary)] p-12 flex items-center justify-center relative border-r lg:border-r-[var(--border-color)] group-hover:bg-[var(--bg-secondary)] transition-colors duration-700">
-                 <div className="absolute top-10 left-10 bg-[var(--bg-secondary)] border border-[var(--border-color)] px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest text-gray-500">
-                   {watch.isLuxury ? 'Elite' : watch.category}
+                 <div className="absolute top-10 left-10 z-30">
+                   <span className="bg-[var(--text-primary)] text-[var(--bg-primary)] px-6 py-2.5 rounded-full text-[11px] font-black uppercase tracking-[0.2em] shadow-2xl border border-[var(--bg-primary)]/20">
+                     {watch.isLuxury ? 'Elite' : watch.category}
+                   </span>
                  </div>
                  <WatchImage 
                    src={watch.images?.[0]} 
@@ -132,12 +129,31 @@ const NewArrivalsPage = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-6">
-                  <button 
-                    onClick={() => handleReserve(watch)}
-                    className="flex-1 bg-[var(--text-primary)] text-[var(--bg-primary)] py-6 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl"
-                  >
-                    <ShoppingCart size={18} /> Add to Cart
-                  </button>
+                  {(() => {
+                    const rawId = String(watch._id || watch.id || watch.sku || watch.name);
+                    const isAdded = cart.some(item => String(item.id) === rawId);
+                    return (
+                      <button 
+                        onClick={() => !isAdded && handleReserve(watch)}
+                        disabled={isAdded}
+                        className={`flex-1 py-6 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center justify-center gap-3 transition-all shadow-xl ${
+                          isAdded 
+                            ? 'bg-[var(--bg-primary)] text-emerald-500 border border-emerald-500/20 cursor-default' 
+                            : 'bg-[var(--text-primary)] text-[var(--bg-primary)] hover:scale-[1.02] active:scale-[0.98]'
+                        }`}
+                      >
+                        {isAdded ? (
+                          <>
+                            <CheckCircle size={18} /> Added to Cart
+                          </>
+                        ) : (
+                          <>
+                            <ShoppingCart size={18} /> Add to Cart
+                          </>
+                        )}
+                      </button>
+                    );
+                  })()}
                   <button 
                     onClick={() => setSelectedWatch(watch)}
                     className="flex-1 bg-transparent border-2 border-[var(--border-color)] text-[var(--text-primary)] py-6 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center justify-center gap-3 hover:border-[var(--text-primary)] transition-all"

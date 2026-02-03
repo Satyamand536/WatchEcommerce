@@ -58,35 +58,6 @@
     "promo": "offers"
   },
   {
-    "name": "Cartier Tank Solo",
-    "brand": "Cartier",
-    "price": 9500,
-    "originalPrice": 12500,
-    "images": [
-      "/images/C3.png"
-    ],
-    "description": "Premium Cartier Tank Solo providing style and precision.",
-    "category": "Luxury",
-    "gender": "Women",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Luxury"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": true,
-    "stock": 20,
-    "promo": "offers"
-  },
-  {
     "name": "Patek Calatrava Lite",
     "brand": "Patek-philippe",
     "price": 8999,
@@ -228,203 +199,6 @@
       "waterResistance": "30m"
     },
     "isLuxury": true,
-    "stock": 20,
-    "promo": "offers"
-  },
-  {
-    "name": "Rolex Oyster Lite Edition",
-    "brand": "Rolex",
-    "price": 4999,
-    "originalPrice": 6999,
-    "images": [
-      "/images/R2.png"
-    ],
-    "description": "Premium Rolex Oyster Lite Edition providing style and precision.",
-    "category": "Luxury",
-    "gender": "Men",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Luxury"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": true,
-    "stock": 20
-  },
-  {
-    "name": "Omega De Ville Mini",
-    "brand": "Omega",
-    "price": 4499,
-    "originalPrice": 5999,
-    "images": [
-      "/images/O3.png"
-    ],
-    "description": "Premium Omega De Ville Mini providing style and precision.",
-    "category": "Luxury",
-    "gender": "Women",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Luxury"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": true,
-    "stock": 20
-  },
-  {
-    "name": "Cartier Ballon Entry",
-    "brand": "Cartier",
-    "price": 3999,
-    "originalPrice": 5499,
-    "images": [
-      "/images/C2.png"
-    ],
-    "description": "Premium Cartier Ballon Entry providing style and precision.",
-    "category": "Luxury",
-    "gender": "Women",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Luxury"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": true,
-    "stock": 20
-  },
-  {
-    "name": "Tag Heuer Formula Lite",
-    "brand": "Tag-heuer",
-    "price": 4799,
-    "originalPrice": 6299,
-    "images": [
-      "/images/TH2.png"
-    ],
-    "description": "Premium Tag Heuer Formula Lite providing style and precision.",
-    "category": "Luxury",
-    "gender": "Men",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Luxury"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": true,
-    "stock": 20
-  },
-  {
-    "name": "IWC Pilot Minimalist",
-    "brand": "Iwc",
-    "price": 3499,
-    "originalPrice": 4999,
-    "images": [
-      "/images/IWC2.png"
-    ],
-    "description": "Premium IWC Pilot Minimalist providing style and precision.",
-    "category": "Luxury",
-    "gender": "Men",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Luxury"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": true,
-    "stock": 20
-  },
-  {
-    "name": "Patek Philippe Elegance",
-    "brand": "Patek-philippe",
-    "price": 2999,
-    "originalPrice": 4299,
-    "images": [
-      "/images/P1.png"
-    ],
-    "description": "Premium Patek Philippe Elegance providing style and precision.",
-    "category": "Luxury",
-    "gender": "Women",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Luxury"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": true,
-    "stock": 20
-  },
-  {
-    "name": "Titan Stellar Smart",
-    "brand": "Titan",
-    "price": 9995,
-    "originalPrice": 13995,
-    "images": [
-      "/images/TS3.png"
-    ],
-    "description": "Premium Titan Stellar Smart providing style and precision.",
-    "category": "Smart",
-    "gender": "Unisex",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Smart"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
     "stock": 20,
     "promo": "offers"
   },
@@ -768,34 +542,6 @@
     "stock": 20
   },
   {
-    "name": "G-Shock Carbon Mud",
-    "brand": "Casio",
-    "price": 9995,
-    "originalPrice": 12995,
-    "images": [
-      "/images/P1.png"
-    ],
-    "description": "Premium G-Shock Carbon Mud providing style and precision.",
-    "category": "Sport",
-    "gender": "Men",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Sport"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
     "name": "Casio Edifice Black",
     "brand": "Casio",
     "price": 8495,
@@ -992,34 +738,6 @@
     "stock": 20
   },
   {
-    "name": "Seiko 5 Sport Neo",
-    "brand": "Seiko",
-    "price": 9500,
-    "originalPrice": 12000,
-    "images": [
-      "/images/O2.png"
-    ],
-    "description": "Premium Seiko 5 Sport Neo providing style and precision.",
-    "category": "Sport",
-    "gender": "Men",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Sport"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
     "name": "Seiko Dress Brown",
     "brand": "Seiko",
     "price": 8200,
@@ -1160,34 +878,6 @@
     "stock": 20
   },
   {
-    "name": "Fossil Gen 6 Smart",
-    "brand": "Fossil",
-    "price": 9995,
-    "originalPrice": 19995,
-    "images": [
-      "/images/TH5.png"
-    ],
-    "description": "Premium Fossil Gen 6 Smart providing style and precision.",
-    "category": "Smart",
-    "gender": "Men",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Smart"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
     "name": "Fossil Townsman Auto",
     "brand": "Fossil",
     "price": 8995,
@@ -1287,34 +977,6 @@
     ],
     "styleTags": [
       "Classic"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
-    "name": "G-Shock Junior Mud",
-    "brand": "Casio",
-    "price": 1499,
-    "originalPrice": 2499,
-    "images": [
-      "/images/B5.png"
-    ],
-    "description": "Premium G-Shock Junior Mud providing style and precision.",
-    "category": "Junior",
-    "gender": "Boys",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Junior"
     ],
     "wristFit": {
       "dialSize": 40,
@@ -1748,34 +1410,6 @@
     "stock": 20
   },
   {
-    "name": "Couple Gold Set",
-    "brand": "Titan",
-    "price": 9999,
-    "originalPrice": 15000,
-    "images": [
-      "/images/JL6.png"
-    ],
-    "description": "Premium Couple Gold Set providing style and precision.",
-    "category": "Gifting",
-    "gender": "Unisex",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Gifting"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
     "name": "Elegance Box Set",
     "brand": "Titan",
     "price": 8500,
@@ -1916,34 +1550,6 @@
     "stock": 20
   },
   {
-    "name": "Collector",
-    "brand": "Iwc",
-    "price": 24500,
-    "originalPrice": 32000,
-    "images": [
-      "/images/IWC4.png"
-    ],
-    "description": "Premium Collector providing style and precision.",
-    "category": "Gifting",
-    "gender": "Men",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Gifting"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
     "name": "Diamond Jubilee Box",
     "brand": "Zenith",
     "price": 45000,
@@ -1987,34 +1593,6 @@
     ],
     "styleTags": [
       "Gifting"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
-    "name": "Matrix Azure Steel",
-    "brand": "Matrix",
-    "price": 999,
-    "originalPrice": 1999,
-    "images": [
-      "/images/P8.png"
-    ],
-    "description": "Premium Matrix Azure Steel providing style and precision.",
-    "category": "Classic",
-    "gender": "Men",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Classic"
     ],
     "wristFit": {
       "dialSize": 40,
@@ -2083,35 +1661,6 @@
       "waterResistance": "30m"
     },
     "isLuxury": false,
-    "stock": 20,
-    "promo": "offers"
-  },
-  {
-    "name": "Rolex Precision Blue",
-    "brand": "Rolex",
-    "price": 9900,
-    "originalPrice": 14500,
-    "images": [
-      "/images/R1.png"
-    ],
-    "description": "Premium Rolex Precision Blue providing style and precision.",
-    "category": "Luxury",
-    "gender": "Men",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Luxury"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": true,
     "stock": 20,
     "promo": "offers"
   },
@@ -2845,6 +2394,7 @@
     "name": "Matrix Smart Lite II",
     "brand": "Matrix",
     "price": 2200,
+    "originalPrice": 65000,
     "images": [
       "/images/TS2.png"
     ],
@@ -2866,34 +2416,6 @@
       "waterResistance": "30m"
     },
     "isLuxury": false,
-    "stock": 20
-  },
-  {
-    "name": "Breitling Navitimer B01",
-    "brand": "Breitling",
-    "price": 58000,
-    "originalPrice": 65000,
-    "images": [
-      "/images/B1.png"
-    ],
-    "description": "Premium Breitling Navitimer B01 providing style and precision.",
-    "category": "Luxury",
-    "gender": "Men",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Luxury"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": true,
     "stock": 20
   },
   {
@@ -2928,38 +2450,11 @@
     "name": "Breitling Avenger Chrono",
     "brand": "Breitling",
     "price": 38000,
+    "originalPrice": 110000,
     "images": [
       "/images/B3.png"
     ],
     "description": "Premium Breitling Avenger Chrono providing style and precision.",
-    "category": "Luxury",
-    "gender": "Men",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Luxury"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": true,
-    "stock": 20
-  },
-  {
-    "name": "Hublot Big Bang Unico",
-    "brand": "Hublot",
-    "price": 95000,
-    "originalPrice": 110000,
-    "images": [
-      "/images/H2.png"
-    ],
-    "description": "Premium Hublot Big Bang Unico providing style and precision.",
     "category": "Luxury",
     "gender": "Men",
     "suitableFor": [
@@ -3011,38 +2506,11 @@
     "name": "Hublot Spirit of Big Bang",
     "brand": "Hublot",
     "price": 78000,
+    "originalPrice": 48000,
     "images": [
       "/images/H4.png"
     ],
     "description": "Premium Hublot Spirit of Big Bang providing style and precision.",
-    "category": "Luxury",
-    "gender": "Men",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Luxury"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": true,
-    "stock": 20
-  },
-  {
-    "name": "JLC Reverso Tribute",
-    "brand": "Jaeger-lecoultre",
-    "price": 42000,
-    "originalPrice": 48000,
-    "images": [
-      "/images/JL1.png"
-    ],
-    "description": "Premium JLC Reverso Tribute providing style and precision.",
     "category": "Luxury",
     "gender": "Men",
     "suitableFor": [
@@ -3094,40 +2562,13 @@
     "name": "JLC Master Ultra Thin",
     "brand": "Jaeger-lecoultre",
     "price": 52000,
+    "originalPrice": 105000,
     "images": [
       "/images/JL4.png"
     ],
     "description": "Premium JLC Master Ultra Thin providing style and precision.",
     "category": "Luxury",
     "gender": "Unisex",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Luxury"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": true,
-    "stock": 20
-  },
-  {
-    "name": "AP Royal Oak Selfwinding",
-    "brand": "Audemars-piguet",
-    "price": 92000,
-    "originalPrice": 105000,
-    "images": [
-      "/images/AP1.png"
-    ],
-    "description": "Premium AP Royal Oak Selfwinding providing style and precision.",
-    "category": "Luxury",
-    "gender": "Men",
     "suitableFor": [
       "Daily Wear"
     ],
@@ -3156,33 +2597,6 @@
     "description": "Premium AP Royal Oak Lady Rose providing style and precision.",
     "category": "Luxury",
     "gender": "Women",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Luxury"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": true,
-    "stock": 20
-  },
-  {
-    "name": "IWC Portugieser Chrono",
-    "brand": "Iwc",
-    "price": 45000,
-    "images": [
-      "/images/IWC2.png"
-    ],
-    "description": "Premium IWC Portugieser Chrono providing style and precision.",
-    "category": "Luxury",
-    "gender": "Men",
     "suitableFor": [
       "Daily Wear"
     ],
@@ -3368,6 +2782,7 @@
     "name": "Budget Gift Box II",
     "brand": "Daily",
     "price": 550,
+    "originalPrice": 95000,
     "images": [
       "/images/W4.png"
     ],
@@ -3379,34 +2794,6 @@
     ],
     "styleTags": [
       "Gifting"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
-    "name": "Apple Watch Ultra II",
-    "brand": "Apple",
-    "price": 89900,
-    "originalPrice": 95000,
-    "images": [
-      "/images/TS3.png"
-    ],
-    "description": "Premium Apple Watch Ultra II providing style and precision.",
-    "category": "Smart",
-    "gender": "Unisex",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Smart"
     ],
     "wristFit": {
       "dialSize": 40,
@@ -3504,34 +2891,6 @@
     "stock": 20
   },
   {
-    "name": "G-Shock Gravitymaster Jr",
-    "brand": "Casio",
-    "price": 7500,
-    "originalPrice": 9999,
-    "images": [
-      "/images/B5.png"
-    ],
-    "description": "Premium G-Shock Gravitymaster Jr providing style and precision.",
-    "category": "Junior",
-    "gender": "Boys",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Junior"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
     "name": "Titan Regalia Boy",
     "brand": "Titan",
     "price": 12500,
@@ -3575,34 +2934,6 @@
     ],
     "styleTags": [
       "Junior"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
-    "name": "Fastrack Reflex Beat",
-    "brand": "Fastrack",
-    "price": 850,
-    "originalPrice": 1499,
-    "images": [
-      "/images/TS2.png"
-    ],
-    "description": "Premium Fastrack Reflex Beat providing style and precision.",
-    "category": "Smart",
-    "gender": "Unisex",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Smart"
     ],
     "wristFit": {
       "dialSize": 40,
@@ -3762,35 +3093,6 @@
     "promo": "offers"
   },
   {
-    "name": "Michael Kors Ritz",
-    "brand": "Michael-kors",
-    "price": 18500,
-    "originalPrice": 24000,
-    "images": [
-      "/images/W11.png"
-    ],
-    "description": "Premium Michael Kors Ritz providing style and precision.",
-    "category": "Luxury",
-    "gender": "Women",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Luxury"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": true,
-    "stock": 20,
-    "promo": "offers"
-  },
-  {
     "name": "Emporio Armani Gianna",
     "brand": "Emporio-armani",
     "price": 28000,
@@ -3847,34 +3149,6 @@
     "isLuxury": true,
     "stock": 20,
     "promo": "offers"
-  },
-  {
-    "name": "Noise Fit Pulse V2",
-    "brand": "Noise",
-    "price": 899,
-    "originalPrice": 1999,
-    "images": [
-      "/images/S1.png"
-    ],
-    "description": "Premium Noise Fit Pulse V2 providing style and precision.",
-    "category": "Smart",
-    "gender": "Men",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Smart"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
   },
   {
     "name": "Fire-Boltt Ninja Bloom",
@@ -4017,34 +3291,6 @@
     "stock": 20
   },
   {
-    "name": "Titan Men",
-    "brand": "Titan",
-    "price": 1850,
-    "originalPrice": 2999,
-    "images": [
-      "/images/W1.png"
-    ],
-    "description": "Premium Titan Men providing style and precision.",
-    "category": "Gifting",
-    "gender": "Men",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Gifting"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
     "name": "Fastrack Urban Gift Set",
     "brand": "Fastrack",
     "price": 1450,
@@ -4116,34 +3362,6 @@
     ],
     "styleTags": [
       "Gifting"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
-    "name": "G-Shock Gravitymaster Boy",
-    "brand": "Casio",
-    "price": 7500,
-    "originalPrice": 9999,
-    "images": [
-      "/images/B5.png"
-    ],
-    "description": "Premium G-Shock Gravitymaster Boy providing style and precision.",
-    "category": "Junior",
-    "gender": "Boys",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Junior"
     ],
     "wristFit": {
       "dialSize": 40,
@@ -4249,370 +3467,6 @@
       "/images/P3.PNG"
     ],
     "description": "Premium Patek Nautilus Mini Junior providing style and precision.",
-    "category": "Junior",
-    "gender": "Boys",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Junior"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
-    "name": "Tag Heuer Carrera Jr",
-    "brand": "Tag-heuer",
-    "price": 32000,
-    "originalPrice": 38000,
-    "images": [
-      "/images/TH2.png"
-    ],
-    "description": "Premium Tag Heuer Carrera Jr providing style and precision.",
-    "category": "Junior",
-    "gender": "Boys",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Junior"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
-    "name": "Fastrack Smart Boy Pro",
-    "brand": "Fastrack",
-    "price": 699,
-    "originalPrice": 1299,
-    "images": [
-      "/images/TS2.png"
-    ],
-    "description": "Premium Fastrack Smart Boy Pro providing style and precision.",
-    "category": "Smart",
-    "gender": "Boys",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Smart"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
-    "name": "boAt Wave Jr Smart",
-    "brand": "Boat",
-    "price": 799,
-    "originalPrice": 1499,
-    "images": [
-      "/images/TS1.png"
-    ],
-    "description": "Premium boAt Wave Jr Smart providing style and precision.",
-    "category": "Smart",
-    "gender": "Boys",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Smart"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
-    "name": "Noise Fit Jr",
-    "brand": "Noise",
-    "price": 899,
-    "originalPrice": 1599,
-    "images": [
-      "/images/S2.png"
-    ],
-    "description": "Premium Noise Fit Jr providing style and precision.",
-    "category": "Smart",
-    "gender": "Boys",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Smart"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
-    "name": "Fire-Boltt Ninja Boy",
-    "brand": "Fire-boltt",
-    "price": 950,
-    "originalPrice": 1799,
-    "images": [
-      "/images/S1.png"
-    ],
-    "description": "Premium Fire-Boltt Ninja Boy providing style and precision.",
-    "category": "Smart",
-    "gender": "Boys",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Smart"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
-    "name": "Titan Smart Jr Elite",
-    "brand": "Titan",
-    "price": 2499,
-    "originalPrice": 3999,
-    "images": [
-      "/images/TS3.png"
-    ],
-    "description": "Premium Titan Smart Jr Elite providing style and precision.",
-    "category": "Smart",
-    "gender": "Boys",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Smart"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
-    "name": "Casio G-Shock Smart Boy",
-    "brand": "Casio",
-    "price": 3499,
-    "originalPrice": 4999,
-    "images": [
-      "/images/B5.png"
-    ],
-    "description": "Premium Casio G-Shock Smart Boy providing style and precision.",
-    "category": "Smart",
-    "gender": "Boys",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Smart"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
-    "name": "Noise ColorFit Boy Pro",
-    "brand": "Noise",
-    "price": 1499,
-    "originalPrice": 2499,
-    "images": [
-      "/images/S3.png"
-    ],
-    "description": "Premium Noise ColorFit Boy Pro providing style and precision.",
-    "category": "Smart",
-    "gender": "Boys",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Smart"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
-    "name": "Ambrane Fit Boy Adventure",
-    "brand": "Ambrane",
-    "price": 1999,
-    "originalPrice": 3499,
-    "images": [
-      "/images/S2.png"
-    ],
-    "description": "Premium Ambrane Fit Boy Adventure providing style and precision.",
-    "category": "Smart",
-    "gender": "Boys",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Smart"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
-    "name": "Titan Zoop Boy Hero",
-    "brand": "Titan",
-    "price": 1299,
-    "originalPrice": 1899,
-    "images": [
-      "/images/W2.png"
-    ],
-    "description": "Premium Titan Zoop Boy Hero providing style and precision.",
-    "category": "Junior",
-    "gender": "Boys",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Junior"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
-    "name": "Casio Youth Boy Digital",
-    "brand": "Casio",
-    "price": 899,
-    "originalPrice": 1499,
-    "images": [
-      "/images/O7.png"
-    ],
-    "description": "Premium Casio Youth Boy Digital providing style and precision.",
-    "category": "Junior",
-    "gender": "Boys",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Junior"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
-    "name": "Fastrack Tees Boy Watch",
-    "brand": "Fastrack",
-    "price": 999,
-    "originalPrice": 1599,
-    "images": [
-      "/images/AP3.png"
-    ],
-    "description": "Premium Fastrack Tees Boy Watch providing style and precision.",
-    "category": "Junior",
-    "gender": "Boys",
-    "suitableFor": [
-      "Daily Wear"
-    ],
-    "styleTags": [
-      "Junior"
-    ],
-    "wristFit": {
-      "dialSize": 40,
-      "fitCategory": "Medium"
-    },
-    "technicalSpecs": {
-      "movement": "Quartz",
-      "waterResistance": "30m"
-    },
-    "isLuxury": false,
-    "stock": 20
-  },
-  {
-    "name": "Sonata Super Fibre Boy",
-    "brand": "Sonata",
-    "price": 799,
-    "originalPrice": 1299,
-    "images": [
-      "/images/IWC5.png"
-    ],
-    "description": "Premium Sonata Super Fibre Boy providing style and precision.",
     "category": "Junior",
     "gender": "Boys",
     "suitableFor": [
@@ -4967,6 +3821,35 @@
     ],
     "styleTags": [
       "Gifting",
+      "Premium"
+    ],
+    "wristFit": {
+      "dialSize": 40,
+      "fitCategory": "Medium"
+    },
+    "technicalSpecs": {
+      "movement": "Automatic",
+      "waterResistance": "50m"
+    },
+    "isLuxury": false,
+    "stock": 10
+  },
+  {
+    "name": "Noise Fit Pulse V2",
+    "brand": "Noise",
+    "price": 899,
+    "images": [
+      "/images/S1.png"
+    ],
+    "category": "Smart",
+    "gender": "Men",
+    "description": "Strategically selected to ensure no selection gap exists in our hallmarked collection.",
+    "suitableFor": [
+      "Daily Wear",
+      "Office"
+    ],
+    "styleTags": [
+      "Smart",
       "Premium"
     ],
     "wristFit": {

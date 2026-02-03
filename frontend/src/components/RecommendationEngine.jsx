@@ -7,12 +7,15 @@ import {
   Dumbbell, 
   ChevronRight,
   Plus,
+  Minus,
   TrendingUp,
   Star,
   CheckCircle2,
   ChevronLeft,
   Info,
-  Zap
+  Zap,
+  Heart,
+  ShoppingCart
 } from 'lucide-react';
 import axios from 'axios';
 import { useTheme } from '../ThemeContext';
@@ -58,12 +61,16 @@ const steps = [
 
 const RecommendationEngine = ({ onRecommendation }) => {
   const { theme } = useTheme();
-  const { addItem } = useCart();
+  const { cart, addItem, increment, decrement, removeItem, toggleWishlist, isInWishlist } = useCart();
   const [currentStep, setCurrentStep] = useState(0);
   const [selections, setSelections] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState(null);
-  const [addedItems, setAddedItems] = useState(new Set());
+
+  const getQty = (id) => {
+    const item = cart.find((c) => String(c.id) === String(id));
+    return item ? Number(item.qty || 0) : 0;
+  };
 
   const handleSelect = (field, value) => {
     const newSelections = { ...selections, [field]: value };
@@ -136,12 +143,12 @@ const RecommendationEngine = ({ onRecommendation }) => {
        }
 
        // Add generic recommendation reasons for local results
-       localResults = localResults.map(w => {
-         const sid = String(w.id || w.sku || w._id);
-         return {
-           ...w,
-           id: sid,
-           _id: sid, // Ensure ID mapping
+        localResults = localResults.map(w => {
+          const sid = String(w._id || w.id || w.sku || w.name);
+          return {
+            ...w,
+            id: sid,
+            _id: sid, // Ensure ID mapping
            recommendationReason: `Perfect balance of ${finalSelections.wristSize} proportions and ${finalSelections.usage} functionality.`
          };
        });
@@ -183,14 +190,31 @@ const RecommendationEngine = ({ onRecommendation }) => {
                animate={{ opacity: 1, scale: 1 }}
                className="bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-[2.5rem] overflow-hidden group hover:border-[var(--text-primary)]/20 transition-all duration-500"
             >
-                 <Link to={`/watch/${watch._id}`} className="aspect-square bg-white dark:bg-zinc-800 rounded-2xl flex items-center justify-center p-4 border border-[var(--border-color)] overflow-hidden">
-                  <WatchImage src={watch.images?.[0] || watch.img} alt={watch.name} className="w-full h-full object-contain hover:scale-110 transition-transform duration-700" />
-                 </Link>
+                 <div className="relative aspect-square bg-white dark:bg-zinc-800 rounded-2xl flex items-center justify-center p-4 border border-[var(--border-color)] overflow-hidden">
+                   {/* Wishlist Heart Button */}
+                   <button 
+                     onClick={(e) => {
+                       e.preventDefault();
+                       e.stopPropagation();
+                       toggleWishlist(watch);
+                     }}
+                     className={`absolute top-4 right-4 z-30 p-3 rounded-2xl border transition-all duration-300 ${
+                       isInWishlist(watch._id) 
+                         ? 'bg-rose-500 border-rose-500 text-white shadow-lg' 
+                         : 'bg-[var(--bg-primary)] border-[var(--border-color)] text-[var(--text-secondary)] hover:text-rose-500 hover:border-rose-500/30'
+                     }`}
+                   >
+                     <Heart size={16} fill={isInWishlist(watch._id) ? "currentColor" : "none"} />
+                   </button>
+                   <Link to={`/watch/${watch._id}`} className="w-full h-full flex items-center justify-center">
+                     <WatchImage src={watch.images?.[0] || watch.img} alt={watch.name} className="w-full h-full object-contain hover:scale-110 transition-transform duration-700" />
+                   </Link>
+                 </div>
                
                <div className="p-8">
                  <div className="flex justify-between items-start mb-6">
                    <span className="text-[10px] font-black bg-[var(--text-primary)] text-[var(--bg-primary)] px-3 py-1 rounded-full tracking-tighter">DIAL {watch.wristFit?.dialSize || watch.dialSize}mm</span>
-                   <span className="text-[10px] text-gray-500 font-black uppercase tracking-[0.2em]">{watch.brand}</span>
+                   <span className="text-[10px] text-[var(--text-primary)] font-black uppercase tracking-[0.2em] opacity-60 group-hover:opacity-100 transition-opacity">{watch.brand}</span>
                  </div>
                  
                  <div className="flex-1">
@@ -206,19 +230,36 @@ const RecommendationEngine = ({ onRecommendation }) => {
                     </div>
                  </div>
 
-                 <button 
-                   onClick={() => {
-                     if (!addedItems.has(watch._id)) {
-                       addItem(watch);
-                       toast.success(`${watch.name} added to cart!`);
-                       setAddedItems(prev => new Set(prev).add(watch._id));
-                     }
-                   }}
-                   disabled={addedItems.has(watch._id)}
-                   className={`w-full py-5 font-black text-[10px] uppercase tracking-[0.3em] rounded-2xl transition-all shadow-xl ${addedItems.has(watch._id) ? 'bg-emerald-600 text-white opacity-90 cursor-default' : 'bg-[var(--text-primary)] text-[var(--bg-primary)] hover:bg-zinc-800 dark:hover:bg-zinc-200'}`}
-                 >
-                   {addedItems.has(watch._id) ? "Added to Cart" : "Add to Cart"}
-                 </button>
+                 {(() => {
+                   const qty = getQty(watch._id);
+                   return qty > 0 ? (
+                     <div className="flex items-center justify-between bg-[var(--bg-primary)] border border-[var(--border-color)] rounded-2xl p-2 shadow-2xl">
+                       <button 
+                         onClick={() => qty > 1 ? decrement(watch._id) : removeItem(watch._id)}
+                         className="w-12 h-12 flex items-center justify-center text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] rounded-xl transition-colors"
+                       >
+                         <Minus size={16} />
+                       </button>
+                       <span className="text-sm font-black text-[var(--text-primary)]">{qty}</span>
+                       <button 
+                         onClick={() => increment(watch._id)}
+                         className="w-12 h-12 flex items-center justify-center text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] rounded-xl transition-colors"
+                       >
+                         <Plus size={16} />
+                       </button>
+                     </div>
+                   ) : (
+                     <button 
+                       onClick={() => {
+                         addItem(watch);
+                         toast.success(`${watch.name} added to cart!`);
+                       }}
+                       className="w-full py-5 bg-[var(--text-primary)] text-[var(--bg-primary)] font-black text-[10px] uppercase tracking-[0.3em] rounded-2xl transition-all shadow-xl hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2"
+                     >
+                       <ShoppingCart size={14} /> Add to Cart
+                     </button>
+                   );
+                 })()}
                </div>
             </motion.div>
           ))}

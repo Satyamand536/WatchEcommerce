@@ -106,7 +106,7 @@ const CheckoutForm = ({ amount, onSuccess, onCancel, customerDetails }) => {
             disabled={!stripe || isProcessing}
             className={`flex-1 px-8 py-5 bg-[var(--text-primary)] text-[var(--bg-primary)] rounded-2xl text-[10px] font-black uppercase tracking-[0.3em] transition-all shadow-xl ${isProcessing ? 'opacity-50 cursor-not-allowed' : 'hover:scale-[1.02] active:scale-[0.98]'}`}
           >
-            {isProcessing ? 'Authenticating...' : `Authorize ₹${amount.toLocaleString("en-IN")}`}
+            {isProcessing ? 'Authenticating...' : `Authorize ₹${(amount ?? 0).toLocaleString("en-IN")}`}
           </button>
         </div>
       </form>
