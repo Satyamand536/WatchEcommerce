@@ -275,155 +275,75 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* ===== PRINT STYLES FOR RECEIPT ===== */
+/* ===== PREMIUM VISUAL RECEIPT PRINT STYLES ===== */
 @media print {
-  /* Page settings */
   @page {
-    size: A4;
-    margin: 12mm;
+    /* Minimal margins to maximize the visual impact, but usually safe to keep some */
+    size: auto;
+    margin: 5mm;
   }
 
-  /* Force colors to print correctly */
-  * {
+  /* 1. HIDE EVERYTHING by default */
+  body * {
+    visibility: hidden;
+  }
+
+  /* 2. REVEAL ONLY the Visual Card */
+  #visual-receipt, 
+  #visual-receipt * {
+    visibility: visible;
+  }
+
+  /* 3. Position the Card Correctly - CENTERED */
+  #visual-receipt {
+    position: absolute;
+    left: 50% !important;
+    top: 5mm; 
+    /* Scale down to 85% to ensure it fits on one page (preventing cutoff) */
+    transform: translateX(-50%) scale(0.85) !important;
+    transform-origin: top center !important;
+    width: 90% !important;
+    max-width: 600px !important; /* Ensure it looks like a proper receipt/card */
+    margin: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    
+    /* CRITICAL: Force Background Colors & Images to Print */
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
     color-adjust: exact !important;
   }
-
-  /* Body reset - white background */
-  body {
-    background: white !important;
-    background-color: white !important;
+  
+  /* CRITICAL FIX: Unlock overflow on parents to preventing clipping */
+  body, html, #root, [class*="min-h-screen"], [class*="overflow-hidden"] {
+    overflow: visible !important;
+    height: auto !important;
   }
 
-  /* Hide decorative background elements (the blur circles & dark overlays) */
-  .pointer-events-none,
-  [class*="blur-"],
-  [class*="opacity-20"],
-  [class*="bg-zinc-950"],
-  [class*="bg-zinc-900"],
-  [class*="dark:bg-zinc-"] {
+  /* 4. Hide Buttons inside the card area (Go Back, Print) */
+  #visual-receipt .print\:hidden {
     display: none !important;
     visibility: hidden !important;
   }
 
-  /* Main container - force white background */
-  [class*="min-h-screen"] {
-    background: white !important;
+  /* 5. Ensure White Background for the page behind the card */
+  body {
     background-color: white !important;
-    min-height: auto !important;
-    padding: 0 !important;
+    background: white !important;
   }
 
-  /* Receipt card wrapper */
-  .max-w-xl {
-    max-width: 100% !important;
-    transform: scale(0.82);
-    transform-origin: top center;
+  /* 6. Card Specific Tweaks for Paper */
+  #visual-receipt .card-premium {
+    box-shadow: none !important; /* Remove drop shadow for crispness on paper */
+    border: 1px solid #ddd !important; /* Ensure clear border definition */
   }
 
-  /* Force all text to be dark and readable */
-  h1, h2, h3, h4, h5, h6, p, span, div, label {
-    color: #1a1a1a !important;
-  }
-
-  /* Colored text should stay colored but darker */
-  [class*="text-emerald"] {
-    color: #047857 !important;
-  }
-
-  [class*="text-amber"], [class*="text-orange"] {
-    color: #b45309 !important;
-  }
-
-  [class*="text-gray-400"], [class*="text-gray-500"] {
-    color: #4a4a4a !important;
-  }
-
-  /* Status indicator - keep colors */
-  [class*="border-emerald"] {
-    border-color: #10b981 !important;
-  }
-
-  [class*="border-amber"] {
-    border-color: #f59e0b !important;
-  }
-
-  /* Boxes with colored backgrounds */
-  [class*="bg-emerald-500\\/5"], [class*="bg-emerald"] {
-    background-color: #ecfdf5 !important;
-    border-color: #a7f3d0 !important;
-  }
-
-  [class*="bg-amber-500\\/5"], [class*="bg-amber"] {
-    background-color: #fffbeb !important;
-    border-color: #fde68a !important;
-  }
-
-  /* Card backgrounds - light gray/white */
-  [class*="bg-\\[var\\(--bg-secondary\\)\\]"],
-  [class*="bg-\\[var\\(--bg-tertiary\\)\\]"],
-  [class*="bg-\\[var\\(--bg-primary\\)\\]"] {
-    background-color: #fafafa !important;
-  }
-
-  /* Borders visible */
-  [class*="border-\\[var\\(--border-color\\)\\]"] {
-    border-color: #e5e5e5 !important;
-  }
-
-  /* Reduce spacing for compact print */
-  [class*="mb-10"], [class*="mb-12"] {
-    margin-bottom: 0.75rem !important;
-  }
-
-  [class*="pb-8"] {
-    padding-bottom: 0.5rem !important;
-  }
-
-  [class*="pt-6"] {
-    padding-top: 0.5rem !important;
-  }
-
-  [class*="p-12"], [class*="p-10"] {
-    padding: 1.5rem !important;
-  }
-
-  [class*="p-8"] {
-    padding: 1rem !important;
-  }
-
-  [class*="p-6"] {
-    padding: 0.75rem !important;
-  }
-
-  [class*="gap-10"], [class*="gap-8"] {
-    gap: 0.5rem !important;
-  }
-
-  [class*="space-y-10"] > * + * {
-    margin-top: 0.5rem !important;
-  }
-
-  [class*="space-y-4"] > * + * {
-    margin-top: 0.35rem !important;
-  }
-
-  /* Status indicator compact */
-  [class*="w-28"][class*="h-28"] {
-    width: 4rem !important;
-    height: 4rem !important;
-    margin-bottom: 1rem !important;
-  }
-
-  /* Item images */
-  [class*="w-12"][class*="h-12"] {
-    width: 2.5rem !important;
-    height: 2.5rem !important;
-  }
-
-  /* Footer print:hidden elements should be hidden */
-  .print\\:hidden {
-    display: none !important;
+  /* 7. Typography Contrast Enforcement (Optional but good for paper) */
+  #visual-receipt h1, 
+  #visual-receipt h2, 
+  #visual-receipt p, 
+  #visual-receipt span {
+    /* We trust the design's colors (amber/emerald) but ensure text is sharp */
+    text-shadow: none !important;
   }
 }

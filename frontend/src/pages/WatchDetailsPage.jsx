@@ -143,18 +143,18 @@ const WatchDetailsPage = () => {
             animate={{ opacity: 1, x: 0 }}
             className="relative group"
           >
-            <div className="aspect-[4/5] bg-white dark:bg-zinc-800 rounded-[4rem] border border-[var(--border-color)] p-12 flex items-center justify-center relative overflow-hidden shadow-sm group-hover:shadow-2xl transition-all duration-1000">
+            <div className="min-h-[500px] md:min-h-[600px] lg:min-h-[700px] bg-white dark:bg-zinc-800 rounded-[4rem] border border-[var(--border-color)] p-8 md:p-12 flex items-center justify-center relative overflow-hidden shadow-sm group-hover:shadow-2xl transition-all duration-1000">
               {/* Abstract decorative element */}
               <div className="absolute -top-20 -right-20 w-80 h-80 bg-[var(--text-primary)]/5 rounded-full blur-3xl group-hover:bg-[var(--text-primary)]/10 transition-colors duration-1000"></div>
               
               <WatchImage 
                 src={watch?.images?.[0] || watch?.img || watch?.image || (WATCHES.find(w => String(w.id) === String(id))?.img)} 
                 alt={watch?.name || (WATCHES.find(w => String(w.id) === String(id))?.name) || "Luxury Timepiece"} 
-                className="w-full h-full object-contain relative z-10 group-hover:scale-110 transition-transform duration-1000 pointer-events-none" 
+                className="max-w-full max-h-[450px] md:max-h-[550px] lg:max-h-[650px] object-contain relative z-10 group-hover:scale-110 transition-transform duration-1000 pointer-events-none" 
               />
               
-              <div className="absolute bottom-10 left-10 flex gap-4 z-10">
-                <div className="px-6 py-3 bg-[var(--bg-primary)]/80 backdrop-blur-xl border border-[var(--border-color)] rounded-2xl flex items-center justify-between gap-4">
+              <div className="absolute bottom-6 md:bottom-10 left-6 md:left-10 flex gap-4 z-10">
+                <div className="px-4 md:px-6 py-2 md:py-3 bg-[var(--bg-primary)]/80 backdrop-blur-xl border border-[var(--border-color)] rounded-2xl flex items-center justify-between gap-3 md:gap-4">
                   <div>
                     <Star size={12} className="text-yellow-500 fill-current mb-1" />
                     <span className="text-[10px] font-black text-[var(--text-primary)] block">4.9 RATING</span>
@@ -214,7 +214,7 @@ const WatchDetailsPage = () => {
             </div>
 
             {/* Action Area */}
-            <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-6 mt-8 md:mt-0">
               {(() => {
                 const isAdded = cart.some(item => String(item.id) === sid);
                 return (
@@ -226,7 +226,7 @@ const WatchDetailsPage = () => {
                       }
                     }}
                     disabled={isAdded}
-                    className={`flex-1 min-h-[56px] py-4 md:py-6 font-black text-[10px] uppercase tracking-[0.4em] rounded-2.5xl flex items-center justify-center gap-4 transition-all shadow-xl group ${
+                    className={`flex-1 min-h-[56px] py-4 md:py-6 font-black text-[10px] uppercase tracking-[0.4em] rounded-2xl flex items-center justify-center gap-4 transition-all shadow-xl group ${
                       isAdded 
                         ? 'bg-[var(--bg-secondary)] text-[var(--text-secondary)] cursor-default border border-[var(--border-color)]' 
                         : 'bg-[var(--text-primary)] text-[var(--bg-primary)] hover:bg-zinc-800 hover:shadow-2xl cursor-pointer'
@@ -249,7 +249,7 @@ const WatchDetailsPage = () => {
             </div>
 
             {/* Trust Footer */}
-            <div className="mt-12 flex items-center gap-8 opacity-40 grayscale group-hover:grayscale-0 transition-all">
+            <div className="mt-8 md:mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 opacity-40 grayscale group-hover:grayscale-0 transition-all">
                <div className="flex items-center gap-2">
                   <ShieldCheck size={16} />
                   <span className="text-[8px] font-black uppercase tracking-widest">Global Escrow</span>

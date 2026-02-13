@@ -175,7 +175,7 @@ const NewArrivalsPage = () => {
       {/* MODAL - Details View */}
       <AnimatePresence>
         {selectedWatch && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6">
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -187,17 +187,17 @@ const NewArrivalsPage = () => {
               initial={{ opacity: 0, scale: 0.95, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 30 }}
-              className="bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-[3.5rem] w-full max-w-3xl relative z-10 overflow-hidden shadow-2xl"
+              className="bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-[2rem] md:rounded-[3.5rem] w-full max-w-3xl max-h-[85vh] md:max-h-[90vh] relative z-10 overflow-hidden shadow-2xl flex flex-col"
             >
-              <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/2 bg-[var(--bg-primary)] flex items-center justify-center p-12">
-                  <WatchImage src={selectedWatch.images?.[0]} alt={selectedWatch.name} className="h-80 object-contain pointer-events-none" />
+              <div className="flex flex-col md:flex-row overflow-y-auto">
+                <div className="md:w-1/2 bg-[var(--bg-primary)] flex items-center justify-center p-6 md:p-12 min-h-[200px] md:min-h-[400px]">
+                  <WatchImage src={selectedWatch.images?.[0]} alt={selectedWatch.name} className="max-h-[160px] md:max-h-[350px] object-contain pointer-events-none" />
                 </div>
-                <div className="md:w-1/2 p-12">
-                  <h3 className="text-3xl font-black text-[var(--text-primary)] italic tracking-tighter uppercase mb-2 leading-none">{selectedWatch.name}</h3>
-                  <p className="text-gray-500 mb-10 text-[10px] font-black uppercase tracking-widest italic opacity-50">"{selectedWatch.tag}" Acquisition</p>
+                <div className="md:w-1/2 p-6 md:p-12 flex flex-col">
+                  <h3 className="text-2xl md:text-3xl font-black text-[var(--text-primary)] italic tracking-tighter uppercase mb-2 leading-none">{selectedWatch.name}</h3>
+                  <p className="text-gray-500 mb-6 md:mb-10 text-[10px] font-black uppercase tracking-widest italic opacity-50">"{selectedWatch.tag}" Acquisition</p>
                   
-                  <div className="space-y-6 mb-12">
+                  <div className="space-y-4 md:space-y-6 mb-6 md:mb-12 flex-1">
                      {[
                        { label: "Architecture", value: selectedWatch.technicalSpecs?.caseMaterial || "Premium Grade" },
                        { label: "Logic (Movement)", value: selectedWatch.technicalSpecs?.movement || "Automatic Pulse" },
@@ -206,14 +206,14 @@ const NewArrivalsPage = () => {
                      ].map((spec, i) => (
                        <div key={i} className="flex justify-between border-b border-[var(--border-color)] pb-3">
                          <span className="text-gray-500 text-[10px] font-black uppercase tracking-widest">{spec.label}</span>
-                         <span className="font-bold text-sm text-[var(--text-primary)]">{spec.value}</span>
+                         <span className="font-bold text-xs md:text-sm text-[var(--text-primary)]">{spec.value}</span>
                        </div>
                      ))}
                   </div>
 
                   <button 
                     onClick={() => setSelectedWatch(null)}
-                    className="w-full bg-[var(--text-primary)] text-[var(--bg-primary)] py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl"
+                    className="w-full bg-[var(--text-primary)] text-[var(--bg-primary)] py-4 md:py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl mt-auto"
                   >
                     Return to Selection
                   </button>

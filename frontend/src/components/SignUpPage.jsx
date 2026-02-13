@@ -94,7 +94,7 @@ const SignUpPage = () => {
   };
     
   return (
-    <div className="min-h-screen bg-[var(--bg-primary)] flex items-center justify-center px-6 py-20 transition-colors duration-500">
+    <div className="min-h-screen bg-[var(--bg-primary)] flex items-center justify-center px-6 py-10 md:py-20 transition-colors duration-500 overflow-y-auto">
       <ToastContainer hideProgressBar role="alert" />
       
       <div className="w-full max-w-md">
