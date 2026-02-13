@@ -296,7 +296,7 @@ const CartPage = () => {
           {/* THE RECEIPT CARD */}
           <div className="bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-[3rem] p-8 md:p-12 text-left relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.1)] print:shadow-none print:!bg-white print:border-gray-300 print:rounded-xl print:p-6">
              {/* Large Watermark - Visible in Print now */}
-             <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[120px] font-black italic opacity-[0.03] select-none pointer-events-none tracking-tighter ${isUPI ? 'text-emerald-500' : 'text-amber-500'}`}>
+             <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[120px] font-black italic opacity-[0.03] print:opacity-[0.12] select-none pointer-events-none tracking-tighter ${isUPI ? 'text-emerald-500' : 'text-amber-500'}`}>
                 {isUPI ? 'PAID' : 'COD'}
              </div>
 
@@ -389,7 +389,7 @@ const CartPage = () => {
                    <div className="grid grid-cols-2 gap-6">
                       <div className="flex flex-col gap-2">
                          <span className="text-[9px] font-black text-gray-500 uppercase tracking-widest">Order Placed</span>
-                         <span className="text-[11px] font-black text-[var(--text-primary)] tracking-tight">{completedOrder?.orderTime || completedOrder?.timestamp}</span>
+                         <span className={`text-[11px] font-black tracking-tight ${isUPI ? 'text-emerald-600 print:text-emerald-700' : 'text-amber-600 print:text-amber-700'}`}>{completedOrder?.orderTime || completedOrder?.timestamp}</span>
                       </div>
                       <div className="flex flex-col gap-2 text-right">
                          <span className="text-[9px] font-black text-gray-500 uppercase tracking-widest">Estimated Delivery</span>
@@ -736,15 +736,20 @@ const CartPage = () => {
                            type="text" 
                            value={addressComponents.street} 
                            onChange={(e) => {
-                             const val = e.target.value;
+                             const val = e.target.value.slice(0, 20);
                              setAddressComponents(prev => ({...prev, street: val}));
                              if(errors.street) setErrors(prev => ({...prev, street: ""}));
                            }} 
                            onBlur={() => handleBlur("street", addressComponents.street)}
-                           placeholder="Street Address, House No, Building" 
+                           placeholder="Street Address (Max 20 chars)" 
+                           maxLength={20}
                            className={`w-full bg-[var(--bg-primary)] border rounded-2xl py-3 md:py-4 px-5 md:px-6 text-sm text-[var(--text-primary)] focus:outline-none transition-colors font-medium placeholder:text-[var(--text-secondary)]/30 ${errors.street ? 'border-rose-500 focus:border-rose-500' : 'border-[var(--border-color)] focus:border-[var(--text-accent)]'}`} 
                            required 
                          />
+                         {/* Character Count */}
+                         <div className="flex justify-end">
+                           <span className="text-[8px] font-bold text-gray-400 uppercase tracking-widest">{addressComponents.street.length}/20</span>
+                         </div>
                          {errors.street && <p className="text-[10px] text-rose-500 font-bold ml-2 uppercase tracking-wide flex items-center gap-1">* {errors.street}</p>}
                        </div>
 
@@ -752,36 +757,64 @@ const CartPage = () => {
                           {/* City */}
                           <div className="space-y-1">
                             <input 
+                              list="city-options"
                               type="text" 
                               value={addressComponents.city} 
                               onChange={(e) => {
-                                 const val = e.target.value;
+                                 const val = e.target.value.replace(/[^a-zA-Z\s]/g, '').slice(0, 20);
                                  setAddressComponents(prev => ({...prev, city: val}));
                                  if(errors.city) setErrors(prev => ({...prev, city: ""}));
                               }} 
                               onBlur={() => handleBlur("city", addressComponents.city)}
-                              placeholder="City / District" 
+                              placeholder="City (Letters Only)" 
+                              maxLength={20}
                               className={`w-full bg-[var(--bg-primary)] border rounded-2xl py-3 md:py-4 px-5 md:px-6 text-sm text-[var(--text-primary)] focus:outline-none transition-colors font-medium placeholder:text-[var(--text-secondary)]/30 ${errors.city ? 'border-rose-500 focus:border-rose-500' : 'border-[var(--border-color)] focus:border-[var(--text-accent)]'}`} 
                               required 
                             />
+                            <datalist id="city-options">
+                               <option value="Mumbai" />
+                               <option value="Delhi" />
+                               <option value="Bangalore" />
+                               <option value="Hyderabad" />
+                               <option value="Ahmedabad" />
+                               <option value="Chennai" />
+                               <option value="Kolkata" />
+                               <option value="Surat" />
+                               <option value="Pune" />
+                               <option value="Jaipur" />
+                            </datalist>
                             {errors.city && <p className="text-[10px] text-rose-500 font-bold ml-2 uppercase tracking-wide flex items-center gap-1">* {errors.city}</p>}
                           </div>
                           
                           {/* State */}
                           <div className="space-y-1">
                             <input 
+                              list="state-options"
                               type="text" 
                               value={addressComponents.state} 
                               onChange={(e) => {
-                                 const val = e.target.value;
+                                 const val = e.target.value.replace(/[^a-zA-Z\s]/g, '').slice(0, 20);
                                  setAddressComponents(prev => ({...prev, state: val}));
                                  if(errors.state) setErrors(prev => ({...prev, state: ""}));
                               }} 
                               onBlur={() => handleBlur("state", addressComponents.state)}
-                              placeholder="State / Province" 
+                              placeholder="State (Letters Only)" 
+                              maxLength={20}
                               className={`w-full bg-[var(--bg-primary)] border rounded-2xl py-3 md:py-4 px-5 md:px-6 text-sm text-[var(--text-primary)] focus:outline-none transition-colors font-medium placeholder:text-[var(--text-secondary)]/30 ${errors.state ? 'border-rose-500 focus:border-rose-500' : 'border-[var(--border-color)] focus:border-[var(--text-accent)]'}`} 
                               required 
                             />
+                            <datalist id="state-options">
+                               <option value="Maharashtra" />
+                               <option value="Delhi" />
+                               <option value="Karnataka" />
+                               <option value="Telangana" />
+                               <option value="Gujarat" />
+                               <option value="Tamil Nadu" />
+                               <option value="West Bengal" />
+                               <option value="Rajasthan" />
+                               <option value="Uttar Pradesh" />
+                               <option value="Bihar" />
+                            </datalist>
                             {errors.state && <p className="text-[10px] text-rose-500 font-bold ml-2 uppercase tracking-wide flex items-center gap-1">* {errors.state}</p>}
                           </div>
                        </div>
@@ -793,12 +826,13 @@ const CartPage = () => {
                               type="text" 
                               value={addressComponents.pincode} 
                               onChange={(e) => {
-                                 const val = e.target.value.replace(/[^a-zA-Z0-9\s-]/g, '');
+                                 const val = e.target.value.replace(/\D/g, '').slice(0, 10);
                                  setAddressComponents(prev => ({...prev, pincode: val}));
                                  if(errors.pincode) setErrors(prev => ({...prev, pincode: ""}));
                               }} 
                               onBlur={() => handleBlur("pincode", addressComponents.pincode)}
-                              placeholder="Pin / Zip Code" 
+                              placeholder="Pincode (Numbers Only)" 
+                              maxLength={10}
                               className={`w-full bg-[var(--bg-primary)] border rounded-2xl py-3 md:py-4 px-5 md:px-6 text-sm text-[var(--text-primary)] focus:outline-none transition-colors font-medium placeholder:text-[var(--text-secondary)]/30 ${errors.pincode ? 'border-rose-500 focus:border-rose-500' : 'border-[var(--border-color)] focus:border-[var(--text-accent)]'}`} 
                               required 
                             />
