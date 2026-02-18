@@ -13,13 +13,18 @@ const paymentRoutes = require('./routes/payment');
 const watchRoutes = require('./routes/watches');
 const subscribeRoutes = require('./routes/subscribe');
 const { errorHandler } = require('./middleware/error');
+const { checkForAuthenticationCookie } = require('./middleware/auth');
 
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: true, // In production, replace with specific domain
+  credentials: true
+}));
 app.use(express.json());
 app.use(cookieParser());
+app.use(checkForAuthenticationCookie('token'));
 
 // ---------------- API Routes ----------------
 app.use('/api/auth', authRoutes);

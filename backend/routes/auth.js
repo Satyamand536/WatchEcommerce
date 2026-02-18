@@ -2,6 +2,14 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const { validateToken } = require('../services/authentication');
+const { publicKey, decryptPassword, encryptCookie } = require('../utils/crypto');
+
+// ----------------------------
+// RSA PUBLIC KEY ENDPOINT
+// ----------------------------
+router.get("/public-key", (req, res) => {
+  res.json({ publicKey });
+});
 
 // ----------------------------
 // VALIDATION REGEX
@@ -50,6 +58,13 @@ router.post('/signup', async (req, res, next) => {
     if (!name || !email || !password)
       return res.status(400).json({ error: "All fields required" });
 
+    // RSA Decryption for Password
+    try {
+      password = decryptPassword(password);
+    } catch (err) {
+      return res.status(400).json({ error: "Identity verification failed (Decryption)" });
+    }
+
     if (name.trim().length < 3)
       return res.status(400).json({ error: "Name must be at least 3 characters" });
 
@@ -86,7 +101,13 @@ router.post('/signup', async (req, res, next) => {
 
     return res.status(201).json({ 
       success: true,
-      message: "User registered successfully" 
+      message: "User registered successfully",
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        role: user.role
+      }
     });
   } catch (err) {
     next(err);
@@ -114,6 +135,13 @@ router.post('/login', async (req, res, next) => {
     return res.status(400).json({ success: false, message: "Email and password required" });
 
   try {
+    // RSA Decryption for Password
+    try {
+      password = decryptPassword(password);
+    } catch (err) {
+      return res.status(400).json({ success: false, message: "Identity verification failed (Decryption)" });
+    }
+
     // Note: User.matchPasswordAndGenerateToken handles both new and old passwords
     const token = await User.matchPasswordAndGenerateToken(
       email.toLowerCase(),
@@ -123,7 +151,10 @@ router.post('/login', async (req, res, next) => {
     // Fetch user for response (excluding password)
     const user = await User.findOne({ email: email.toLowerCase() });
 
-    res.cookie("token", token, {
+    // AES Encrypt Token for Cookie
+    const encryptedToken = encryptCookie(token);
+
+    res.cookie("token", encryptedToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
@@ -133,7 +164,6 @@ router.post('/login', async (req, res, next) => {
     return res.json({
       success: true,
       message: "Signin successful",
-      token, // Still return token for potential mobile use
       user: { 
         id: user._id, 
         name: user.name, 
@@ -157,22 +187,14 @@ router.post('/login', async (req, res, next) => {
 // ----------------------------
 router.get("/check-login", async (req, res) => {
   try {
-    const token = req.cookies.token;
-    if (!token) return res.json({ loggedIn: false });
-
-    const decoded = validateToken(token);
-    const user = await User.findById(decoded._id).select("name email role");
-
-    if (!user) return res.json({ loggedIn: false });
-
     return res.json({
-      loggedIn: true,
-      user: { 
-        id: user._id,
-        name: user.name, 
-        email: user.email,
-        role: user.role
-      },
+      loggedIn: !!req.user,
+      user: req.user ? { 
+        id: req.user._id,
+        name: req.user.name, 
+        email: req.user.email,
+        role: req.user.role
+      } : null,
     });
   } catch (err) {
     return res.status(401).json({ loggedIn: false });

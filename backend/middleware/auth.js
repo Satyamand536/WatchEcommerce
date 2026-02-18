@@ -1,13 +1,14 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const { validateToken } = require('../services/authentication');
+const { decryptCookie } = require('../utils/crypto');
 
 const protect = async (req, res, next) => {
   let token;
 
   // Check for token in cookies first
   if (req.cookies && req.cookies.token) {
-    token = req.cookies.token;
+    token = decryptCookie(req.cookies.token);
   } 
   // Then check Authorization header
   else if (
@@ -52,13 +53,15 @@ const authorize = (...roles) => {
 
 function checkForAuthenticationCookie(cookieName) {
   return async (req, res, next) => {
-    const tokenCookieValue = req.cookies[cookieName];
+    let tokenCookieValue = req.cookies[cookieName];
     if (!tokenCookieValue) {
       return next();
     }
 
     try {
-      const payload = validateToken(tokenCookieValue);
+      // Decrypt cookie
+      const decryptedToken = decryptCookie(tokenCookieValue);
+      const payload = validateToken(decryptedToken);
       const user = await User.findById(payload._id);
       if (user) {
         req.user = user;

@@ -40,10 +40,10 @@ const userSchema = new mongoose.Schema({
 });
 
 // Encrypt password before saving
-userSchema.pre('save', async function (next) {
+userSchema.pre('save', async function () {
   const user = this;
 
-  if (!user.isModified('password')) return next();
+  if (!user.isModified('password')) return;
 
   const salt = randomBytes(16).toString('hex');
   const hashedPassword = createHmac('sha256', salt)
@@ -52,7 +52,6 @@ userSchema.pre('save', async function (next) {
 
   this.salt = salt;
   this.password = hashedPassword;
-  next();
 });
 
 // Static method to match password and generate token

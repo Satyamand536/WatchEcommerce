@@ -37,10 +37,8 @@ export const AuthProvider = ({ children }) => {
     checkAuth();
   }, []);
 
-  const login = (userData, token) => {
-    // We still support token in localStorage if needed for some components,
-    // but the main auth now relies on the HTTP-only cookie.
-    localStorage.setItem('authToken', token);
+  const login = (userData) => {
+    // The main auth now relies purely on the HTTP-only cookie.
     localStorage.setItem('user', JSON.stringify(userData));
     setUser(userData);
     setIsAuthenticated(true);
@@ -52,7 +50,6 @@ export const AuthProvider = ({ children }) => {
     } catch (error) {
       console.error("Logout error:", error);
     }
-    localStorage.removeItem('authToken');
     localStorage.removeItem('user');
     setUser(null);
     setIsAuthenticated(false);

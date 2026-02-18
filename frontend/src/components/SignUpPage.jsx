@@ -21,7 +21,22 @@ const SignUpPage = () => {
   const [passwordStrength, setPasswordStrength] = useState(0);
   const [touched, setTouched] = useState({});
 
+  const [publicKey, setPublicKey] = useState(null);
+
   const navigate = useNavigate();
+
+  // Fetch RSA Public Key
+  React.useEffect(() => {
+    const fetchKey = async () => {
+      try {
+        const res = await axios.get('/api/auth/public-key');
+        setPublicKey(res.data.publicKey);
+      } catch (err) {
+        console.error("Failed to fetch security keys");
+      }
+    };
+    fetchKey();
+  }, []);
 
   // Real-time validation
   React.useEffect(() => {
@@ -68,13 +83,21 @@ const SignUpPage = () => {
       return;
     }
 
+    if (!publicKey) {
+      toast.error("Security protocol initializing... please wait.");
+      return;
+    }
+
     setIsSubmitting(true);
     try {
+      const { encryptWithRSA } = await import('../utils/crypto');
+      const encryptedPassword = await encryptWithRSA(password, publicKey);
+
       // Obfuscate payload to prevent plain-text visibility in Network panel
       const obfuscatedPayload = btoa(JSON.stringify({
         name,
         email,
-        password
+        password: encryptedPassword
       }));
 
       const response = await axios.post('/api/auth/signup', {
@@ -84,7 +107,7 @@ const SignUpPage = () => {
       if (response.data.success) {
         toast.success("Account Secured. Syncing...");
         // Use context login for seamless state update
-        login(response.data.user, response.data.token);
+        login(response.data.user);
 
         setTimeout(() => {
           navigate("/");
