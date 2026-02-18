@@ -1,32 +1,40 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+const { validateToken } = require('../services/authentication');
 
 const protect = async (req, res, next) => {
   let token;
 
-  if (
+  // Check for token in cookies first
+  if (req.cookies && req.cookies.token) {
+    token = req.cookies.token;
+  } 
+  // Then check Authorization header
+  else if (
     req.headers.authorization &&
     req.headers.authorization.startsWith('Bearer')
   ) {
-    try {
-      // Get token from header
-      token = req.headers.authorization.split(' ')[1];
-
-      // Verify token
-      const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-      // Get user from the token
-      req.user = await User.findById(decoded.id).select('-password');
-
-      next();
-    } catch (error) {
-      console.error(error);
-      res.status(401).json({ success: false, message: 'Not authorized, token failed' });
-    }
+    token = req.headers.authorization.split(' ')[1];
   }
 
   if (!token) {
-    res.status(401).json({ success: false, message: 'Not authorized, no token' });
+    return res.status(401).json({ success: false, message: 'Not authorized, no token' });
+  }
+
+  try {
+    // Verify token
+    const decoded = validateToken(token);
+
+    // Get user from the token
+    req.user = await User.findById(decoded._id).select('-password');
+    if (!req.user) {
+      return res.status(401).json({ success: false, message: 'Not authorized, user not found' });
+    }
+
+    next();
+  } catch (error) {
+    console.error('Auth protect error:', error.message);
+    res.status(401).json({ success: false, message: 'Not authorized, token failed' });
   }
 };
 
@@ -42,4 +50,24 @@ const authorize = (...roles) => {
   };
 };
 
-module.exports = { protect, authorize };
+function checkForAuthenticationCookie(cookieName) {
+  return async (req, res, next) => {
+    const tokenCookieValue = req.cookies[cookieName];
+    if (!tokenCookieValue) {
+      return next();
+    }
+
+    try {
+      const payload = validateToken(tokenCookieValue);
+      const user = await User.findById(payload._id);
+      if (user) {
+        req.user = user;
+      }
+    } catch (error) {
+      console.error('Auth error:', error.message);
+    }
+    next();
+  };
+}
+
+module.exports = { protect, authorize, checkForAuthenticationCookie };

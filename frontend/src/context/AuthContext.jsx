@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import axios from 'axios';
 
 const AuthContext = createContext();
 
@@ -10,22 +11,24 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check for token on mount
+    // Check for session on mount
     const checkAuth = async () => {
       try {
-        const token = localStorage.getItem('authToken');
-        const storedUser = localStorage.getItem('user');
-        
-        if (token && storedUser) {
-          setUser(JSON.parse(storedUser));
+        const response = await axios.get('/api/auth/check-login');
+        if (response.data.loggedIn) {
+          setUser(response.data.user);
           setIsAuthenticated(true);
         } else {
-            // Clean up if inconsistent
-            localStorage.removeItem('authToken');
-            localStorage.removeItem('user');
+          setUser(null);
+          setIsAuthenticated(false);
+          // Optional: clear any legacy local storage
+          localStorage.removeItem('authToken');
+          localStorage.removeItem('user');
         }
       } catch (error) {
         console.error("Auth check failed:", error);
+        setUser(null);
+        setIsAuthenticated(false);
       } finally {
         setLoading(false);
       }
@@ -35,13 +38,20 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = (userData, token) => {
+    // We still support token in localStorage if needed for some components,
+    // but the main auth now relies on the HTTP-only cookie.
     localStorage.setItem('authToken', token);
     localStorage.setItem('user', JSON.stringify(userData));
     setUser(userData);
     setIsAuthenticated(true);
   };
 
-  const logout = () => {
+  const logout = async () => {
+    try {
+      await axios.post('/api/auth/logout');
+    } catch (error) {
+      console.error("Logout error:", error);
+    }
     localStorage.removeItem('authToken');
     localStorage.removeItem('user');
     setUser(null);

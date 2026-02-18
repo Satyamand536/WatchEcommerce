@@ -70,10 +70,15 @@ const SignUpPage = () => {
 
     setIsSubmitting(true);
     try {
-      const response = await axios.post('/api/auth/signup', {
+      // Obfuscate payload to prevent plain-text visibility in Network panel
+      const obfuscatedPayload = btoa(JSON.stringify({
         name,
         email,
         password
+      }));
+
+      const response = await axios.post('/api/auth/signup', {
+        d: obfuscatedPayload
       });
 
       if (response.data.success) {

@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
+const cookieParser = require('cookie-parser');
+
 dotenv.config();
 
 const authRoutes = require('./routes/auth');
@@ -17,6 +19,7 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
 
 // ---------------- API Routes ----------------
 app.use('/api/auth', authRoutes);
