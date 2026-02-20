@@ -14,7 +14,7 @@
 
 ## What is this?
 
-Most e-commerce templates stop at a product grid and a cart. ChronoElite goes further — it's built around the idea that buying a watch is not the same as buying a t-shirt. The customer needs to know *why* this watch suits them, *which* size works for their wrist, and *when* to wear it.
+Most e-commerce templates stop at a product grid and a cart. Preseejan goes further — it's built around the idea that buying a watch is not the same as buying a t-shirt. The customer needs to know *why* this watch suits them, *which* size works for their wrist, and *when* to wear it.
 
 So I built a platform that answers those questions through three custom-engineered systems: a biometric wrist-fit advisor, a lifestyle-based recommendation engine, and occasion-first curated shopping. Everything sits on top of a secure MERN backend with RSA-encrypted authentication and Stripe payments.
 
@@ -183,17 +183,7 @@ node seed.js
 | `POST` | `/api/payment/demo-success` | Record demo UPI/COD order to MongoDB |
 | `POST` | `/api/subscribe` | Newsletter subscription via Nodemailer |
 
----
 
-## Why I Built It This Way
-
-**The recommendation engine is rule-based, not ML-based — on purpose.** A catalog of luxury watches doesn't have millions of users generating behavioral data. A well-designed weighted scorer that understands domain knowledge (dial sizes, usage contexts, style language) outperforms a cold-start recommendation model every time at this scale.
-
-**RSA encryption in the browser felt like overkill — until it wasn't.** The standard argument is "HTTPS is enough." But for an e-commerce platform handling credentials, eliminating any chance of plain-text passwords appearing in proxy logs, middleware, or accidentally-left-open debuggers is worth the added implementation cost. The Web Crypto API made it feasible without any third-party library.
-
-**Express v5 was a deliberate choice.** It handles async errors natively without try-catch wrappers on every route, which cleaned up the codebase significantly and reduced boilerplate.
-
----
 
 
 
