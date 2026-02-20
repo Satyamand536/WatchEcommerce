@@ -1,9 +1,9 @@
 <div align="center">
 
-<h1>⌚ ChronoElite</h1>
+<h1>⌚ Preseejan</h1>
 <p><strong>A full-stack luxury watch e-commerce platform — built with the MERN stack, engineered for the modern collector.</strong></p>
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-black?style=for-the-badge&logo=vercel)](https://your-deployment-url.com)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-black?style=for-the-badge&logo=vercel)](https://preseejan.onrender.com/)
 [![Node.js](https://img.shields.io/badge/Node.js-v18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com)
@@ -52,8 +52,8 @@ A full-page, alternating timeline that walks through the evolution of watchmakin
 ### LumeMaster & Watch Comparison
 The LumeMaster section highlights a specific hero product with a focused story. The Watch Comparison feature lets users place two pieces side-by-side and evaluate specifications directly — reducing the back-and-forth of trying to hold two product pages in memory simultaneously.
 
-### Stripe Payment Integration
-A real Stripe payment intent is created server-side in INR via `/api/payment/create-intent`. The `amount` is converted to paise before being sent to Stripe. A separate demo UPI flow exists for testing without real card credentials, and every completed order is written to MongoDB with full line-item, financial, and shipping detail.
+###  Demo Payment Integration
+A  payment intent is created server-side in INR via `/api/payment/create-intent`.  A separate demo UPI flow exists for testing without real card credentials, and every completed order is written to MongoDB with full line-item, financial, and shipping detail.
 
 ### Dark / Light Mode, Wishlist & Cart
 Theme preference is stored in React Context and applied through CSS variables, making the dark mode a true design inversion rather than a simple opacity hack. The cart and wishlist are also powered by Context, with persistent toast notifications confirming every action.
@@ -139,7 +139,6 @@ Open `.env` and fill in:
 ```env
 MONGO_URI=your_mongodb_atlas_connection_string
 JWT_SECRET=your_jwt_secret_key
-STRIPE_SECRET_KEY=sk_test_your_stripe_key
 EMAIL_USER=your_email@gmail.com
 EMAIL_PASS=your_app_password
 PORT=5000
@@ -196,18 +195,5 @@ node seed.js
 
 ---
 
-## Screenshots
 
-> *(Add screenshots of: Home page, WristFit simulator, Recommendation results, Cart, Dark mode)*
 
----
-
-## License
-
-MIT — use it, learn from it, build on it.
-
----
-
-<div align="center">
-<p>Built with late nights, strong chai, and a genuine love for watches.</p>
-</div>
